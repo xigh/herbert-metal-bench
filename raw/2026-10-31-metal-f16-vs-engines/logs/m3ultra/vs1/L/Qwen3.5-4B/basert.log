@@ -1,0 +1,40 @@
+=== Qwen3.5-4B basert 2026-10-31 05:04:41
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2549854.
+Swapouts:                                  100282979.
+input ~/models/qwen/Qwen3.5-4B
+--- pp8192
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 25080 MiB | pp8192:random | 2026.68 ± 0.66 |
+| Qwen3.5-4B-bf16 | 25080 MiB | tg128 | 77.06 ± 0.01 |
+--- pp16384
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 25333 MiB | pp16384:random | 1905.82 ± 0.27 |
+--- pp32768
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 25847 MiB | pp32768:random | 1701.77 ± 0.20 |
+--- pp65536
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 26876 MiB | pp65536:random | 1395.90 ± 0.23 |
+--- pp81920
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 27388 MiB | pp81920:random | 1280.39 ± 0.51 |
+removed ~/basert-tmp/Qwen3.5-4B-bf16.base
+exit 0 2026-10-31 05:17:32
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2394653.
+Swapouts:                                  100282979.

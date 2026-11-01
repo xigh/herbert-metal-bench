@@ -1,0 +1,18 @@
+=== Qwen3.5-2B rapid 2026-10-28 23:52:40
+Pages free:                                  3590200.
+Swapouts:                                   98333948.
+[pp512] warm-up prompt_tokens 533 ttft 149.9 ms wall 0.176 s 3556.8 tok/s
+[pp512] run prompt_tokens 547 ttft 142.6 ms wall 0.152 s 3834.8 tok/s
+[pp512] run prompt_tokens 530 ttft 141.7 ms wall 0.151 s 3740.7 tok/s
+[pp512] run prompt_tokens 528 ttft 155.9 ms wall 0.166 s 3386.9 tok/s
+[tg128] warm-up completion_tokens 128 mean_itl 6.962 ms wall 0.943 s 143.6 tok/s
+[tg128] run completion_tokens 128 mean_itl 6.903 ms wall 0.923 s 144.9 tok/s
+[tg128] run completion_tokens 128 mean_itl 6.906 ms wall 0.923 s 144.8 tok/s
+[tg128] run completion_tokens 128 mean_itl 6.901 ms wall 0.923 s 144.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | rapid-mlx | pp512 | 3654.10 ± 236.16 |
+| Qwen3.5-2B | rapid-mlx | tg128 | 144.86 ± 0.05 |
+exit 143 2026-10-28 23:52:53
+Pages free:                                  3667937.
+Swapouts:                                   98333948.

@@ -1,0 +1,16 @@
+Qwen3.5-0.8B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-0.8B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+Qwen3.5-2B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-2B long: prompt = reference (146 ids) · 20/48 ids identical · first difference at 20
+    reference [2716, 1414, 303, 8323, 883, 6165, 4779, 321]
+    metal     [1414, 303, 8323, 21988, 279, 3712, 321, 1428]
+    reference top-5 at 20: 2716:24.78 1414:24.78 8323:23.58 13901:21.53 20438:17 (margin 0)
+    metal top-5 at 20: 1414:24.77 2716:24.77 8323:23.59 13901:21.55 20438:16.98 (margin 0)
+Qwen3.5-4B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-4B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+Qwen3.5-9B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-9B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+Qwen3.8-27B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.8-27B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+Qwen3.6-35B-A3B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.6-35B-A3B long: prompt = reference (146 ids) · 48/48 ids identical · identical

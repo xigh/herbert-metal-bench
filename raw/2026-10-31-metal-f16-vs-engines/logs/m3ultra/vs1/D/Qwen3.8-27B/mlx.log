@@ -1,0 +1,19 @@
+=== Qwen3.8-27B mlx 2026-10-31 02:33:10
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   121155.
+Swapouts:                                   99397947.
+input $MODELS_DIR/Qwen3.8-27B
+Running warmup..
+Timing with prompt_tokens=4096, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=336.567, generation_tps=13.214, peak_memory=57.113, total_time=21.863
+Trial 2:  prompt_tps=336.733, generation_tps=13.239, peak_memory=57.114, total_time=21.839
+Trial 3:  prompt_tps=336.900, generation_tps=13.246, peak_memory=57.114, total_time=21.828
+Averages: prompt_tps=336.733, generation_tps=13.233, peak_memory=57.114
+exit 0 2026-10-31 02:35:57
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  3570025.
+Swapouts:                                   99397947.

@@ -1,0 +1,29 @@
+=== Qwen3.5-9B basert 2026-10-31 06:58:57
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2994332.
+Swapouts:                                  100282979.
+input ~/models/qwen/Qwen3.5-9B
+--- pp8192
+BaseFile: tensor 'layers.28.mlp.down_proj.weight' weights [13290618880, 13391282176) exceeds blob length 13320478720
+Failed: Failed to open model: ~/basert-tmp/Qwen3.5-9B-bf16.base
+--- pp16384
+BaseFile: tensor 'layers.28.mlp.down_proj.weight' weights [13290618880, 13391282176) exceeds blob length 13320478720
+Failed: Failed to open model: ~/basert-tmp/Qwen3.5-9B-bf16.base
+--- pp32768
+BaseFile: tensor 'layers.28.mlp.down_proj.weight' weights [13290618880, 13391282176) exceeds blob length 13320478720
+Failed: Failed to open model: ~/basert-tmp/Qwen3.5-9B-bf16.base
+--- pp65536
+BaseFile: tensor 'layers.28.mlp.down_proj.weight' weights [13290618880, 13391282176) exceeds blob length 13320478720
+Failed: Failed to open model: ~/basert-tmp/Qwen3.5-9B-bf16.base
+--- pp81920
+BaseFile: tensor 'layers.28.mlp.down_proj.weight' weights [13290618880, 13391282176) exceeds blob length 13320478720
+Failed: Failed to open model: ~/basert-tmp/Qwen3.5-9B-bf16.base
+removed ~/basert-tmp/Qwen3.5-9B-bf16.base
+exit 1 2026-10-31 07:00:26
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2024116.
+Swapouts:                                  100282979.

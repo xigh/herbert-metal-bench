@@ -1,0 +1,17 @@
+[gpu] Apple M5 · working set 25.0 GiB · max buffer 18.7 GiB · threadgroup memory 32 KiB
+check	hacc	32x32 tile, K slice 64, 256 turns	float8x8 acc	tile (0, 0) of the four simdgroups [236.75, 236.75, 236.75, 236.75]
+check	hacc	32x32 tile, K slice 64, 256 turns	half8x8 acc	tile (0, 0) of the four simdgroups [272.0, 272.0, 272.0, 272.0]
+run	hacc	32x32 tile, K slice 64, 256 turns	float8x8 acc	0	0.152217625	3.612	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	half8x8 acc	0	0.146439125	3.754	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	half8x8 acc	1	0.146878125	3.743	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	float8x8 acc	1	0.153952250	3.571	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	float8x8 acc	2	0.152822125	3.597	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	half8x8 acc	2	0.147221417	3.734	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	half8x8 acc	3	0.147529250	3.726	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	float8x8 acc	3	0.154182417	3.566	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	float8x8 acc	4	0.152829000	3.597	TFLOPS
+run	hacc	32x32 tile, K slice 64, 256 turns	half8x8 acc	4	0.145962792	3.766	TFLOPS
+| probe | shape | variant | median | min | max | unit | / first of the shape |
+| --- | --- | --- | ---: | ---: | ---: | --- | ---: |
+| hacc | 32x32 tile, K slice 64, 256 turns | float8x8 acc | 3.597 | 3.566 | 3.612 | TFLOPS | 1.0000 |
+| hacc | 32x32 tile, K slice 64, 256 turns | half8x8 acc | 3.743 | 3.726 | 3.766 | TFLOPS | 1.0405 |

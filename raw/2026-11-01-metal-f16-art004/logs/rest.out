@@ -1,0 +1,173 @@
+start rest 2026-11-01 00:36:44
+### 2 Qwen3.5-0.8B llama-f16 pp24576,61440 00:36:44
+=== Qwen3.5-0.8B llama-f16 2026-11-01 00:36:44
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |         pp24576 |      6316.30 ± 13.07 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |         pp61440 |       3929.19 ± 0.70 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |           tg128 |        213.79 ± 1.64 |
+### 2 Qwen3.5-2B llama-f16 pp24576,61440 00:37:27
+=== Qwen3.5-2B llama-f16 2026-11-01 00:37:27
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |         pp24576 |       3799.03 ± 6.65 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |         pp61440 |       2780.65 ± 3.05 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |           tg128 |        132.16 ± 0.71 |
+### 2 Qwen3.5-4B llama-f16 pp24576,61440 00:38:31
+=== Qwen3.5-4B llama-f16 2026-11-01 00:38:31
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 4B F16                  |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |         pp24576 |       1545.84 ± 1.04 |
+| qwen35 4B F16                  |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |         pp61440 |       1128.02 ± 0.20 |
+| qwen35 4B F16                  |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |           tg128 |         68.12 ± 0.11 |
+### 2 Qwen3.5-9B llama-f16 pp24576,61440 00:41:08
+=== Qwen3.5-9B llama-f16 2026-11-01 00:41:08
+missing input $GGUF_DIR/Qwen3.5-9B-F16.gguf: not run
+### 3 Qwen3.5-0.8B tg128 @ d32768 h-f16 h-bf16 llama-bf16 llama-f16 mlx 00:41:08
+=== Qwen3.5-0.8B h-f16 2026-11-01 00:41:08
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp1 | 386.59 ± 0.34 |
+| Qwen3.5-0.8B | herbert-metal-f16 | tg128 @ d32768 | 296.03 ± 0.03 |
+pause 30 s
+=== Qwen3.5-0.8B h-bf16 2026-11-01 00:42:29
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp1 | 380.05 ± 0.84 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 @ d32768 | 289.29 ± 0.16 |
+pause 30 s
+=== Qwen3.5-0.8B llama-bf16 2026-11-01 00:43:41
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |  tg128 @ d32768 |        174.48 ± 2.52 |
+pause 30 s
+=== Qwen3.5-0.8B llama-f16 2026-11-01 00:44:19
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |  tg128 @ d32768 |        176.99 ± 3.71 |
+pause 30 s
+=== Qwen3.5-0.8B mlx 2026-11-01 00:44:57
+Trial 1:  prompt_tps=7778.479, generation_tps=201.046, peak_memory=5.183, total_time=4.854
+Trial 2:  prompt_tps=7794.321, generation_tps=201.492, peak_memory=5.184, total_time=4.844
+Averages: prompt_tps=7786.400, generation_tps=201.269, peak_memory=5.183
+### 3 Qwen3.5-2B tg128 @ d32768 mlx llama-f16 llama-bf16 h-bf16 h-f16 00:45:13
+=== Qwen3.5-2B mlx 2026-11-01 00:45:13
+Trial 1:  prompt_tps=4569.630, generation_tps=124.781, peak_memory=6.291, total_time=8.201
+Trial 2:  prompt_tps=4571.060, generation_tps=124.964, peak_memory=6.292, total_time=8.197
+Averages: prompt_tps=4570.345, generation_tps=124.873, peak_memory=6.292
+pause 30 s
+=== Qwen3.5-2B llama-f16 2026-11-01 00:46:09
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |  tg128 @ d32768 |        121.51 ± 0.43 |
+pause 30 s
+=== Qwen3.5-2B llama-bf16 2026-11-01 00:46:52
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |  tg128 @ d32768 |        121.42 ± 0.93 |
+pause 30 s
+=== Qwen3.5-2B h-bf16 2026-11-01 00:47:34
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp1 | 179.67 ± 0.13 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 @ d32768 | 156.84 ± 0.04 |
+pause 30 s
+=== Qwen3.5-2B h-f16 2026-11-01 00:49:04
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-f16 | pp1 | 182.24 ± 0.04 |
+| Qwen3.5-2B | herbert-metal-f16 | tg128 @ d32768 | 160.59 ± 0.06 |
+### 3 Qwen3.5-4B tg128 @ d32768 h-f16 h-bf16 llama-bf16 llama-f16 mlx 00:50:17
+=== Qwen3.5-4B h-f16 2026-11-01 00:50:17
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-f16 | pp1 | 85.45 ± 0.08 |
+| Qwen3.5-4B | herbert-metal-f16 | tg128 @ d32768 | 69.08 ± 0.03 |
+pause 30 s
+=== Qwen3.5-4B h-bf16 2026-11-01 00:53:13
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp1 | 85.00 ± 0.02 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 @ d32768 | 68.59 ± 0.00 |
+pause 30 s
+=== Qwen3.5-4B llama-bf16 2026-11-01 00:55:56
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 4B BF16                 |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |  tg128 @ d32768 |         59.48 ± 0.09 |
+pause 30 s
+=== Qwen3.5-4B llama-f16 2026-11-01 00:57:01
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 4B F16                  |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |  tg128 @ d32768 |         59.50 ± 0.07 |
+pause 30 s
+=== Qwen3.5-4B mlx 2026-11-01 00:57:59
+Trial 1:  prompt_tps=1736.410, generation_tps=61.965, peak_memory=13.019, total_time=20.941
+Trial 2:  prompt_tps=1735.681, generation_tps=62.012, peak_memory=13.019, total_time=20.948
+Averages: prompt_tps=1736.045, generation_tps=61.989, peak_memory=13.019
+### 3 Qwen3.5-9B tg128 @ d32768 mlx llama-f16 llama-bf16 h-bf16 h-f16 00:59:04
+=== Qwen3.5-9B mlx 2026-11-01 00:59:04
+Trial 1:  prompt_tps=1078.330, generation_tps=37.696, peak_memory=22.530, total_time=33.789
+Trial 2:  prompt_tps=1078.243, generation_tps=37.678, peak_memory=22.531, total_time=33.793
+Averages: prompt_tps=1078.287, generation_tps=37.687, peak_memory=22.531
+pause 30 s
+=== Qwen3.5-9B llama-f16 2026-11-01 01:01:17
+missing input $GGUF_DIR/Qwen3.5-9B-F16.gguf: not run
+pause 30 s
+=== Qwen3.5-9B llama-bf16 2026-11-01 01:01:47
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 9B BF16                 |  16.68 GiB |     8.95 B | MTL,BLAS   |      20 |  tg128 @ d32768 |         37.70 ± 0.14 |
+pause 30 s
+=== Qwen3.5-9B h-bf16 2026-11-01 01:03:20
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp1 | 47.17 ± 0.03 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 @ d32768 | 41.63 ± 0.01 |
+pause 30 s
+=== Qwen3.5-9B h-f16 2026-11-01 01:07:27
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-f16 | pp1 | 47.61 ± 0.04 |
+| Qwen3.5-9B | herbert-metal-f16 | tg128 @ d32768 | 42.96 ± 0.00 |
+### 4 Qwen3.8-27B pp512,8192 tg128 01:11:19
+=== Qwen3.8-27B h-f16 2026-11-01 01:11:19
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | herbert-metal-f16 | pp512 | 380.46 ± 0.00 |
+| Qwen3.8-27B | herbert-metal-f16 | pp8192 | 385.89 ± 0.01 |
+| Qwen3.8-27B | herbert-metal-f16 | tg128 | 14.83 ± 0.00 |
+pause 30 s
+=== Qwen3.8-27B h-bf16 2026-11-01 01:20:51
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | herbert-metal-bf16 | pp512 | 379.14 ± 0.38 |
+| Qwen3.8-27B | herbert-metal-bf16 | pp8192 | 389.03 ± 0.02 |
+| Qwen3.8-27B | herbert-metal-bf16 | tg128 | 14.75 ± 0.00 |
+pause 30 s
+=== Qwen3.8-27B llama-bf16 2026-11-01 01:30:08
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |           pp512 |        319.50 ± 0.19 |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |          pp8192 |        307.31 ± 0.00 |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |           tg128 |         13.45 ± 0.00 |
+pause 30 s
+=== Qwen3.8-27B mlx 2026-11-01 01:33:37
+### 4 Qwen3.6-35B-A3B pp512,8192 tg128 01:36:04
+=== Qwen3.6-35B-A3B h-f16 2026-11-01 01:36:04
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-f16 | pp512 | 2447.75 ± 2.22 |
+| Qwen3.6-35B-A3B | herbert-metal-f16 | pp8192 | 3674.85 ± 3.45 |
+| Qwen3.6-35B-A3B | herbert-metal-f16 | tg128 | 90.82 ± 0.01 |
+pause 30 s
+=== Qwen3.6-35B-A3B h-bf16 2026-11-01 01:41:27
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp512 | 2433.16 ± 1.31 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp8192 | 3633.80 ± 0.51 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | tg128 | 89.18 ± 0.05 |
+pause 30 s
+=== Qwen3.6-35B-A3B llama-bf16 2026-11-01 01:45:00
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |           pp512 |      2003.80 ± 12.09 |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |          pp8192 |       1803.62 ± 1.23 |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |           tg128 |         71.65 ± 1.05 |
+pause 30 s
+=== Qwen3.6-35B-A3B mlx 2026-11-01 01:47:28
+Averages: prompt_tps=1893.141, generation_tps=73.290, peak_memory=69.996
+Trial 1:  prompt_tps=2486.905, generation_tps=78.686, peak_memory=71.654, total_time=3.399
+Trial 2:  prompt_tps=2486.648, generation_tps=78.134, peak_memory=71.654, total_time=3.400
+Averages: prompt_tps=2486.777, generation_tps=78.410, peak_memory=71.654
+### 5 ids 01:50:36

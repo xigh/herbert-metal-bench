@@ -1,0 +1,58 @@
+=== E2B rapid 2026-10-31 03:00:14
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  3087450.
+Swapouts:                                  100280196.
+input ~/models/gemma-4-E2B-it-qat-q4_0-unquantized
+--- pp8192
+[pp8192] run prompt_tokens 8192 ttft 1273.9 ms wall 1.366 s 6430.6 tok/s
+[pp8192] run prompt_tokens 8192 ttft 963.1 ms wall 0.990 s 8506.0 tok/s
+[tg128] run completion_tokens 128 mean_itl 16.496 ms wall 2.159 s 60.6 tok/s
+[tg128] run completion_tokens 128 mean_itl 16.504 ms wall 2.169 s 60.6 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | pp8192 | 7468.32 ± 1467.56 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | tg128 | 60.61 ± 0.02 |
+--- pp16384
+[pp16384] run prompt_tokens 16384 ttft 2096.8 ms wall 2.156 s 7814.0 tok/s
+[pp16384] run prompt_tokens 16384 ttft 2060.9 ms wall 2.105 s 7950.1 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.207 ms wall 0.177 s 61.7 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.436 ms wall 0.188 s 60.8 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | pp16384 | 7882.04 ± 96.24 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 61.27 ± 0.61 |
+--- pp32768
+[pp32768] run prompt_tokens 32768 ttft 4867.3 ms wall 4.964 s 6732.3 tok/s
+[pp32768] run prompt_tokens 32768 ttft 4876.1 ms wall 4.957 s 6720.1 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.208 ms wall 0.177 s 61.7 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.333 ms wall 0.187 s 61.2 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | pp32768 | 6726.19 ± 8.66 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 61.46 ± 0.34 |
+--- pp65536
+[pp65536] run prompt_tokens 65536 ttft 14101.1 ms wall 14.271 s 4647.6 tok/s
+[pp65536] run prompt_tokens 65536 ttft 14063.5 ms wall 14.218 s 4660.0 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.143 ms wall 0.178 s 61.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.328 ms wall 0.184 s 61.2 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | pp65536 | 4653.78 ± 8.79 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 61.59 ± 0.50 |
+--- pp81920
+[pp81920] run prompt_tokens 81920 ttft 20419.0 ms wall 20.635 s 4011.9 tok/s
+[pp81920] run prompt_tokens 81920 ttft 20422.8 ms wall 20.618 s 4011.2 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.301 ms wall 0.181 s 61.3 tok/s
+[tg8] run completion_tokens 8 mean_itl 16.232 ms wall 0.185 s 61.6 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | pp81920 | 4011.58 ± 0.52 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 61.48 ± 0.18 |
+exit 143 2026-10-31 03:02:00
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2597831.
+Swapouts:                                  100282979.

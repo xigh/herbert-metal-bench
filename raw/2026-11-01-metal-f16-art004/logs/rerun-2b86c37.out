@@ -1,0 +1,176 @@
+start rerun 2026-11-01 02:28:06 2b86c37
+### 1r Qwen3.5-0.8B pp2048 h-bf16 02:28:06
+=== Qwen3.5-0.8B h-bf16 2026-11-01 02:28:06
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp2048 | 12301.73 ± 0.13 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 382.19 ± 0.33 |
+### 1r Qwen3.5-2B pp2048 h-bf16 02:28:26
+=== Qwen3.5-2B h-bf16 2026-11-01 02:28:26
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp2048 | 5626.07 ± 1.74 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 180.31 ± 0.03 |
+### 1r Qwen3.5-4B pp2048 h-bf16 02:28:55
+=== Qwen3.5-4B h-bf16 2026-11-01 02:28:55
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp2048 | 2280.60 ± 0.20 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 | 84.92 ± 0.08 |
+### 1r Qwen3.5-9B pp2048 h-bf16 02:29:37
+=== Qwen3.5-9B h-bf16 2026-11-01 02:29:37
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp2048 | 1261.42 ± 0.99 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 47.15 ± 0.03 |
+### 1r Qwen3.5-0.8B pp8192 h-bf16 02:30:44
+=== Qwen3.5-0.8B h-bf16 2026-11-01 02:30:44
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp8192 | 11291.82 ± 3.47 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 382.50 ± 0.01 |
+### 1r Qwen3.5-2B pp8192 h-bf16 02:31:16
+=== Qwen3.5-2B h-bf16 2026-11-01 02:31:16
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp8192 | 5477.75 ± 0.96 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 182.18 ± 0.00 |
+### 1r Qwen3.5-4B pp8192 h-bf16 02:32:07
+=== Qwen3.5-4B h-bf16 2026-11-01 02:32:07
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp8192 | 2203.94 ± 0.09 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 | 84.97 ± 0.00 |
+### 1r Qwen3.5-9B pp8192 h-bf16 02:33:40
+=== Qwen3.5-9B h-bf16 2026-11-01 02:33:40
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp8192 | 1236.38 ± 0.53 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 47.29 ± 0.06 |
+### 1r Qwen3.5-0.8B pp24576 h-bf16 02:36:18
+=== Qwen3.5-0.8B h-bf16 2026-11-01 02:36:18
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp24576 | 8684.68 ± 1.04 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 379.55 ± 0.82 |
+### 1r Qwen3.5-2B pp24576 h-bf16 02:36:57
+=== Qwen3.5-2B h-bf16 2026-11-01 02:36:57
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp24576 | 4781.84 ± 0.18 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 182.63 ± 0.07 |
+### 1r Qwen3.5-4B pp24576 h-bf16 02:37:55
+=== Qwen3.5-4B h-bf16 2026-11-01 02:37:55
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp24576 | 1909.02 ± 0.20 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 | 85.13 ± 0.00 |
+### 1r Qwen3.5-9B pp24576 h-bf16 02:39:50
+=== Qwen3.5-9B h-bf16 2026-11-01 02:39:50
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp24576 | 1136.46 ± 0.05 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 47.23 ± 0.00 |
+### 1r Qwen3.5-0.8B pp61440 h-bf16 02:42:59
+=== Qwen3.5-0.8B h-bf16 2026-11-01 02:42:59
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp61440 | 5643.25 ± 0.47 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 384.16 ± 0.20 |
+### 1r Qwen3.5-2B pp61440 h-bf16 02:43:52
+=== Qwen3.5-2B h-bf16 2026-11-01 02:43:52
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp61440 | 3688.71 ± 0.44 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 181.87 ± 0.53 |
+### 1r Qwen3.5-4B pp61440 h-bf16 02:45:14
+=== Qwen3.5-4B h-bf16 2026-11-01 02:45:14
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp61440 | 1455.98 ± 0.85 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 | 85.21 ± 0.00 |
+### 1r Qwen3.5-9B pp61440 h-bf16 02:48:09
+=== Qwen3.5-9B h-bf16 2026-11-01 02:48:09
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp61440 | 961.29 ± 0.29 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 47.32 ± 0.00 |
+### 1r Qwen3.5-0.8B pp81920 h-bf16 02:52:43
+=== Qwen3.5-0.8B h-bf16 2026-11-01 02:52:43
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp81920 | 4756.34 ± 0.38 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 373.11 ± 0.27 |
+### 3r Qwen3.5-0.8B tg128 @ d32768 h-f16 h-bf16 02:53:48
+=== Qwen3.5-0.8B h-f16 2026-11-01 02:53:48
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp1 | 383.15 ± 0.49 |
+| Qwen3.5-0.8B | herbert-metal-f16 | tg128 @ d32768 | 297.42 ± 0.12 |
+pause 10 s
+=== Qwen3.5-0.8B h-bf16 2026-11-01 02:54:50
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp1 | 381.02 ± 0.11 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 @ d32768 | 296.88 ± 0.46 |
+### 3r Qwen3.5-2B tg128 @ d32768 h-f16 h-bf16 02:55:37
+=== Qwen3.5-2B h-f16 2026-11-01 02:55:37
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-f16 | pp1 | 182.12 ± 0.04 |
+| Qwen3.5-2B | herbert-metal-f16 | tg128 @ d32768 | 160.30 ± 0.06 |
+pause 10 s
+=== Qwen3.5-2B h-bf16 2026-11-01 02:57:05
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp1 | 180.89 ± 0.74 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 @ d32768 | 159.50 ± 0.03 |
+### 3r Qwen3.5-4B tg128 @ d32768 h-f16 h-bf16 02:58:17
+=== Qwen3.5-4B h-f16 2026-11-01 02:58:17
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-f16 | pp1 | 85.52 ± 0.04 |
+| Qwen3.5-4B | herbert-metal-f16 | tg128 @ d32768 | 71.79 ± 0.04 |
+pause 10 s
+=== Qwen3.5-4B h-bf16 2026-11-01 03:01:02
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp1 | 85.13 ± 0.13 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 @ d32768 | 71.23 ± 0.01 |
+### 3r Qwen3.5-9B tg128 @ d32768 h-f16 h-bf16 03:03:30
+=== Qwen3.5-9B h-f16 2026-11-01 03:03:30
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-f16 | pp1 | 47.59 ± 0.05 |
+| Qwen3.5-9B | herbert-metal-f16 | tg128 @ d32768 | 42.70 ± 0.00 |
+pause 10 s
+=== Qwen3.5-9B h-bf16 2026-11-01 03:07:52
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp1 | 47.34 ± 0.00 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 @ d32768 | 42.82 ± 0.02 |
+### 4r Qwen3.8-27B pp512,8192 tg128 h-f16 h-bf16 03:11:53
+=== Qwen3.8-27B h-f16 2026-11-01 03:11:53
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | herbert-metal-f16 | pp512 | 353.26 ± 0.08 |
+| Qwen3.8-27B | herbert-metal-f16 | pp8192 | 350.72 ± 0.05 |
+| Qwen3.8-27B | herbert-metal-f16 | tg128 | 14.84 ± 0.00 |
+pause 10 s
+=== Qwen3.8-27B h-bf16 2026-11-01 03:21:33
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | herbert-metal-bf16 | pp512 | 353.36 ± 0.04 |
+| Qwen3.8-27B | herbert-metal-bf16 | pp8192 | 350.77 ± 0.04 |
+| Qwen3.8-27B | herbert-metal-bf16 | tg128 | 14.82 ± 0.00 |
+### 4r Qwen3.6-35B-A3B pp512,8192 tg128 h-f16 h-bf16 03:30:48
+=== Qwen3.6-35B-A3B h-f16 2026-11-01 03:30:48
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-f16 | pp512 | 2364.00 ± 0.21 |
+| Qwen3.6-35B-A3B | herbert-metal-f16 | pp8192 | 3207.67 ± 2.63 |
+| Qwen3.6-35B-A3B | herbert-metal-f16 | tg128 | 91.31 ± 0.04 |
+pause 10 s
+=== Qwen3.6-35B-A3B h-bf16 2026-11-01 03:34:14
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp512 | 2346.77 ± 1.18 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp8192 | 3191.06 ± 0.95 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | tg128 | 90.03 ± 0.03 |
+### 5r ids 03:37:19

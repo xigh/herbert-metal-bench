@@ -1,0 +1,41 @@
+=== Qwen3.5-2B basert 2026-10-30 23:00:22
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+ 22.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+Pages free:                                  1875003.
+Swapouts:                                   99113415.
+input ~/models/qwen/Qwen3.5-2B
+--- pp128
+BaseWeightStore: weights blob (5569298432 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp128:random | 3128.61 ± 6.75 |
+--- pp512
+BaseWeightStore: weights blob (5569298432 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp512:random | 4536.72 ± 2.48 |
+| Qwen3.5-2B-bf16 | 12312 MiB | tg128 | 160.50 ± 0.37 |
+--- pp1024
+BaseWeightStore: weights blob (5569298432 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp1024:random | 4890.01 ± 2.37 |
+--- pp2048
+BaseWeightStore: weights blob (5569298432 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp2048:random | 5142.53 ± 1.75 |
+--- pp4096
+BaseWeightStore: weights blob (5569298432 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp4096:random | 5280.69 ± 4.12 |
+removed ~/basert-tmp/Qwen3.5-2B-bf16.base
+exit 0 2026-10-30 23:01:05
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1581308.
+Swapouts:                                   99113415.

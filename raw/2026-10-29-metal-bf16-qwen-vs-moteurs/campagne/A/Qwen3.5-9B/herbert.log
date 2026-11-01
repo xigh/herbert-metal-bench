@@ -1,0 +1,55 @@
+=== Qwen3.5-9B herbert 2026-10-29 00:03:02
+Pages free:                                  1930266.
+Swapouts:                                   98333948.
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] skipped: model.visual.* ×333, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 4096, 32 layers, 16 heads / 4 kv × 256, intermediate 12288, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head false
+[metal] weights 16.77 GiB, everything 17.16 GiB, capacity 2048, DeltaNet activations bf16
+[autotune] gemm 4096x24576 Bf16, 64 rows: mma 1.140 ms, mm2d64x64 0.769 ms, mm2d64x32 0.743 ms, mm2d64x16 0.759 ms, mm2d32x64 0.749 ms, mm2d32x32 0.751 ms, mm2d32x16 0.899 ms -> mm2d64x32
+[autotune] gemm 12288x4096 Residual, 64 rows: mma 1.236 ms, mm2d64x64 0.789 ms, mm2d64x32 0.551 ms, mm2d64x16 0.474 ms, mm2d32x64 0.547 ms, mm2d32x32 0.471 ms, mm2d32x16 0.557 ms -> mm2d32x32
+[autotune] gemm 4096x10240 Bf16, 64 rows: mma 0.451 ms, mm2d64x64 0.364 ms, mm2d64x32 0.339 ms, mm2d64x16 0.345 ms, mm2d32x64 0.340 ms, mm2d32x32 0.341 ms, mm2d32x16 0.426 ms -> mm2d64x32
+[autotune] gemm 4096x4096 Residual, 64 rows: mma 0.378 ms, mm2d64x64 0.268 ms, mm2d64x32 0.196 ms, mm2d64x16 0.162 ms, mm2d32x64 0.195 ms, mm2d32x32 0.162 ms, mm2d32x16 0.173 ms -> mm2d64x16
+[autotune] gemm 4096x12352 Bf16, 64 rows: mma 0.737 ms, mm2d64x64 0.458 ms, mm2d64x32 0.389 ms, mm2d64x16 0.396 ms, mm2d32x64 0.390 ms, mm2d32x32 0.394 ms, mm2d32x16 0.488 ms -> mm2d64x32
+[autotune] gemm 4096x24576 Bf16, 128 rows: mma 1.897 ms, mm2d64x64 1.464 ms, mm2d64x32 1.395 ms, mm2d64x16 1.404 ms, mm2d32x64 1.411 ms, mm2d32x32 1.399 ms, mm2d32x16 1.649 ms -> mm2d64x32
+[autotune] gemm 12288x4096 Residual, 128 rows: mma 1.350 ms, mm2d64x64 1.063 ms, mm2d64x32 0.853 ms, mm2d64x16 0.844 ms, mm2d32x64 0.866 ms, mm2d32x32 0.840 ms, mm2d32x16 0.968 ms -> mm2d32x32
+[autotune] gemm 4096x10240 Bf16, 128 rows: mma 0.853 ms, mm2d64x64 0.662 ms, mm2d64x32 0.637 ms, mm2d64x16 0.627 ms, mm2d32x64 0.644 ms, mm2d32x32 0.622 ms, mm2d32x16 0.722 ms -> mm2d32x32
+[autotune] gemm 4096x4096 Residual, 128 rows: mma 0.446 ms, mm2d64x64 0.365 ms, mm2d64x32 0.289 ms, mm2d64x16 0.286 ms, mm2d32x64 0.293 ms, mm2d32x32 0.285 ms, mm2d32x16 0.321 ms -> mm2d32x32
+[autotune] gemm 4096x12352 Bf16, 128 rows: mma 1.071 ms, mm2d64x64 0.761 ms, mm2d64x32 0.738 ms, mm2d64x16 0.757 ms, mm2d32x64 0.748 ms, mm2d32x32 0.753 ms, mm2d32x16 0.859 ms -> mm2d64x32
+[autotune] gemm 4096x24576 Bf16, 256 rows: mma 3.585 ms, mm2d64x64 2.768 ms, mm2d64x32 2.702 ms, mm2d64x16 2.739 ms, mm2d32x64 2.733 ms, mm2d32x32 2.713 ms, mm2d32x16 3.168 ms -> mm2d64x32
+[autotune] gemm 12288x4096 Residual, 256 rows: mma 2.180 ms, mm2d64x64 1.696 ms, mm2d64x32 1.625 ms, mm2d64x16 1.559 ms, mm2d32x64 1.638 ms, mm2d32x32 1.547 ms, mm2d32x16 1.631 ms -> mm2d32x32
+[autotune] gemm 4096x10240 Bf16, 256 rows: mma 1.644 ms, mm2d64x64 1.263 ms, mm2d64x32 1.194 ms, mm2d64x16 1.190 ms, mm2d32x64 1.185 ms, mm2d32x32 1.176 ms, mm2d32x16 1.325 ms -> mm2d32x32
+[autotune] gemm 4096x4096 Residual, 256 rows: mma 0.727 ms, mm2d64x64 0.571 ms, mm2d64x32 0.546 ms, mm2d64x16 0.522 ms, mm2d32x64 0.551 ms, mm2d32x32 0.518 ms, mm2d32x16 0.578 ms -> mm2d32x32
+[autotune] gemm 4096x12352 Bf16, 256 rows: mma 1.871 ms, mm2d64x64 1.467 ms, mm2d64x32 1.397 ms, mm2d64x16 1.421 ms, mm2d32x64 1.417 ms, mm2d32x32 1.407 ms, mm2d32x16 1.620 ms -> mm2d64x32
+[autotune] gemm 4096x24576 Bf16, 512 rows: mma 6.799 ms, mm2d64x64 5.273 ms, mm2d64x32 5.276 ms, mm2d64x16 5.364 ms, mm2d32x64 5.337 ms, mm2d32x32 5.358 ms, mm2d32x16 6.231 ms -> mm2d64x64
+[autotune] gemm 12288x4096 Residual, 512 rows: mma 4.323 ms, mm2d64x64 3.197 ms, mm2d64x32 2.984 ms, mm2d64x16 2.878 ms, mm2d32x64 2.872 ms, mm2d32x32 2.876 ms, mm2d32x16 3.242 ms -> mm2d32x64
+[autotune] gemm 4096x10240 Bf16, 512 rows: mma 2.919 ms, mm2d64x64 2.274 ms, mm2d64x32 2.262 ms, mm2d64x16 2.296 ms, mm2d32x64 2.290 ms, mm2d32x32 2.279 ms, mm2d32x16 2.546 ms -> mm2d64x32
+[autotune] gemm 4096x4096 Residual, 512 rows: mma 1.332 ms, mm2d64x64 1.075 ms, mm2d64x32 0.979 ms, mm2d64x16 0.962 ms, mm2d32x64 0.992 ms, mm2d32x32 0.964 ms, mm2d32x16 1.110 ms -> mm2d64x16
+[autotune] gemm 4096x12352 Bf16, 512 rows: mma 3.573 ms, mm2d64x64 2.776 ms, mm2d64x32 2.718 ms, mm2d64x16 2.739 ms, mm2d32x64 2.746 ms, mm2d32x32 2.741 ms, mm2d32x16 3.155 ms -> mm2d64x32
+[autotune] gemm 4096x24576 Bf16, 1024 rows: mma 13.501 ms, mm2d64x64 10.465 ms, mm2d64x32 10.412 ms, mm2d64x16 10.622 ms, mm2d32x64 10.525 ms, mm2d32x32 10.634 ms, mm2d32x16 12.365 ms -> mm2d64x32
+[autotune] gemm 12288x4096 Residual, 1024 rows: mma 7.433 ms, mm2d64x64 5.607 ms, mm2d64x32 5.555 ms, mm2d64x16 5.517 ms, mm2d32x64 5.605 ms, mm2d32x32 5.531 ms, mm2d32x16 6.450 ms -> mm2d64x16
+[autotune] gemm 4096x10240 Bf16, 1024 rows: mma 5.810 ms, mm2d64x64 4.477 ms, mm2d64x32 4.429 ms, mm2d64x16 4.483 ms, mm2d32x64 4.471 ms, mm2d32x32 4.487 ms, mm2d32x16 4.990 ms -> mm2d64x32
+[autotune] gemm 4096x4096 Residual, 1024 rows: mma 2.477 ms, mm2d64x64 1.883 ms, mm2d64x32 1.867 ms, mm2d64x16 1.843 ms, mm2d32x64 1.889 ms, mm2d32x32 1.848 ms, mm2d32x16 2.153 ms -> mm2d64x16
+[autotune] gemm 4096x12352 Bf16, 1024 rows: mma 6.860 ms, mm2d64x64 5.370 ms, mm2d64x32 5.284 ms, mm2d64x16 5.382 ms, mm2d32x64 5.341 ms, mm2d32x32 5.394 ms, mm2d32x16 6.249 ms -> mm2d64x32
+[autotune] gemm 4096x24576 Bf16, 2048 rows: mma 27.229 ms, mm2d64x64 20.689 ms, mm2d64x32 20.708 ms, mm2d64x16 21.181 ms, mm2d32x64 20.918 ms, mm2d32x32 21.166 ms, mm2d32x16 24.773 ms -> mm2d64x64
+[autotune] gemm 12288x4096 Residual, 2048 rows: mma 14.451 ms, mm2d64x64 10.711 ms, mm2d64x32 10.703 ms, mm2d64x16 11.028 ms, mm2d32x64 10.765 ms, mm2d32x32 10.948 ms, mm2d32x16 13.063 ms -> mm2d64x32
+[autotune] gemm 4096x10240 Bf16, 2048 rows: mma 11.430 ms, mm2d64x64 8.682 ms, mm2d64x32 8.698 ms, mm2d64x16 8.875 ms, mm2d32x64 8.783 ms, mm2d32x32 8.877 ms, mm2d32x16 9.965 ms -> mm2d64x64
+[autotune] gemm 4096x4096 Residual, 2048 rows: mma 4.788 ms, mm2d64x64 3.588 ms, mm2d64x32 3.576 ms, mm2d64x16 3.618 ms, mm2d32x64 3.615 ms, mm2d32x32 3.621 ms, mm2d32x16 4.266 ms -> mm2d64x32
+[autotune] gemm 4096x12352 Bf16, 2048 rows: mma 13.795 ms, mm2d64x64 10.481 ms, mm2d64x32 10.459 ms, mm2d64x16 10.693 ms, mm2d32x64 10.565 ms, mm2d32x32 10.685 ms, mm2d32x16 12.479 ms -> mm2d64x32
+[autotune] blocks over 2048 rows, 4 layers: 512 214.816 ms, 1024 207.411 ms, 2048 203.625 ms -> 2048
+[metal] 62 kernels compiled in 0.01 s, GEMMs and blocks timed in 7.19 s, 341 dispatches per token, blocks of 2048 rows; prefill.block=2048 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.pair=0 rec.stage=0 conv.cols=32 sdpa.prefill=1 sdpa.bq=16 sdpa.bk=16 gemm.simt=1 gemm.auto=1 gemm.mma=1 gemm.tn=64 gemm.mfirst=1 moe.grouped=1 moe.tile=16
+[engine] loaded in 9.5 s
+[pp512] warm-up 0.509 s, 1006.3 tok/s, argmax 89
+[pp512] run 0.411 s, 1244.4 tok/s, argmax 89
+[pp512] run 0.411 s, 1246.1 tok/s, argmax 89
+[pp512] run 0.411 s, 1245.7 tok/s, argmax 89
+[tg128] warm-up 128 tokens 3.136 s, 40.8 tok/s
+[tg128] run 128 tokens 3.136 s, 40.8 tok/s
+[tg128] run 128 tokens 3.137 s, 40.8 tok/s
+[tg128] run 128 tokens 3.141 s, 40.7 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp512 | 1245.39 ± 0.92 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 40.79 ± 0.04 |
+exit 0 2026-10-29 00:03:26
+Pages free:                                  1957738.
+Swapouts:                                   98333948.

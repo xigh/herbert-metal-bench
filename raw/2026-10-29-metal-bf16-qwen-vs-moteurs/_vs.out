@@ -1,0 +1,268 @@
+start 2026-10-28 23:42:46
+cf3d0f88f4163024507d123257cea1a86b3d798eacbc426d5b2adf9a5197c2a7  target/release/herbert-metal-chat
+72988aab8e80efba4ee3b3700b8f8ca79cfb34b2e8be5632c7e64fb1b25652d6  target/release/herbert-metal-bench
+/dev/disk6s2   3.6Ti   3.6Ti    76Gi    98%       1     0  100%   $DATA_DIR
+### ids, réglages par défaut 23:42:46
+Qwen3.5-0.8B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-0.8B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+Qwen3.5-2B short: prompt = reference (17 ids) · 37/48 ids identical · first difference at 37
+    reference [3134, 369, 303, 8323, 13, 271, 5170, 11]
+    metal     [1156, 1429, 8323, 13, 271, 5170, 11, 353]
+Qwen3.5-2B long: prompt = reference (146 ids) · 25/48 ids identical · first difference at 25
+    reference [13263, 321, 1428, 4864, 1881, 6165, 4779, 4478]
+    metal     [3712, 321, 1428, 1528, 314, 6165, 4779, 5972]
+Qwen3.5-4B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-4B long: prompt = reference (146 ids) · 28/48 ids identical · first difference at 28
+    reference [14791, 3992, 3983, 13, 198, 262, 348, 256]
+    metal     [1141, 5253, 383, 3992, 3983, 13, 198, 262]
+Qwen3.5-9B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-9B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+Qwen3.8-27B short: prompt = reference (17 ids) · 15/48 ids identical · first difference at 15
+    reference [318, 576, 63210, 2308, 84, 45690, 1061, 369]
+    metal     [303, 264, 15855, 11, 7281, 1605, 1560, 13]
+Qwen3.8-27B long: prompt = reference (146 ids) · 13/48 ids identical · first difference at 13
+    reference [6558, 728, 3418, 279, 1414, 1118, 25, 271]
+    metal     [561, 1414, 369, 883, 1204, 6165, 4779, 682]
+Qwen3.6-35B-A3B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.6-35B-A3B long: prompt = reference (146 ids) · 24/48 ids identical · first difference at 24
+    reference [26623, 3266, 632, 65673, 3656, 9056, 11424, 13]
+    metal     [8482, 184743, 909, 195441, 1663, 264, 180831, 4936]
+### tour A 23:48:46
+=== Qwen3.5-0.8B herbert 2026-10-28 23:48:46
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp512 | 11312.19 ± 8.16 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 238.24 ± 0.24 |
+pause 30 s
+=== Qwen3.5-0.8B llama 2026-10-28 23:49:22
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |           pp512 |      9940.75 ± 11.83 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |           tg128 |        215.21 ± 2.74 |
+pause 30 s
+=== Qwen3.5-0.8B mlx 2026-10-28 23:49:56
+pause 30 s
+=== Qwen3.5-0.8B rapid 2026-10-28 23:50:30
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | rapid-mlx | pp512 | 7284.29 ± 76.60 |
+| Qwen3.5-0.8B | rapid-mlx | tg128 | 254.52 ± 0.11 |
+pause 30 s
+=== Qwen3.5-0.8B basert 2026-10-28 23:51:18
+| --- | ---: | ---: | ---: |
+| Qwen3.5-0.8B-bf16 | 5317 MiB | pp512:random | 9412.14 ± 11.69 |
+| Qwen3.5-0.8B-bf16 | 5317 MiB | tg128 | 307.53 ± 0.84 |
+=== Qwen3.5-2B llama 2026-10-28 23:51:26
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |           pp512 |       4828.97 ± 6.16 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |           tg128 |        135.20 ± 1.58 |
+pause 30 s
+=== Qwen3.5-2B mlx 2026-10-28 23:52:05
+pause 30 s
+=== Qwen3.5-2B rapid 2026-10-28 23:52:40
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | rapid-mlx | pp512 | 3654.10 ± 236.16 |
+| Qwen3.5-2B | rapid-mlx | tg128 | 144.86 ± 0.05 |
+pause 30 s
+=== Qwen3.5-2B basert 2026-10-28 23:53:23
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp512:random | 4534.51 ± 5.53 |
+| Qwen3.5-2B-bf16 | 12312 MiB | tg128 | 161.38 ± 0.17 |
+pause 30 s
+=== Qwen3.5-2B herbert 2026-10-28 23:54:21
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp512 | 5368.46 ± 4.43 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 135.91 ± 0.09 |
+=== Qwen3.5-4B mlx 2026-10-28 23:54:29
+pause 30 s
+=== Qwen3.5-4B rapid 2026-10-28 23:55:10
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp512 | 1653.88 ± 26.42 |
+| Qwen3.5-4B | rapid-mlx | tg128 | 71.22 ± 0.03 |
+pause 30 s
+=== Qwen3.5-4B basert 2026-10-28 23:55:57
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp512:random | 1869.19 ± 0.90 |
+| Qwen3.5-4B-bf16 | 24948 MiB | tg128 | 77.37 ± 0.01 |
+pause 30 s
+=== Qwen3.5-4B herbert 2026-10-28 23:57:29
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp512 | 2222.98 ± 1.11 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 | 69.65 ± 0.03 |
+pause 30 s
+=== Qwen3.5-4B llama 2026-10-28 23:58:13
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 4B BF16                 |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |           pp512 |       1928.45 ± 1.58 |
+| qwen35 4B BF16                 |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |           tg128 |         69.07 ± 0.04 |
+=== Qwen3.5-9B rapid 2026-10-28 23:58:32
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | rapid-mlx | pp512 | 953.37 ± 15.50 |
+| Qwen3.5-9B | rapid-mlx | tg128 | 40.87 ± 0.02 |
+pause 30 s
+=== Qwen3.5-9B basert 2026-10-28 23:59:29
+| --- | ---: | ---: | ---: |
+| Qwen3.5-9B-bf16 | 45381 MiB | pp512:random | 1043.29 ± 0.15 |
+| Qwen3.5-9B-bf16 | 45381 MiB | tg128 | 43.84 ± 0.01 |
+pause 30 s
+=== Qwen3.5-9B herbert 2026-10-29 00:03:02
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp512 | 1245.39 ± 0.92 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 40.79 ± 0.04 |
+pause 30 s
+=== Qwen3.5-9B llama 2026-10-29 00:03:56
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 9B BF16                 |  16.68 GiB |     8.95 B | MTL,BLAS   |      20 |           pp512 |       1124.78 ± 0.32 |
+| qwen35 9B BF16                 |  16.68 GiB |     8.95 B | MTL,BLAS   |      20 |           tg128 |         41.40 ± 0.10 |
+pause 30 s
+=== Qwen3.5-9B mlx 2026-10-29 00:05:02
+=== Qwen3.8-27B herbert 2026-10-29 00:05:18
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | herbert-metal-bf16 | pp512 | 370.68 ± 0.20 |
+| Qwen3.8-27B | herbert-metal-bf16 | tg128 | 13.15 ± 0.01 |
+pause 30 s
+=== Qwen3.8-27B llama 2026-10-29 00:07:50
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |           pp512 |        319.88 ± 0.13 |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |           tg128 |         13.46 ± 0.01 |
+pause 30 s
+=== Qwen3.8-27B mlx 2026-10-29 00:10:06
+pause 30 s
+=== Qwen3.8-27B rapid 2026-10-29 00:10:51
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | rapid-mlx | pp512 | 270.62 ± 4.61 |
+| Qwen3.8-27B | rapid-mlx | tg128 | 13.29 ± 0.00 |
+=== Qwen3.6-35B-A3B llama 2026-10-29 00:13:05
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |           pp512 |       2010.30 ± 8.56 |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |           tg128 |         71.80 ± 0.01 |
+pause 30 s
+=== Qwen3.6-35B-A3B mlx 2026-10-29 00:15:20
+pause 30 s
+=== Qwen3.6-35B-A3B rapid 2026-10-29 00:17:33
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | rapid-mlx | pp512 | 1761.85 ± 26.60 |
+| Qwen3.6-35B-A3B | rapid-mlx | tg128 | 78.19 ± 0.02 |
+pause 30 s
+=== Qwen3.6-35B-A3B herbert 2026-10-29 00:19:39
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp512 | 2355.51 ± 1.15 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | tg128 | 70.64 ± 0.04 |
+### tour B 00:22:01
+=== Qwen3.5-0.8B basert 2026-10-29 00:22:01
+| --- | ---: | ---: | ---: |
+| Qwen3.5-0.8B-bf16 | 5317 MiB | pp512:random | 9412.57 ± 16.74 |
+| Qwen3.5-0.8B-bf16 | 5317 MiB | tg128 | 304.24 ± 0.90 |
+pause 30 s
+=== Qwen3.5-0.8B rapid 2026-10-29 00:22:55
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | rapid-mlx | pp512 | 7329.96 ± 90.73 |
+| Qwen3.5-0.8B | rapid-mlx | tg128 | 253.62 ± 0.32 |
+pause 30 s
+=== Qwen3.5-0.8B mlx 2026-10-29 00:23:37
+pause 30 s
+=== Qwen3.5-0.8B llama 2026-10-29 00:24:11
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |           pp512 |      9850.38 ± 54.31 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |      20 |           tg128 |        214.00 ± 3.69 |
+pause 30 s
+=== Qwen3.5-0.8B herbert 2026-10-29 00:24:46
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp512 | 11203.05 ± 9.34 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 235.50 ± 0.25 |
+=== Qwen3.5-2B herbert 2026-10-29 00:24:51
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp512 | 5359.58 ± 5.59 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 134.85 ± 0.08 |
+pause 30 s
+=== Qwen3.5-2B basert 2026-10-29 00:25:29
+| --- | ---: | ---: | ---: |
+| Qwen3.5-2B-bf16 | 12312 MiB | pp512:random | 4532.08 ± 3.93 |
+| Qwen3.5-2B-bf16 | 12312 MiB | tg128 | 160.46 ± 0.30 |
+pause 30 s
+=== Qwen3.5-2B rapid 2026-10-29 00:26:16
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | rapid-mlx | pp512 | 3554.83 ± 257.50 |
+| Qwen3.5-2B | rapid-mlx | tg128 | 144.31 ± 0.15 |
+pause 30 s
+=== Qwen3.5-2B mlx 2026-10-29 00:26:59
+pause 30 s
+=== Qwen3.5-2B llama 2026-10-29 00:27:35
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |           pp512 |      4815.41 ± 15.44 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |      20 |           tg128 |        134.59 ± 0.52 |
+=== Qwen3.5-4B llama 2026-10-29 00:27:44
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 4B BF16                 |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |           pp512 |       1923.96 ± 5.05 |
+| qwen35 4B BF16                 |   7.84 GiB |     4.21 B | MTL,BLAS   |      20 |           tg128 |         68.59 ± 0.24 |
+pause 30 s
+=== Qwen3.5-4B herbert 2026-10-29 00:28:32
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | herbert-metal-bf16 | pp512 | 2220.26 ± 0.55 |
+| Qwen3.5-4B | herbert-metal-bf16 | tg128 | 69.47 ± 0.03 |
+pause 30 s
+=== Qwen3.5-4B basert 2026-10-29 00:29:17
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp512:random | 1866.17 ± 0.60 |
+| Qwen3.5-4B-bf16 | 24948 MiB | tg128 | 77.30 ± 0.00 |
+pause 30 s
+=== Qwen3.5-4B rapid 2026-10-29 00:30:22
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp512 | 1656.92 ± 26.70 |
+| Qwen3.5-4B | rapid-mlx | tg128 | 71.27 ± 0.03 |
+pause 30 s
+=== Qwen3.5-4B mlx 2026-10-29 00:31:09
+=== Qwen3.5-9B mlx 2026-10-29 00:31:19
+pause 30 s
+=== Qwen3.5-9B llama 2026-10-29 00:32:08
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 9B BF16                 |  16.68 GiB |     8.95 B | MTL,BLAS   |      20 |           pp512 |       1123.49 ± 0.21 |
+| qwen35 9B BF16                 |  16.68 GiB |     8.95 B | MTL,BLAS   |      20 |           tg128 |         41.11 ± 0.07 |
+pause 30 s
+=== Qwen3.5-9B herbert 2026-10-29 00:33:14
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | herbert-metal-bf16 | pp512 | 1243.52 ± 1.01 |
+| Qwen3.5-9B | herbert-metal-bf16 | tg128 | 40.82 ± 0.01 |
+pause 30 s
+=== Qwen3.5-9B basert 2026-10-29 00:34:08
+| --- | ---: | ---: | ---: |
+| Qwen3.5-9B-bf16 | 45381 MiB | pp512:random | 1043.28 ± 0.52 |
+| Qwen3.5-9B-bf16 | 45381 MiB | tg128 | 43.84 ± 0.01 |
+pause 30 s
+=== Qwen3.5-9B rapid 2026-10-29 00:36:03
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | rapid-mlx | pp512 | 953.22 ± 16.52 |
+| Qwen3.5-9B | rapid-mlx | tg128 | 40.93 ± 0.03 |
+=== Qwen3.8-27B rapid 2026-10-29 00:36:28
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | rapid-mlx | pp512 | 270.85 ± 4.52 |
+| Qwen3.8-27B | rapid-mlx | tg128 | 13.33 ± 0.01 |
+pause 30 s
+=== Qwen3.8-27B mlx 2026-10-29 00:39:25
+pause 30 s
+=== Qwen3.8-27B llama 2026-10-29 00:42:38
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |           pp512 |        319.60 ± 0.18 |
+| qwen35 27B BF16                |  50.89 GiB |    27.32 B | MTL,BLAS   |      20 |           tg128 |         13.37 ± 0.01 |
+pause 30 s
+=== Qwen3.8-27B herbert 2026-10-29 00:44:57
+| --- | --- | ---: | ---: |
+| Qwen3.8-27B | herbert-metal-bf16 | pp512 | 369.75 ± 0.17 |
+| Qwen3.8-27B | herbert-metal-bf16 | tg128 | 13.08 ± 0.00 |
+=== Qwen3.6-35B-A3B herbert 2026-10-29 00:46:32
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp512 | 2353.35 ± 1.22 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | tg128 | 69.97 ± 0.01 |
+pause 30 s
+=== Qwen3.6-35B-A3B rapid 2026-10-29 00:48:40
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | rapid-mlx | pp512 | 1752.36 ± 18.42 |
+| Qwen3.6-35B-A3B | rapid-mlx | tg128 | 77.33 ± 0.06 |
+pause 30 s
+=== Qwen3.6-35B-A3B mlx 2026-10-29 00:51:16
+pause 30 s
+=== Qwen3.6-35B-A3B llama 2026-10-29 00:53:36
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |           pp512 |       2005.74 ± 8.26 |
+| qwen35moe 35B.A3B BF16         |  66.18 GiB |    35.51 B | MTL,BLAS   |      20 |           tg128 |         70.05 ± 0.16 |
+removed Qwen3.5-2B-bf16.base
+removed Qwen3.5-4B-bf16.base
+removed Qwen3.5-9B-bf16.base
+/dev/disk6s2   3.6Ti   3.6Ti    76Gi    98%       1     0  100%   $DATA_DIR
+end 2026-10-29 00:55:19

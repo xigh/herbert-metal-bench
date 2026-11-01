@@ -1,0 +1,17 @@
+[gpu] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+check	hacc	32x32 tile, K slice 64, 64 turns	float8x8 acc	tile (0, 0) of the four simdgroups [59.1875, 59.1875, 59.1875, 59.1875]
+check	hacc	32x32 tile, K slice 64, 64 turns	half8x8 acc	tile (0, 0) of the four simdgroups [59.25, 59.25, 59.25, 59.25]
+run	hacc	32x32 tile, K slice 64, 64 turns	float8x8 acc	0	0.006850792	20.062	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	half8x8 acc	0	0.006787125	20.250	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	half8x8 acc	1	0.006785625	20.254	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	float8x8 acc	1	0.006848792	20.068	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	float8x8 acc	2	0.006852250	20.057	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	half8x8 acc	2	0.006785250	20.256	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	half8x8 acc	3	0.006785333	20.255	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	float8x8 acc	3	0.006850292	20.063	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	float8x8 acc	4	0.006850208	20.063	TFLOPS
+run	hacc	32x32 tile, K slice 64, 64 turns	half8x8 acc	4	0.006783375	20.261	TFLOPS
+| probe | shape | variant | median | min | max | unit | / first of the shape |
+| --- | --- | --- | ---: | ---: | ---: | --- | ---: |
+| hacc | 32x32 tile, K slice 64, 64 turns | float8x8 acc | 20.063 | 20.057 | 20.068 | TFLOPS | 1.0000 |
+| hacc | 32x32 tile, K slice 64, 64 turns | half8x8 acc | 20.255 | 20.250 | 20.261 | TFLOPS | 1.0096 |

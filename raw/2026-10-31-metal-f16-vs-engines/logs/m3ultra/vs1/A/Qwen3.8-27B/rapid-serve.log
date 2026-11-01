@@ -1,0 +1,330 @@
+  Note: $MODELS_DIR/Qwen3.8-27B is not in the Rapid-MLX catalog, so it has not been catalog-tested here.
+INFO:rapid_mlx.utils.mamba_cache:[MambaCache] Skipping _make_cache patch — mlx-lm ArraysCache has native batching support
+INFO:rapid_mlx.gdn_prefill:[gdn_prefill] blocked-seq GDN prefill kernel installed (prompt>=64 tokens, Dk=128)
+INFO:rapid_mlx.cli:Disk caches disabled by --disable-disk-caches: no prefix-cache snapshot, KV checkpoints or vision prefix-cache disk tier is written
+INFO:rapid_mlx.model_auto_config:Auto-detected checkpoint metadata for '$MODELS_DIR/Qwen3.8-27B' → tool_call_parser=qwen3_coder_xml, reasoning_parser=qwen3, is_hybrid=True
+INFO:rapid_mlx.cli:Auto-configured --tool-call-parser qwen3_coder_xml
+INFO:rapid_mlx.cli:Auto-configured --reasoning-parser qwen3
+INFO:rapid_mlx.server:Host-header allowlist enabled (allowed_hosts=['localhost', 'localhost', '[::1]', '*.localhost'])
+INFO:rapid_mlx.cli:Reasoning parser enabled: qwen3
+INFO:rapid_mlx.kv_cache_dtype:KV cache dtype: bf16 (model=$MODELS_DIR/Qwen3.8-27B) — bf16 selected (no QuantizedKVCache wrap)
+INFO:rapid_mlx.utils.generation_config:generation_config: loaded sampling defaults from $MODELS_DIR/Qwen3.8-27B/generation_config.json: {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20}
+INFO:rapid_mlx.server:Force text-only mode enabled via --no-mllm flag (MLLM auto-detection overridden, #393)
+INFO:rapid_mlx.server:Loading model with BatchedEngine: $MODELS_DIR/Qwen3.8-27B
+INFO:rapid_mlx.server:Model loaded: $MODELS_DIR/Qwen3.8-27B
+INFO:rapid_mlx.server:Native tool format enabled for parser: qwen3_coder_xml
+INFO:rapid_mlx.server:Default max tokens: 32768
+INFO:rapid_mlx.runtime.model_registry:Registered model '$MODELS_DIR/Qwen3.8-27B' (aliases=none, default=True)
+⚠ rapid-mlx 0.16.10 is behind latest 1.0.0 — run `rapid-mlx upgrade` to pick up new model aliases / flags.
+INFO:     Started server process [88892]
+INFO:     Waiting for application startup.
+INFO:rapid_mlx.server:GC control enabled: thresholds set to (100000, 50, 50)
+INFO:rapid_mlx.engine_core:MLX step thread initialized: stream=Stream(Device(gpu, 0), 2) (worker default = generation_stream)
+INFO:rapid_mlx.utils.generation_config:generation_config: loaded extra EOS token ids from $MODELS_DIR/Qwen3.8-27B/generation_config.json: [248046, 248044]
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3783.0 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00001-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2902.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00002-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2425.0 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00003-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3804.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00004-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2002.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00005-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3795.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00006-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2011.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00007-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3795.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00008-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2011.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00009-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3795.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00010-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2011.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00011-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3795.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00012-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2011.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00013-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3795.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00014-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2011.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00015-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3795.2 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00016-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 2011.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00017-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3235.1 MB from UBC for $MODELS_DIR/Qwen3.8-27B/model-00018-of-00018.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: pass complete total_mb=52989.0 elapsed_s=0.28
+INFO:rapid_mlx.engine.batched:Metal memory limits set (auto): allocation_limit=75.1GB (90% of 83.5GB, weights=53.8GB), cache_limit=18.8GB
+INFO:rapid_mlx.engine_core:Model profile: $MODELS_DIR/Qwen3.8-27B → hybrid (linear-attention/Mamba), throttle ON, spec decode OFF, tool=qwen3_coder_xml, reasoning=qwen3
+INFO:rapid_mlx.engine_core:Engine started
+INFO:rapid_mlx.engine.batched:BatchedEngine loaded: $MODELS_DIR/Qwen3.8-27B (mllm=False)
+INFO:rapid_mlx.server:Warming up (compiling Metal shaders)...
+INFO:rapid_mlx.server:Hybrid model: running full request warmup (compiling GatedDeltaNet kernels)
+INFO:rapid_mlx.output_router:[OutputRouter] Think tag format detected: think=248068/248069
+INFO:rapid_mlx.engine_core:[stream_outputs] e82f1c7a-42d START waiting for tokens
+INFO:rapid_mlx.scheduler:[dense_sampler_fastpath] installed on BatchGenerator
+INFO:rapid_mlx.singleton_cache_fastpath:[singleton-fastpath] installed (B=1 keeps singleton KV caches)
+INFO:rapid_mlx.scheduler:[schedule] request=e82f1c7a-42d uid=0 prompt_tokens=53 tokens_to_prefill=53 max_tokens=2 running=1 waiting=0
+INFO:rapid_mlx.engine_core:[stream_outputs] e82f1c7a-42d first token after 0.9s
+INFO:rapid_mlx.engine_core:[stream_outputs] e82f1c7a-42d finished normally, 2 tokens in 0.9s
+INFO:rapid_mlx.engine_core:[stream_outputs] e82f1c7a-42d cleanup done
+INFO:rapid_mlx.server:Warmup complete (1.0s)
+INFO:rapid_mlx.server:Tool-grammar warmup complete (LLTokenizer pre-built for parser 'qwen3_coder_xml')
+INFO:rapid_mlx.server:[lifespan] Prefix-cache auto-load skipped: disk caches disabled by --disable-disk-caches
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8765 (Press CTRL+C to quit)
+
+  🐆 Rapid-MLX
+  ─────────
+  Features: tools: qwen3_coder_xml, reasoning: qwen3, gc-control
+  Model: $MODELS_DIR/Qwen3.8-27B
+Mode: Continuous batching (for multiple concurrent users)
+Stream interval: 1 tokens
+
+  !! Memory pressure warning: this model is likely too large for your hardware.
+  Continuing may trigger a macOS kernel panic (see issue #324).
+
+    Model on disk:             51.8 GB
+    Est. working set:          77.7 GB  (model x 1.5 — short-chat workload; long-context serving will use more)
+    Currently used by OS:       7.0 GB
+    Total system RAM:          96.0 GB  (88% projected utilization)
+
+  Apple Silicon firmware can panic the whole system rather than
+  raise an OOM error when unified-memory pressure exceeds the
+  iBoot AMCC threshold. Recommended actions:
+
+    - Close other apps to free RAM, or
+    - Pick a smaller model:    rapid-mlx models
+    - Or lower memory headroom: rapid-mlx serve <model> --gpu-memory-utilization 0.75
+
+
+  Starting server on http://localhost:8765 (warming up — this can take a few seconds)
+
+  Ready: http://localhost:8765
+
+  OpenAI:    http://localhost:8765/v1
+  Anthropic: http://localhost:8765
+  Model:     $MODELS_DIR/Qwen3.8-27B
+
+  Connect:
+    Coding agent  rapid-mlx launch <agent>
+    Python        rapid-mlx connect openai-python --base-url http://localhost:8765/v1
+INFO:     localhost:62903 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=631
+INFO:rapid_mlx.scheduler:[schedule] request=9cd77e5b-4ec uid=1 prompt_tokens=130 tokens_to_prefill=130 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 130 prompt + 1 completion tokens in 0.87s (1.1 tok/s)
+INFO:     localhost:62904 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=611
+INFO:rapid_mlx.scheduler:[schedule] request=0e0eef3f-9c0 uid=2 prompt_tokens=137 tokens_to_prefill=137 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 137 prompt + 1 completion tokens in 0.85s (1.2 tok/s)
+INFO:     localhost:62905 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=641
+INFO:rapid_mlx.scheduler:[schedule] request=b217c4b8-cb4 uid=3 prompt_tokens=128 tokens_to_prefill=128 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 128 prompt + 1 completion tokens in 0.66s (1.5 tok/s)
+INFO:     localhost:62906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=630
+INFO:rapid_mlx.scheduler:[schedule] request=2ce607d7-e3a uid=4 prompt_tokens=129 tokens_to_prefill=129 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 129 prompt + 1 completion tokens in 0.66s (1.5 tok/s)
+INFO:     localhost:62907 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=e3457375-e1a uid=5 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62908 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=a2c66efb-7e2 uid=6 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.7 tok/s)
+INFO:     localhost:62909 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=f8999303-19b uid=7 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62910 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=da680d77-048 uid=8 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62911 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2710
+INFO:rapid_mlx.scheduler:[schedule] request=abcdcf4a-04e uid=9 prompt_tokens=533 tokens_to_prefill=533 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 533 prompt + 1 completion tokens in 1.99s (0.5 tok/s)
+INFO:     localhost:62912 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2583
+INFO:rapid_mlx.scheduler:[schedule] request=d1debc3a-d95 uid=10 prompt_tokens=547 tokens_to_prefill=547 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 547 prompt + 1 completion tokens in 1.99s (0.5 tok/s)
+INFO:     localhost:62913 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2431
+INFO:rapid_mlx.scheduler:[schedule] request=0bc9e252-78d uid=11 prompt_tokens=530 tokens_to_prefill=530 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 530 prompt + 1 completion tokens in 1.98s (0.5 tok/s)
+INFO:     localhost:62914 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2541
+INFO:rapid_mlx.scheduler:[schedule] request=02bad00d-c9a uid=12 prompt_tokens=528 tokens_to_prefill=528 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 528 prompt + 1 completion tokens in 1.99s (0.5 tok/s)
+INFO:     localhost:62916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=f5467c30-e65 uid=13 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 10.00s (12.8 tok/s)
+INFO:     localhost:62918 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=8d1fa037-05a uid=14 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.scheduler:[Metal memory] active=54.0GB peak=54.8GB cache=0.0GB step=256 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 10.00s (12.8 tok/s)
+INFO:     localhost:62919 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=bb14ac9d-b4a uid=15 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 9.99s (12.8 tok/s)
+INFO:     localhost:62920 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=d4a1c941-6d1 uid=16 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.scheduler:[Metal memory] active=54.0GB peak=54.8GB cache=0.0GB step=512 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 9.98s (12.8 tok/s)
+INFO:     localhost:62921 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5303
+INFO:rapid_mlx.scheduler:[schedule] request=eb6487e2-8d1 uid=17 prompt_tokens=1067 tokens_to_prefill=1067 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1067 prompt + 1 completion tokens in 3.47s (0.3 tok/s)
+INFO:     localhost:62922 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5082
+INFO:rapid_mlx.scheduler:[schedule] request=ac572314-72c uid=18 prompt_tokens=1092 tokens_to_prefill=1092 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1092 prompt + 1 completion tokens in 3.63s (0.3 tok/s)
+INFO:     localhost:62923 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5174
+INFO:rapid_mlx.scheduler:[schedule] request=6532def0-e7e uid=19 prompt_tokens=1061 tokens_to_prefill=1061 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1061 prompt + 1 completion tokens in 3.46s (0.3 tok/s)
+INFO:     localhost:62924 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5035
+INFO:rapid_mlx.scheduler:[schedule] request=f61061ce-9fa uid=20 prompt_tokens=1059 tokens_to_prefill=1059 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1059 prompt + 1 completion tokens in 3.46s (0.3 tok/s)
+INFO:     localhost:62925 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=abab666f-8b3 uid=21 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62926 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=4c70c7cd-51e uid=22 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62927 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=b9242938-9da uid=23 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=9e6374b7-01a uid=24 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62929 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=10617
+INFO:rapid_mlx.scheduler:[schedule] request=e6d6fbd1-a00 uid=25 prompt_tokens=2168 tokens_to_prefill=2168 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 2168 prompt + 1 completion tokens in 6.64s (0.2 tok/s)
+INFO:     localhost:62930 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=10415
+INFO:rapid_mlx.scheduler:[schedule] request=862bcf36-dc5 uid=26 prompt_tokens=2149 tokens_to_prefill=2149 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 2149 prompt + 1 completion tokens in 6.62s (0.2 tok/s)
+INFO:     localhost:62931 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=10400
+INFO:rapid_mlx.scheduler:[schedule] request=b3df2c6a-529 uid=27 prompt_tokens=2121 tokens_to_prefill=2121 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 2121 prompt + 1 completion tokens in 6.56s (0.2 tok/s)
+INFO:     localhost:62932 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=10102
+INFO:rapid_mlx.scheduler:[schedule] request=0ccfbbe6-e62 uid=28 prompt_tokens=2126 tokens_to_prefill=2126 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.routes.completions:Completion: 2126 prompt + 1 completion tokens in 6.57s (0.2 tok/s)
+INFO:     localhost:62933 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=b226dcf2-730 uid=29 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.7 tok/s)
+INFO:     localhost:62934 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=5b4705a3-93b uid=30 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.7 tok/s)
+INFO:     localhost:62935 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=ca1cb2ce-293 uid=31 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62936 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=6c10a4d4-6fc uid=32 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.7 tok/s)
+INFO:     localhost:62937 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=21015
+INFO:rapid_mlx.scheduler:[schedule] request=a7696941-a4d uid=33 prompt_tokens=4291 tokens_to_prefill=4291 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #20 disconnected=False elapsed=10.0s
+INFO:rapid_mlx.routes.completions:Completion: 4291 prompt + 1 completion tokens in 13.21s (0.1 tok/s)
+INFO:     localhost:62938 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=20938
+INFO:rapid_mlx.scheduler:[schedule] request=59e0f0fe-093 uid=34 prompt_tokens=4303 tokens_to_prefill=4303 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #20 disconnected=False elapsed=10.0s
+INFO:rapid_mlx.routes.completions:Completion: 4303 prompt + 1 completion tokens in 13.15s (0.1 tok/s)
+INFO:     localhost:62939 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=20622
+INFO:rapid_mlx.scheduler:[schedule] request=4a279790-9c0 uid=35 prompt_tokens=4249 tokens_to_prefill=4249 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #20 disconnected=False elapsed=10.0s
+INFO:rapid_mlx.routes.completions:Completion: 4249 prompt + 1 completion tokens in 12.97s (0.1 tok/s)
+INFO:     localhost:62940 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=20611
+INFO:rapid_mlx.scheduler:[schedule] request=4080e0c8-300 uid=36 prompt_tokens=4262 tokens_to_prefill=4262 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #10 disconnected=False elapsed=5.0s
+INFO:rapid_mlx.service.helpers:[disconnect_guard] poll #20 disconnected=False elapsed=10.0s
+INFO:rapid_mlx.routes.completions:Completion: 4262 prompt + 1 completion tokens in 12.97s (0.1 tok/s)
+INFO:     localhost:62941 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=e60c6dfb-162 uid=37 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.7 tok/s)
+INFO:     localhost:62942 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=42fe7b49-10b uid=38 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.7 tok/s)
+INFO:     localhost:62943 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=4293048e-5e4 uid=39 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.92s (8.6 tok/s)
+INFO:     localhost:62944 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='$MODELS_DIR/Qwen3.8-27B' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=e768bffa-ce1 uid=40 prompt_tokens=28 tokens_to_prefill=28 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 8 completion tokens in 0.93s (8.6 tok/s)
+INFO:     localhost:62945 - "POST /v1/completions HTTP/1.1" 200 OK
+WARNING:rapid_mlx._signal_observability:rapid-mlx received signal SIGTERM; thread stacks follow (faulthandler)
+Thread 0x00000075de6ff000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x00000075d97b7000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 355 in wait
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/queue.py", line 171 in get
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/telemetry/inference.py", line 44 in _worker_main
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016ed23000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016cd0b000 (most recent call first):
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/update_refresh.py", line 64 in _run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Current thread 0x00000001ef485d80 (most recent call first):
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_signal_observability.py", line 694 in _on_signal
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/selectors.py", line 566 in select
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 1961 in _run_once
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 645 in run_forever
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 678 in run_until_complete
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 195 in run
+  File "$ENGINES_DIR/rapid-mlx/venv/lib/python3.12/site-packages/uvicorn/server.py", line 86 in run
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_uvicorn.py", line 258 in _run_server
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_uvicorn.py", line 285 in run_uvicorn
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 749 in _run_uvicorn
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 8231 in serve_command
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 16029 in main
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 15346 in wrapped
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 16183 in cli_entrypoint
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/dependency_repair.py", line 250 in cli_entrypoint
+  File "$ENGINES_DIR/rapid-mlx/venv/bin/rapid-mlx", line 8 in <module>
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:rapid_mlx.server:[lifespan] Prefix-cache auto-save skipped: disk caches disabled by --disable-disk-caches
+INFO:rapid_mlx.engine_core:Engine stopped
+INFO:rapid_mlx.scheduler:Deep reset completed - all caches cleared
+INFO:rapid_mlx.engine.batched:BatchedEngine stopped
+INFO:rapid_mlx.server:Engine stopped
+INFO:     Application shutdown complete.
+INFO:     Finished server process [88892]

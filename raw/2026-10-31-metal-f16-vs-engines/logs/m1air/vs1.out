@@ -1,0 +1,172 @@
+start 2026-10-30 13:51:29
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+b66ea4694bec9f1aa131f2754c2b103f7a73875ad0a35d7386dc0c8abfc50c55  target/f16/release/herbert-metal-bench
+11847055add64bb3d8b224b299eb664e372117845df48b428d708c3923f01583  target/release/herbert-metal-bench
+1e84e1086c41efaf54a6b19123a9135bad5af344e06df1889b0184f7b08fa62c  ~/llama.cpp-s1/build/bin/llama-bench
+fb4b273 vulkan: add logging to pipeline compile issues (#29794)
+ sleep                1 (sleep prevented by powerd, caffeinate)
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+=== Qwen3.5-0.8B h-f16 2026-10-30 13:51:29
+| Qwen3.5-0.8B | herbert-metal-f16 | pp1024 | 1382.34 ± 0.82 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 1175.16 ± 1.02 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp4096 | 894.33 ± 1.01 |
+| Qwen3.5-0.8B | herbert-metal-f16 | tg128 | 37.37 ± 1.63 |
+pause 60 s
+=== Qwen3.5-0.8B llama-bf16 2026-10-30 13:54:49
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp1024 |       1074.57 ± 0.94 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp2048 |       1057.14 ± 0.50 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp4096 |       1010.04 ± 0.26 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |           tg128 |         36.73 ± 0.21 |
+pause 60 s
+=== Qwen3.5-0.8B h-bf16 2026-10-30 13:56:54
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp1024 | 991.68 ± 0.10 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp2048 | 851.33 ± 1.91 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp4096 | 665.53 ± 0.99 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 40.19 ± 0.02 |
+pause 60 s
+=== Qwen3.5-0.8B llama-f16 2026-10-30 14:00:01
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp1024 |       1264.39 ± 0.78 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp2048 |       1240.31 ± 1.73 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp4096 |       1177.20 ± 0.31 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |           tg128 |         36.76 ± 0.09 |
+=== Qwen3.5-2B llama-f16 2026-10-30 14:01:59
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp1024 |        567.27 ± 0.37 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp2048 |        562.99 ± 0.53 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp4096 |        548.75 ± 0.81 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |           tg128 |         15.91 ± 0.03 |
+pause 60 s
+=== Qwen3.5-2B h-bf16 2026-10-30 14:15:08
+| Qwen3.5-2B | herbert-metal-bf16 | pp1024 | 415.95 ± 0.16 |
+| Qwen3.5-2B | herbert-metal-bf16 | pp2048 | 389.36 ± 0.28 |
+| Qwen3.5-2B | herbert-metal-bf16 | pp4096 | 342.58 ± 0.12 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 15.68 ± 0.02 |
+pause 60 s
+=== Qwen3.5-2B llama-bf16 2026-10-30 14:31:06
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp1024 |        451.06 ± 0.32 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp2048 |        448.29 ± 0.20 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp4096 |        438.67 ± 0.19 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |           tg128 |         14.77 ± 0.02 |
+pause 60 s
+=== Qwen3.5-2B h-f16 2026-10-30 14:44:39
+| Qwen3.5-2B | herbert-metal-f16 | pp1024 | 641.40 ± 0.23 |
+| Qwen3.5-2B | herbert-metal-f16 | pp2048 | 594.54 ± 0.23 |
+| Qwen3.5-2B | herbert-metal-f16 | pp4096 | 514.86 ± 0.31 |
+| Qwen3.5-2B | herbert-metal-f16 | tg128 | 17.00 ± 0.02 |
+=== E2B h-f16 2026-10-30 14:59:25
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp1024 | 16.64 ± 0.01 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp2048 | 16.56 ± 0.01 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp4096 | 16.36 ± 0.05 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | tg128 | 12.82 ± 0.00 |
+pause 60 s
+=== E2B h-bf16 2026-10-30 15:59:28
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1024 | 16.58 ± 0.02 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp2048 | 16.48 ± 0.03 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp4096 | 16.30 ± 0.05 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 | 12.79 ± 0.00 |
+=== E2B h-bf16 2026-10-30 16:49:44
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1024 | 16.54 ± 0.09 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp2048 | 16.45 ± 0.08 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp4096 | 16.30 ± 0.09 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 | 12.77 ± 0.00 |
+pause 60 s
+=== E2B h-f16 2026-10-30 17:40:02
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp1024 | 16.56 ± 0.05 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp2048 | 16.46 ± 0.09 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp4096 | 16.37 ± 0.05 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | tg128 | 12.81 ± 0.00 |
+=== Qwen3.5-2B h-f16 2026-10-30 18:30:14
+| Qwen3.5-2B | herbert-metal-f16 | pp1024 | 641.02 ± 0.11 |
+| Qwen3.5-2B | herbert-metal-f16 | pp2048 | 592.26 ± 0.13 |
+| Qwen3.5-2B | herbert-metal-f16 | pp4096 | 513.57 ± 0.15 |
+| Qwen3.5-2B | herbert-metal-f16 | tg128 | 16.88 ± 0.00 |
+pause 60 s
+=== Qwen3.5-2B llama-bf16 2026-10-30 18:34:53
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp1024 |        476.86 ± 0.19 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp2048 |        474.53 ± 0.16 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp4096 |        461.93 ± 3.32 |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |           tg128 |         16.01 ± 0.04 |
+pause 60 s
+=== Qwen3.5-2B h-bf16 2026-10-30 18:38:17
+| Qwen3.5-2B | herbert-metal-bf16 | pp1024 | 437.44 ± 0.07 |
+| Qwen3.5-2B | herbert-metal-bf16 | pp2048 | 408.66 ± 0.14 |
+| Qwen3.5-2B | herbert-metal-bf16 | pp4096 | 358.90 ± 0.31 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 | 17.04 ± 0.01 |
+pause 60 s
+=== Qwen3.5-2B llama-f16 2026-10-30 18:43:54
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp1024 |        567.51 ± 0.37 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp2048 |        564.14 ± 0.15 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |          pp4096 |        548.25 ± 2.46 |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |           tg128 |         15.99 ± 0.04 |
+=== Qwen3.5-0.8B llama-f16 2026-10-30 18:47:02
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp1024 |       1265.55 ± 0.40 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp2048 |       1244.12 ± 0.34 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp4096 |       1176.83 ± 0.37 |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |           tg128 |         36.91 ± 0.08 |
+pause 60 s
+=== Qwen3.5-0.8B h-bf16 2026-10-30 18:48:59
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp1024 | 991.70 ± 0.33 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp2048 | 851.37 ± 0.51 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp4096 | 657.87 ± 1.29 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 | 40.33 ± 0.09 |
+pause 60 s
+=== Qwen3.5-0.8B llama-bf16 2026-10-30 18:52:10
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp1024 |       1075.49 ± 0.67 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp2048 |       1058.50 ± 0.41 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |          pp4096 |       1010.75 ± 0.25 |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |           tg128 |         36.93 ± 0.05 |
+pause 60 s
+=== Qwen3.5-0.8B h-f16 2026-10-30 18:54:14
+| Qwen3.5-0.8B | herbert-metal-f16 | pp1024 | 1381.33 ± 0.80 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 1172.49 ± 1.42 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp4096 | 894.31 ± 0.79 |
+| Qwen3.5-0.8B | herbert-metal-f16 | tg128 | 40.26 ± 0.01 |
+### depth 4096 18:57:01
+=== Qwen3.5-0.8B h-f16 2026-10-30 18:57:01
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp1 | 39.86 ± 0.23 |
+| Qwen3.5-0.8B | herbert-metal-f16 | tg128 @ d4096 | 38.64 ± 0.01 |
+pause 60 s
+=== Qwen3.5-0.8B llama-f16 2026-10-30 18:59:32
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B F16                |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |   tg128 @ d4096 |         35.29 ± 0.09 |
+pause 60 s
+=== Qwen3.5-0.8B h-bf16 2026-10-30 19:00:54
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-0.8B | herbert-metal-bf16 | pp1 | 39.45 ± 0.10 |
+| Qwen3.5-0.8B | herbert-metal-bf16 | tg128 @ d4096 | 38.62 ± 0.01 |
+pause 60 s
+=== Qwen3.5-0.8B llama-bf16 2026-10-30 19:03:39
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 0.8B BF16               |   1.44 GiB |   772.85 M | MTL,BLAS   |       4 |   tg128 @ d4096 |         35.46 ± 0.04 |
+=== Qwen3.5-2B llama-bf16 2026-10-30 19:05:02
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |   tg128 @ d4096 |         15.82 ± 0.02 |
+pause 60 s
+=== Qwen3.5-2B h-bf16 2026-10-30 19:06:54
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-bf16 | pp1 | 17.06 ± 0.01 |
+| Qwen3.5-2B | herbert-metal-bf16 | tg128 @ d4096 | 16.83 ± 0.00 |
+pause 60 s
+=== Qwen3.5-2B llama-f16 2026-10-30 19:11:40
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B F16                  |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |   tg128 @ d4096 |         15.78 ± 0.02 |
+pause 60 s
+=== Qwen3.5-2B h-f16 2026-10-30 19:14:01
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-2B | herbert-metal-f16 | pp1 | 16.99 ± 0.04 |
+| Qwen3.5-2B | herbert-metal-f16 | tg128 @ d4096 | 16.74 ± 0.01 |
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+end 2026-10-30 19:17:05

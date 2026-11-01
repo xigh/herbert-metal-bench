@@ -1,0 +1,19 @@
+=== Qwen3.6-35B-A3B mlx 2026-10-31 02:43:31
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                    88712.
+Swapouts:                                   99397987.
+input $MODELS_DIR/Qwen3.6-35B-A3B
+Running warmup..
+Timing with prompt_tokens=4096, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=2611.373, generation_tps=71.760, peak_memory=71.302, total_time=3.355
+Trial 2:  prompt_tps=2611.134, generation_tps=71.625, peak_memory=71.302, total_time=3.359
+Trial 3:  prompt_tps=2611.710, generation_tps=71.717, peak_memory=71.303, total_time=3.356
+Averages: prompt_tps=2611.406, generation_tps=71.701, peak_memory=71.302
+exit 0 2026-10-31 02:45:22
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  4475345.
+Swapouts:                                   99397987.

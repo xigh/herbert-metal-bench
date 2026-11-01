@@ -1,0 +1,50 @@
+target/release/herbert-metal-chat ~/models/qwen/Qwen3.5-2B --no-system --max-tokens 49 --ask Bonjour, que fais-tu ?
+
+>>> Bonjour, que fais-tu ?
+Okay, the user is asking "Bonjour, que fais-tu ?" which translates to "Hello, what do you do?" in French. I need to respond in French since the user used French.
+
+First, I should acknowledge the greeting
+
+--- stderr ---
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] skipped: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 2048, 24 layers, 8 heads / 2 kv × 256, intermediate 6144, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[metal] weights 3.56 GiB, everything 3.77 GiB, capacity 4096, DeltaNet activations bf16
+[autotune] gemm 2048x12288 Bf16, 64 rows: mma 0.340 ms, mm2d64x64 0.233 ms, mm2d64x32 0.198 ms, mm2d64x16 0.200 ms, mm2d32x64 0.199 ms, mm2d32x32 0.198 ms, mm2d32x16 0.208 ms -> mm2d32x32
+[autotune] gemm 6144x2048 Residual, 64 rows: mma 0.538 ms, mm2d64x64 0.390 ms, mm2d64x32 0.193 ms, mm2d64x16 0.150 ms, mm2d32x64 0.199 ms, mm2d32x32 0.148 ms, mm2d32x16 0.146 ms -> mm2d32x16
+[autotune] gemm 2048x5120 Bf16, 64 rows: mma 0.179 ms, mm2d64x64 0.130 ms, mm2d64x32 0.099 ms, mm2d64x16 0.093 ms, mm2d32x64 0.097 ms, mm2d32x32 0.093 ms, mm2d32x16 0.098 ms -> mm2d64x16
+[autotune] gemm 2048x2048 Residual, 64 rows: mma 0.187 ms, mm2d64x64 0.136 ms, mm2d64x32 0.073 ms, mm2d64x16 0.051 ms, mm2d32x64 0.074 ms, mm2d32x32 0.053 ms, mm2d32x16 0.047 ms -> mm2d32x16
+[autotune] gemm 2048x8224 Bf16, 64 rows: mma 0.223 ms, mm2d64x64 0.187 ms, mm2d64x32 0.146 ms, mm2d64x16 0.145 ms, mm2d32x64 0.158 ms, mm2d32x32 0.143 ms, mm2d32x16 0.143 ms -> mm2d32x16
+[autotune] gemm 2048x12288 Bf16, 128 rows: mma 0.521 ms, mm2d64x64 0.385 ms, mm2d64x32 0.375 ms, mm2d64x16 0.381 ms, mm2d32x64 0.378 ms, mm2d32x32 0.379 ms, mm2d32x16 0.386 ms -> mm2d64x32
+[autotune] gemm 6144x2048 Residual, 128 rows: mma 0.526 ms, mm2d64x64 0.389 ms, mm2d64x32 0.278 ms, mm2d64x16 0.233 ms, mm2d32x64 0.282 ms, mm2d32x32 0.232 ms, mm2d32x16 0.240 ms -> mm2d32x32
+[autotune] gemm 2048x5120 Bf16, 128 rows: mma 0.220 ms, mm2d64x64 0.184 ms, mm2d64x32 0.172 ms, mm2d64x16 0.171 ms, mm2d32x64 0.174 ms, mm2d32x32 0.170 ms, mm2d32x16 0.172 ms -> mm2d32x32
+[autotune] gemm 2048x2048 Residual, 128 rows: mma 0.182 ms, mm2d64x64 0.135 ms, mm2d64x32 0.099 ms, mm2d64x16 0.081 ms, mm2d32x64 0.099 ms, mm2d32x32 0.081 ms, mm2d32x16 0.077 ms -> mm2d32x16
+[autotune] gemm 2048x8224 Bf16, 128 rows: mma 0.368 ms, mm2d64x64 0.289 ms, mm2d64x32 0.273 ms, mm2d64x16 0.263 ms, mm2d32x64 0.286 ms, mm2d32x32 0.261 ms, mm2d32x16 0.264 ms -> mm2d32x32
+[autotune] gemm 2048x12288 Bf16, 256 rows: mma 0.936 ms, mm2d64x64 0.743 ms, mm2d64x32 0.706 ms, mm2d64x16 0.706 ms, mm2d32x64 0.713 ms, mm2d32x32 0.705 ms, mm2d32x16 0.728 ms -> mm2d32x32
+[autotune] gemm 6144x2048 Residual, 256 rows: mma 0.655 ms, mm2d64x64 0.547 ms, mm2d64x32 0.431 ms, mm2d64x16 0.423 ms, mm2d32x64 0.438 ms, mm2d32x32 0.423 ms, mm2d32x16 0.413 ms -> mm2d32x16
+[autotune] gemm 2048x5120 Bf16, 256 rows: mma 0.423 ms, mm2d64x64 0.339 ms, mm2d64x32 0.325 ms, mm2d64x16 0.315 ms, mm2d32x64 0.330 ms, mm2d32x32 0.315 ms, mm2d32x16 0.320 ms -> mm2d32x32
+[autotune] gemm 2048x2048 Residual, 256 rows: mma 0.226 ms, mm2d64x64 0.191 ms, mm2d64x32 0.150 ms, mm2d64x16 0.145 ms, mm2d32x64 0.153 ms, mm2d32x32 0.146 ms, mm2d32x16 0.138 ms -> mm2d32x16
+[autotune] gemm 2048x8224 Bf16, 256 rows: mma 0.689 ms, mm2d64x64 0.545 ms, mm2d64x32 0.502 ms, mm2d64x16 0.484 ms, mm2d32x64 0.517 ms, mm2d32x32 0.483 ms, mm2d32x16 0.495 ms -> mm2d32x32
+[autotune] gemm 2048x12288 Bf16, 512 rows: mma 1.759 ms, mm2d64x64 1.394 ms, mm2d64x32 1.351 ms, mm2d64x16 1.371 ms, mm2d32x64 1.367 ms, mm2d32x32 1.365 ms, mm2d32x16 1.414 ms -> mm2d64x32
+[autotune] gemm 6144x2048 Residual, 512 rows: mma 1.070 ms, mm2d64x64 0.852 ms, mm2d64x32 0.815 ms, mm2d64x16 0.775 ms, mm2d32x64 0.816 ms, mm2d32x32 0.770 ms, mm2d32x16 0.776 ms -> mm2d32x32
+[autotune] gemm 2048x5120 Bf16, 512 rows: mma 0.805 ms, mm2d64x64 0.642 ms, mm2d64x32 0.605 ms, mm2d64x16 0.600 ms, mm2d32x64 0.612 ms, mm2d32x32 0.601 ms, mm2d32x16 0.606 ms -> mm2d64x16
+[autotune] gemm 2048x2048 Residual, 512 rows: mma 0.373 ms, mm2d64x64 0.297 ms, mm2d64x32 0.279 ms, mm2d64x16 0.264 ms, mm2d32x64 0.282 ms, mm2d32x32 0.265 ms, mm2d32x16 0.259 ms -> mm2d32x16
+[autotune] gemm 2048x8224 Bf16, 512 rows: mma 1.188 ms, mm2d64x64 0.951 ms, mm2d64x32 0.934 ms, mm2d64x16 0.937 ms, mm2d32x64 0.955 ms, mm2d32x32 0.933 ms, mm2d32x16 0.952 ms -> mm2d32x32
+[autotune] gemm 2048x12288 Bf16, 1024 rows: mma 3.358 ms, mm2d64x64 2.650 ms, mm2d64x32 2.652 ms, mm2d64x16 2.692 ms, mm2d32x64 2.682 ms, mm2d32x32 2.692 ms, mm2d32x16 2.790 ms -> mm2d64x64
+[autotune] gemm 6144x2048 Residual, 1024 rows: mma 2.120 ms, mm2d64x64 1.603 ms, mm2d64x32 1.472 ms, mm2d64x16 1.445 ms, mm2d32x64 1.480 ms, mm2d32x32 1.441 ms, mm2d32x16 1.518 ms -> mm2d32x32
+[autotune] gemm 2048x5120 Bf16, 1024 rows: mma 1.453 ms, mm2d64x64 1.149 ms, mm2d64x32 1.140 ms, mm2d64x16 1.151 ms, mm2d32x64 1.153 ms, mm2d32x32 1.150 ms, mm2d32x16 1.178 ms -> mm2d64x32
+[autotune] gemm 2048x2048 Residual, 1024 rows: mma 0.710 ms, mm2d64x64 0.551 ms, mm2d64x32 0.492 ms, mm2d64x16 0.488 ms, mm2d32x64 0.502 ms, mm2d32x32 0.489 ms, mm2d32x16 0.492 ms -> mm2d64x16
+[autotune] gemm 2048x8224 Bf16, 1024 rows: mma 2.281 ms, mm2d64x64 1.841 ms, mm2d64x32 1.797 ms, mm2d64x16 1.818 ms, mm2d32x64 1.825 ms, mm2d32x32 1.817 ms, mm2d32x16 1.874 ms -> mm2d64x32
+[autotune] gemm 2048x12288 Bf16, 2048 rows: mma 6.831 ms, mm2d64x64 5.247 ms, mm2d64x32 5.220 ms, mm2d64x16 5.329 ms, mm2d32x64 5.272 ms, mm2d32x32 5.329 ms, mm2d32x16 5.553 ms -> mm2d64x32
+[autotune] gemm 6144x2048 Residual, 2048 rows: mma 3.744 ms, mm2d64x64 2.814 ms, mm2d64x32 2.786 ms, mm2d64x16 2.771 ms, mm2d32x64 2.810 ms, mm2d32x32 2.753 ms, mm2d32x16 3.007 ms -> mm2d32x32
+[autotune] gemm 2048x5120 Bf16, 2048 rows: mma 2.935 ms, mm2d64x64 2.249 ms, mm2d64x32 2.223 ms, mm2d64x16 2.254 ms, mm2d32x64 2.247 ms, mm2d32x32 2.252 ms, mm2d32x16 2.334 ms -> mm2d64x32
+[autotune] gemm 2048x2048 Residual, 2048 rows: mma 1.277 ms, mm2d64x64 0.954 ms, mm2d64x32 0.942 ms, mm2d64x16 0.931 ms, mm2d32x64 0.951 ms, mm2d32x32 0.933 ms, mm2d32x16 0.959 ms -> mm2d64x16
+[autotune] gemm 2048x8224 Bf16, 2048 rows: mma 4.642 ms, mm2d64x64 3.558 ms, mm2d64x32 3.531 ms, mm2d64x16 3.583 ms, mm2d32x64 3.575 ms, mm2d32x32 3.583 ms, mm2d32x16 3.728 ms -> mm2d64x32
+[autotune] blocks over 2048 rows, 4 layers: 512 68.045 ms, 1024 65.090 ms, 2048 62.539 ms -> 2048
+[metal] 62 kernels compiled in 0.01 s, GEMMs and blocks timed in 3.11 s, 257 dispatches per token, blocks of 2048 rows; prefill.block=2048 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.pair=0 rec.stage=0 conv.cols=32 sdpa.prefill=1 sdpa.bq=16 sdpa.bk=16 gemm.simt=1 gemm.auto=1 gemm.mma=1 gemm.tn=64 gemm.mfirst=1 moe.grouped=1 moe.tile=16
+[engine] loaded in 4.1 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+[prompt] 248045 846 198 78768 11 1649 63210 2308 84 907 248046 198 248045 74455 198 248068 198
+[ids] 31248 11 279 1156 369 9859 328 78768 11 1649 63210 2308 84 907 1 864 45351 310 328 9419 11 1092 635 488 635 7285 303 8323 13 353 1144 310 5707 303 8323 2394 279 1156 1429 8323 13 271 5170 11 353 1220 23868 279
+[decoded] "Okay, the user is asking \"Bonjour, que fais-tu ?\" which translates to \"Hello, what do you do?\" in French. I need to respond in French since the user used French.\n\nFirst, I should acknowledge the"
+[turn 1] 17 prompt tokens in 0.032 s (537.5 tok/s) · 48 generated in 0.35 s (136.67 tok/s) · position 65 · GPU 6.94 ms per step

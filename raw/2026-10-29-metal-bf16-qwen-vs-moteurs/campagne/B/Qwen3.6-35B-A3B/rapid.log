@@ -1,0 +1,18 @@
+=== Qwen3.6-35B-A3B rapid 2026-10-29 00:48:40
+Pages free:                                  4321397.
+Swapouts:                                   98333948.
+[pp512] warm-up prompt_tokens 533 ttft 507.4 ms wall 0.542 s 1050.6 tok/s
+[pp512] run prompt_tokens 547 ttft 308.7 ms wall 0.315 s 1772.1 tok/s
+[pp512] run prompt_tokens 530 ttft 305.4 ms wall 0.312 s 1735.7 tok/s
+[pp512] run prompt_tokens 528 ttft 301.8 ms wall 0.309 s 1749.3 tok/s
+[tg128] warm-up completion_tokens 128 mean_itl 12.925 ms wall 1.750 s 77.4 tok/s
+[tg128] run completion_tokens 128 mean_itl 12.932 ms wall 1.752 s 77.3 tok/s
+[tg128] run completion_tokens 128 mean_itl 12.940 ms wall 1.753 s 77.3 tok/s
+[tg128] run completion_tokens 128 mean_itl 12.922 ms wall 1.751 s 77.4 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | rapid-mlx | pp512 | 1752.36 ± 18.42 |
+| Qwen3.6-35B-A3B | rapid-mlx | tg128 | 77.33 ± 0.06 |
+exit 143 2026-10-29 00:50:46
+Pages free:                                  5681409.
+Swapouts:                                   98333948.

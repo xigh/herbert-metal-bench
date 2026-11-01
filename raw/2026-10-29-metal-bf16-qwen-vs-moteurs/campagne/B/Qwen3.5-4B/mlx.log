@@ -1,0 +1,12 @@
+=== Qwen3.5-4B mlx 2026-10-29 00:31:09
+Pages free:                                  3288562.
+Swapouts:                                   98333948.
+Running warmup..
+Timing with prompt_tokens=512, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=1795.587, generation_tps=71.393, peak_memory=9.040, total_time=2.082
+Trial 2:  prompt_tps=1797.183, generation_tps=71.413, peak_memory=9.040, total_time=2.081
+Trial 3:  prompt_tps=1796.669, generation_tps=71.414, peak_memory=9.041, total_time=2.081
+Averages: prompt_tps=1796.480, generation_tps=71.407, peak_memory=9.040
+exit 0 2026-10-29 00:31:19
+Pages free:                                  2449398.
+Swapouts:                                   98333948.

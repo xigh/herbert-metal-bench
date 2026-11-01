@@ -1,0 +1,60 @@
+start 2026-10-31 08:08:25
+54975e4b76df8cef6149edaf8cc0b2c3a46a0dce2655c407cc36b1b00a5de94a  ~/herbert-metal-bf16/target/f16/release/herbert-metal-bench
+=== ids Qwen3.5-2B 2026-10-31 08:08:25
+    reference top-5 at 20: 2716:24.78 1414:24.78 8323:23.58 13901:21.53 20438:17 (margin 0)
+    metal top-5 at 20: 1414:24.77 2716:24.77 8323:23.59 13901:21.55 20438:16.98 (margin 0)
+=== base Qwen3.5-2B pp2048 2026-10-31 08:08:57
+[pp2048] run 0.376 s, 5446.8 tok/s, gpu 0.376 s, 5452.9 tok/s, argmax 220
+[pp2048] run 0.376 s, 5451.5 tok/s, gpu 0.375 s, 5457.4 tok/s, argmax 220
+=== base Qwen3.5-2B pp8192 2026-10-31 08:09:16
+[pp8192] run 1.970 s, 4158.8 tok/s, gpu 1.968 s, 4162.8 tok/s, argmax 220
+[pp8192] run 1.969 s, 4159.7 tok/s, gpu 1.968 s, 4163.5 tok/s, argmax 220
+=== base Qwen3.5-2B pp24576 2026-10-31 08:09:38
+[pp24576] run 9.695 s, 2535.0 tok/s, gpu 9.672 s, 2540.8 tok/s, argmax 220
+=== mmaqr Qwen3.5-2B pp2048 2026-10-31 08:10:06
+[pp2048] run 0.347 s, 5894.8 tok/s, gpu 0.347 s, 5902.2 tok/s, argmax 220
+[pp2048] run 0.347 s, 5896.2 tok/s, gpu 0.347 s, 5903.3 tok/s, argmax 220
+=== mmaqr Qwen3.5-2B pp8192 2026-10-31 08:10:23
+[pp8192] run 1.484 s, 5521.8 tok/s, gpu 1.482 s, 5528.3 tok/s, argmax 220
+[pp8192] run 1.483 s, 5523.1 tok/s, gpu 1.482 s, 5529.5 tok/s, argmax 220
+=== mmaqr Qwen3.5-2B pp24576 2026-10-31 08:10:43
+[pp24576] run 5.247 s, 4683.6 tok/s, gpu 5.226 s, 4702.5 tok/s, argmax 220
+=== ids Qwen3.5-4B 2026-10-31 08:11:04
+Qwen3.5-4B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-4B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+=== base Qwen3.5-4B pp2048 2026-10-31 08:11:51
+[pp2048] run 0.929 s, 2204.1 tok/s, gpu 0.929 s, 2205.3 tok/s, argmax 220
+[pp2048] run 0.929 s, 2205.6 tok/s, gpu 0.928 s, 2206.7 tok/s, argmax 220
+=== base Qwen3.5-4B pp8192 2026-10-31 08:12:17
+[pp8192] run 4.849 s, 1689.5 tok/s, gpu 4.845 s, 1690.8 tok/s, argmax 220
+[pp8192] run 4.845 s, 1690.9 tok/s, gpu 4.843 s, 1691.6 tok/s, argmax 220
+=== base Qwen3.5-4B pp24576 2026-10-31 08:12:54
+[pp24576] run 23.892 s, 1028.6 tok/s, gpu 23.828 s, 1031.4 tok/s, argmax 220
+=== mmaqr Qwen3.5-4B pp2048 2026-10-31 08:13:44
+[pp2048] run 0.856 s, 2391.7 tok/s, gpu 0.856 s, 2393.0 tok/s, argmax 220
+[pp2048] run 0.856 s, 2391.5 tok/s, gpu 0.856 s, 2392.9 tok/s, argmax 220
+=== mmaqr Qwen3.5-4B pp8192 2026-10-31 08:14:09
+[pp8192] run 3.675 s, 2228.9 tok/s, gpu 3.674 s, 2230.0 tok/s, argmax 220
+[pp8192] run 3.677 s, 2227.7 tok/s, gpu 3.675 s, 2228.9 tok/s, argmax 220
+=== mmaqr Qwen3.5-4B pp24576 2026-10-31 08:14:42
+[pp24576] run 13.078 s, 1879.2 tok/s, gpu 13.027 s, 1886.6 tok/s, argmax 220
+=== ids Qwen3.5-9B 2026-10-31 08:15:21
+Qwen3.5-9B short: prompt = reference (17 ids) · 48/48 ids identical · identical
+Qwen3.5-9B long: prompt = reference (146 ids) · 48/48 ids identical · identical
+=== base Qwen3.5-9B pp2048 2026-10-31 08:16:33
+[pp2048] run 1.630 s, 1256.8 tok/s, gpu 1.627 s, 1258.6 tok/s, argmax 248046
+[pp2048] run 1.630 s, 1256.5 tok/s, gpu 1.628 s, 1258.3 tok/s, argmax 248046
+=== base Qwen3.5-9B pp8192 2026-10-31 08:17:13
+[pp8192] run 7.660 s, 1069.4 tok/s, gpu 7.637 s, 1072.6 tok/s, argmax 220
+[pp8192] run 7.663 s, 1069.1 tok/s, gpu 7.641 s, 1072.1 tok/s, argmax 220
+=== base Qwen3.5-9B pp24576 2026-10-31 08:18:11
+[pp24576] run 32.343 s, 759.9 tok/s, gpu 32.215 s, 762.9 tok/s, argmax 220
+=== mmaqr Qwen3.5-9B pp2048 2026-10-31 08:19:21
+[pp2048] run 1.557 s, 1315.1 tok/s, gpu 1.555 s, 1317.1 tok/s, argmax 248046
+[pp2048] run 1.556 s, 1315.9 tok/s, gpu 1.556 s, 1316.3 tok/s, argmax 248046
+=== mmaqr Qwen3.5-9B pp8192 2026-10-31 08:20:00
+[pp8192] run 6.491 s, 1262.1 tok/s, gpu 6.470 s, 1266.2 tok/s, argmax 220
+[pp8192] run 6.490 s, 1262.3 tok/s, gpu 6.470 s, 1266.2 tok/s, argmax 220
+=== mmaqr Qwen3.5-9B pp24576 2026-10-31 08:20:54
+[pp24576] run 21.534 s, 1141.3 tok/s, gpu 21.414 s, 1147.7 tok/s, argmax 220
+end 2026-10-31 08:21:56

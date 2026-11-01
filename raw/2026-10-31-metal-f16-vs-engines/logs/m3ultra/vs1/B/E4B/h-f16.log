@@ -1,0 +1,62 @@
+=== E4B h-f16 2026-10-31 00:19:56
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+ 54.1 /sbin/launchd
+ 38.6 /usr/libexec/fskitd
+ 28.6 /System/Library/PrivateFrameworks/UVFSXPCService.framework/Versions/A/XPCServices/UVFSService.xpc/Contents/MacOS/UVFSService
+Pages free:                                  4118355.
+Swapouts:                                   99113415.
+input ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] gemma4_text — hidden 2560, 42 layers (18 sharing K/V), 8 heads / 2 kv × 256 (global 2 kv × 512), intermediate 10240, per-layer input 256, window 512, vocab 262144
+[metal] weights 8.65 GiB, everything 8.88 GiB, capacity 4096, prefill block 16
+[metal] 51 kernels compiled in 0.02 s
+[engine] loaded in 11.7 s
+[pp128] warm-up 1.328 s, 96.4 tok/s, gpu 1.198 s, 106.9 tok/s, argmax 237218
+[pp128] run 1.204 s, 106.3 tok/s, gpu 1.193 s, 107.3 tok/s, argmax 237218
+[pp128] run 1.200 s, 106.7 tok/s, gpu 1.189 s, 107.7 tok/s, argmax 237218
+[pp128] run 1.199 s, 106.7 tok/s, gpu 1.188 s, 107.7 tok/s, argmax 237218
+[pp512] warm-up 4.947 s, 103.5 tok/s, gpu 4.769 s, 107.4 tok/s, argmax 107
+[pp512] run 4.803 s, 106.6 tok/s, gpu 4.759 s, 107.6 tok/s, argmax 107
+[pp512] run 4.804 s, 106.6 tok/s, gpu 4.759 s, 107.6 tok/s, argmax 107
+[pp512] run 4.825 s, 106.1 tok/s, gpu 4.780 s, 107.1 tok/s, argmax 107
+[pp1024] warm-up 9.812 s, 104.4 tok/s, gpu 9.547 s, 107.3 tok/s, argmax 238185
+[pp1024] run 9.649 s, 106.1 tok/s, gpu 9.560 s, 107.1 tok/s, argmax 238185
+[pp1024] run 9.662 s, 106.0 tok/s, gpu 9.573 s, 107.0 tok/s, argmax 238185
+[pp1024] run 9.651 s, 106.1 tok/s, gpu 9.561 s, 107.1 tok/s, argmax 238185
+[pp2048] warm-up 19.733 s, 103.8 tok/s, gpu 19.208 s, 106.6 tok/s, argmax 237462
+[pp2048] run 19.381 s, 105.7 tok/s, gpu 19.199 s, 106.7 tok/s, argmax 237462
+[pp2048] run 19.384 s, 105.7 tok/s, gpu 19.199 s, 106.7 tok/s, argmax 237462
+[pp2048] run 19.374 s, 105.7 tok/s, gpu 19.189 s, 106.7 tok/s, argmax 237462
+[pp4096] warm-up 39.725 s, 103.1 tok/s, gpu 38.676 s, 105.9 tok/s, argmax 236761
+[pp4096] run 39.037 s, 104.9 tok/s, gpu 38.668 s, 105.9 tok/s, argmax 236761
+[pp4096] run 39.019 s, 105.0 tok/s, gpu 38.653 s, 106.0 tok/s, argmax 236761
+[pp4096] run 39.041 s, 104.9 tok/s, gpu 38.684 s, 105.9 tok/s, argmax 236761
+[tg128] warm-up 128 tokens 2.161 s, 59.2 tok/s, gpu 2.086 s, 61.4 tok/s
+[tg128] run 128 tokens 2.162 s, 59.2 tok/s, gpu 2.087 s, 61.3 tok/s
+[tg128] run 128 tokens 2.160 s, 59.2 tok/s, gpu 2.086 s, 61.4 tok/s
+[tg128] run 128 tokens 2.158 s, 59.3 tok/s, gpu 2.083 s, 61.5 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp128 | 106.58 ± 0.21 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp512 | 106.43 ± 0.27 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp1024 | 106.07 ± 0.08 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp2048 | 105.68 ± 0.03 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp4096 | 104.94 ± 0.03 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | tg128 | 59.25 ± 0.05 |
+
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp128 | 107.56 ± 0.22 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp512 | 107.43 ± 0.27 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp1024 | 107.06 ± 0.08 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp2048 | 106.69 ± 0.03 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp4096 | 105.93 ± 0.04 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-f16 | tg128 | 61.39 ± 0.06 |
+exit 0 2026-10-31 00:25:15
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  3526829.
+Swapouts:                                   99113415.

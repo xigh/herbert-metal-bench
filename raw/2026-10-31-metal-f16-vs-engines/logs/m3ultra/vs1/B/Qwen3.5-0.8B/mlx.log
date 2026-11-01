@@ -1,0 +1,48 @@
+=== Qwen3.5-0.8B mlx 2026-10-31 00:41:02
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2224489.
+Swapouts:                                   99113415.
+input ~/models/qwen/Qwen3.5-0.8B
+--- pp128
+Running warmup..
+Timing with prompt_tokens=128, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=5611.594, generation_tps=286.424, peak_memory=1.727, total_time=0.054
+Trial 2:  prompt_tps=5660.899, generation_tps=285.807, peak_memory=1.733, total_time=0.054
+Trial 3:  prompt_tps=5680.705, generation_tps=285.705, peak_memory=1.733, total_time=0.054
+Averages: prompt_tps=5651.066, generation_tps=285.978, peak_memory=1.731
+--- pp512
+Running warmup..
+Timing with prompt_tokens=512, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=8997.755, generation_tps=247.062, peak_memory=2.297, total_time=0.579
+Trial 2:  prompt_tps=8915.117, generation_tps=247.814, peak_memory=2.298, total_time=0.578
+Trial 3:  prompt_tps=8780.492, generation_tps=248.253, peak_memory=2.298, total_time=0.578
+Averages: prompt_tps=8897.788, generation_tps=247.710, peak_memory=2.298
+--- pp1024
+Running warmup..
+Timing with prompt_tokens=1024, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=10594.679, generation_tps=295.735, peak_memory=2.533, total_time=0.128
+Trial 2:  prompt_tps=10566.391, generation_tps=296.075, peak_memory=2.533, total_time=0.128
+Trial 3:  prompt_tps=10638.639, generation_tps=295.158, peak_memory=2.534, total_time=0.127
+Averages: prompt_tps=10599.903, generation_tps=295.656, peak_memory=2.533
+--- pp2048
+Running warmup..
+Timing with prompt_tokens=2048, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=11628.130, generation_tps=285.400, peak_memory=2.836, total_time=0.208
+Trial 2:  prompt_tps=10277.476, generation_tps=265.480, peak_memory=2.837, total_time=0.233
+Trial 3:  prompt_tps=10439.701, generation_tps=289.558, peak_memory=2.837, total_time=0.228
+Averages: prompt_tps=10781.769, generation_tps=280.146, peak_memory=2.837
+--- pp4096
+Running warmup..
+Timing with prompt_tokens=4096, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=10347.535, generation_tps=252.932, peak_memory=2.865, total_time=0.431
+Trial 2:  prompt_tps=11153.883, generation_tps=283.157, peak_memory=2.866, total_time=0.399
+Trial 3:  prompt_tps=10412.605, generation_tps=253.148, peak_memory=2.866, total_time=0.429
+Averages: prompt_tps=10638.008, generation_tps=263.079, peak_memory=2.866
+exit 0 2026-10-31 00:41:13
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2099022.
+Swapouts:                                   99113415.

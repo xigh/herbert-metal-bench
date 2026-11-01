@@ -1,0 +1,162 @@
+  Note: ~/models/qwen/Qwen3.5-9B is not in the Rapid-MLX catalog, so it has not been catalog-tested here.
+INFO:rapid_mlx.utils.mamba_cache:[MambaCache] Skipping _make_cache patch — mlx-lm ArraysCache has native batching support
+INFO:rapid_mlx.gdn_prefill:[gdn_prefill] blocked-seq GDN prefill kernel installed (prompt>=64 tokens, Dk=128)
+INFO:rapid_mlx.cli:Disk caches disabled by --disable-disk-caches: no prefix-cache snapshot, KV checkpoints or vision prefix-cache disk tier is written
+INFO:rapid_mlx.model_auto_config:Auto-detected model family 'qwen3\.5' → tool_call_parser=hermes, reasoning_parser=qwen3, is_hybrid=False, supports_spec_decode=False
+INFO:rapid_mlx.cli:Auto-configured --tool-call-parser hermes
+INFO:rapid_mlx.cli:Auto-configured --reasoning-parser qwen3
+INFO:rapid_mlx.server:Host-header allowlist enabled (allowed_hosts=['localhost', 'localhost', '[::1]', '*.localhost'])
+INFO:rapid_mlx.cli:Reasoning parser enabled: qwen3
+INFO:rapid_mlx.kv_cache_dtype:KV cache dtype: bf16 (model=~/models/qwen/Qwen3.5-9B) — bf16 selected (no QuantizedKVCache wrap)
+INFO:rapid_mlx.server:Force text-only mode enabled via --no-mllm flag (MLLM auto-detection overridden, #393)
+INFO:rapid_mlx.server:Loading model with BatchedEngine: ~/models/qwen/Qwen3.5-9B
+INFO:rapid_mlx.server:Model loaded: ~/models/qwen/Qwen3.5-9B
+INFO:rapid_mlx.server:Native tool format enabled for parser: hermes
+INFO:rapid_mlx.server:Default max tokens: 32768
+INFO:rapid_mlx.runtime.model_registry:Registered model '~/models/qwen/Qwen3.5-9B' (aliases=none, default=True)
+INFO:     Started server process [22076]
+INFO:     Waiting for application startup.
+INFO:rapid_mlx.server:GC control enabled: thresholds set to (100000, 50, 50)
+INFO:rapid_mlx.engine_core:MLX step thread initialized: stream=Stream(Device(gpu, 0), 2) (worker default = generation_stream)
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 5032.0 MB from UBC for ~/models/qwen/Qwen3.5-9B/model.safetensors-00001-of-00004.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 5088.0 MB from UBC for ~/models/qwen/Qwen3.5-9B/model.safetensors-00002-of-00004.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 5120.0 MB from UBC for ~/models/qwen/Qwen3.5-9B/model.safetensors-00003-of-00004.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 3171.9 MB from UBC for ~/models/qwen/Qwen3.5-9B/model.safetensors-00004-of-00004.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: pass complete total_mb=18411.9 elapsed_s=0.17
+INFO:rapid_mlx.engine.batched:Metal memory limits set (auto): allocation_limit=75.1GB (90% of 83.5GB, weights=17.9GB), cache_limit=18.8GB
+INFO:rapid_mlx.engine_core:Model profile: ~/models/qwen/Qwen3.5-9B → dense GatedDeltaNet (standard scheduler), throttle OFF, spec decode OFF, tool=hermes, reasoning=qwen3
+INFO:rapid_mlx.engine_core:Engine started
+INFO:rapid_mlx.engine.batched:BatchedEngine loaded: ~/models/qwen/Qwen3.5-9B (mllm=False)
+INFO:rapid_mlx.server:Warming up (compiling Metal shaders)...
+INFO:rapid_mlx.server:Hybrid model: running full request warmup (compiling GatedDeltaNet kernels)
+INFO:rapid_mlx.output_router:[OutputRouter] Think tag format detected: think=248068/248069
+INFO:rapid_mlx.engine_core:[stream_outputs] baa0162e-218 START waiting for tokens
+INFO:rapid_mlx.scheduler:[dense_sampler_fastpath] installed on BatchGenerator
+INFO:rapid_mlx.singleton_cache_fastpath:[singleton-fastpath] installed (B=1 keeps singleton KV caches)
+INFO:rapid_mlx.scheduler:[schedule] request=baa0162e-218 uid=0 prompt_tokens=11 tokens_to_prefill=11 max_tokens=2 running=1 waiting=0
+INFO:rapid_mlx.engine_core:[stream_outputs] baa0162e-218 first token after 0.3s
+INFO:rapid_mlx.engine_core:[stream_outputs] baa0162e-218 finished normally, 2 tokens in 0.3s
+INFO:rapid_mlx.engine_core:[stream_outputs] baa0162e-218 cleanup done
+INFO:rapid_mlx.server:Warmup complete (0.4s)
+INFO:rapid_mlx.server:Tool-grammar warmup complete (LLTokenizer pre-built for parser 'hermes')
+INFO:rapid_mlx.server:[lifespan] Prefix-cache auto-load skipped: disk caches disabled by --disable-disk-caches
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8765 (Press CTRL+C to quit)
+
+  🐆 Rapid-MLX
+  ─────────
+  Features: tools: hermes, reasoning: qwen3, gc-control
+  Model: ~/models/qwen/Qwen3.5-9B
+Mode: Continuous batching (for multiple concurrent users)
+Stream interval: 1 tokens
+
+  Memory pressure note: this model uses a large fraction of system RAM.
+
+    Model on disk:             18.0 GB
+    Est. working set:          27.0 GB  (model x 1.5 — short-chat workload; long-context serving will use more)
+    Currently used by OS:      39.9 GB
+    Total system RAM:          96.0 GB  (70% projected utilization)
+
+  If you see crashes or kernel panics, try: --gpu-memory-utilization 0.85
+
+
+  Starting server on http://localhost:8765 (warming up — this can take a few seconds)
+
+  Ready: http://localhost:8765
+
+  OpenAI:    http://localhost:8765/v1
+  Anthropic: http://localhost:8765
+  Model:     ~/models/qwen/Qwen3.5-9B
+
+  Connect:
+    Coding agent  rapid-mlx launch <agent>
+    Python        rapid-mlx connect openai-python --base-url http://localhost:8765/v1
+INFO:     localhost:59443 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2710
+INFO:rapid_mlx.scheduler:[schedule] request=2c1628cd-a73 uid=1 prompt_tokens=533 tokens_to_prefill=533 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 533 prompt + 1 completion tokens in 0.58s (1.7 tok/s)
+INFO:     localhost:59444 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2583
+INFO:rapid_mlx.scheduler:[schedule] request=3659f465-3fc uid=2 prompt_tokens=547 tokens_to_prefill=547 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 547 prompt + 1 completion tokens in 0.57s (1.7 tok/s)
+INFO:     localhost:59445 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2431
+INFO:rapid_mlx.scheduler:[schedule] request=d7d6dde5-725 uid=3 prompt_tokens=530 tokens_to_prefill=530 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 530 prompt + 1 completion tokens in 0.57s (1.8 tok/s)
+INFO:     localhost:59446 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2541
+INFO:rapid_mlx.scheduler:[schedule] request=d28de778-941 uid=4 prompt_tokens=528 tokens_to_prefill=528 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 528 prompt + 1 completion tokens in 0.57s (1.8 tok/s)
+INFO:     localhost:59447 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=bdae7d59-deb uid=5 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 3.23s (39.6 tok/s)
+INFO:     localhost:59448 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=27c26fe0-322 uid=6 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.scheduler:[Metal memory] active=18.0GB peak=18.5GB cache=0.0GB step=256 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 3.23s (39.6 tok/s)
+INFO:     localhost:59449 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=8e87daab-ca6 uid=7 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 3.23s (39.6 tok/s)
+INFO:     localhost:59450 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/qwen/Qwen3.5-9B' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=f9289695-5d2 uid=8 prompt_tokens=28 tokens_to_prefill=28 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.scheduler:[Metal memory] active=18.0GB peak=18.5GB cache=0.0GB step=512 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 28 prompt + 128 completion tokens in 3.23s (39.6 tok/s)
+INFO:     localhost:59451 - "POST /v1/completions HTTP/1.1" 200 OK
+WARNING:rapid_mlx._signal_observability:rapid-mlx received signal SIGTERM; thread stacks follow (faulthandler)
+Thread 0x000000071c29f000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000719493000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 355 in wait
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/queue.py", line 171 in get
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/telemetry/inference.py", line 44 in _worker_main
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016edc3000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016cdab000 (most recent call first):
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/update_refresh.py", line 64 in _run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Current thread 0x00000001ef485d80 (most recent call first):
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_signal_observability.py", line 694 in _on_signal
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/selectors.py", line 566 in select
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 1961 in _run_once
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 645 in run_forever
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 678 in run_until_complete
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 195 in run
+  File "$ENGINES_DIR/rapid-mlx/venv/lib/python3.12/site-packages/uvicorn/server.py", line 86 in run
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_uvicorn.py", line 258 in _run_server
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_uvicorn.py", line 285 in run_uvicorn
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 749 in _run_uvicorn
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 8231 in serve_command
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 16029 in main
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 15346 in wrapped
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 16183 in cli_entrypoint
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/dependency_repair.py", line 250 in cli_entrypoint
+  File "$ENGINES_DIR/rapid-mlx/venv/bin/rapid-mlx", line 8 in <module>
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:rapid_mlx.server:[lifespan] Prefix-cache auto-save skipped: disk caches disabled by --disable-disk-caches
+INFO:rapid_mlx.engine_core:Engine stopped
+INFO:rapid_mlx.scheduler:Deep reset completed - all caches cleared
+INFO:rapid_mlx.engine.batched:BatchedEngine stopped
+INFO:rapid_mlx.server:Engine stopped
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22076]

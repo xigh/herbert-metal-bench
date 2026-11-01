@@ -1,0 +1,41 @@
+=== Qwen3.5-4B basert 2026-10-30 23:06:31
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+ 22.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+Pages free:                                  1319674.
+Swapouts:                                   99113415.
+input ~/models/qwen/Qwen3.5-4B
+--- pp128
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp128:random | 1383.43 ± 1.82 |
+--- pp512
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp512:random | 1869.49 ± 1.40 |
+| Qwen3.5-4B-bf16 | 24948 MiB | tg128 | 77.43 ± 0.06 |
+--- pp1024
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp1024:random | 1979.18 ± 0.67 |
+--- pp2048
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp2048:random | 2068.73 ± 0.38 |
+--- pp4096
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp4096:random | 2093.80 ± 0.93 |
+removed ~/basert-tmp/Qwen3.5-4B-bf16.base
+exit 0 2026-10-30 23:08:16
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1778488.
+Swapouts:                                   99113415.

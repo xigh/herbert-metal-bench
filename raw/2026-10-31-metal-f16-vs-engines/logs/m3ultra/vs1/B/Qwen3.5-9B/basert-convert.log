@@ -1,0 +1,15 @@
+/dev/disk3s5   926Gi   869Gi    31Gi    97%    3.8M  322M    1%   /System/Volumes/Data
+base-convert v0.4.2
+  input:   ~/models/qwen/Qwen3.5-9B
+  output:  ~/basert-tmp/Qwen3.5-9B-bf16.base
+  target:  Bf16
+  arch:    qwen3_5
+  config:  hidden=4096, layers=32, heads=16/4, ffn=12288, vocab=248320
+  mtp:     split mtp.fc.weight into fc_embed / fc_hidden (f16)
+  mapped:  427 tensors kept, 333 mmproj, 16 speculator, 0 dropped
+  quantized 443 tensors
+Error: writing bundle
+
+Caused by:
+    0: io: No space left on device (os error 28)
+    1: No space left on device (os error 28)

@@ -1,0 +1,48 @@
+=== E2B mlx 2026-10-31 00:12:03
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  5238744.
+Swapouts:                                   99113415.
+input ~/models/gemma-4-E2B-it-qat-q4_0-unquantized
+--- pp128
+Running warmup..
+Timing with prompt_tokens=128, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=3656.525, generation_tps=109.209, peak_memory=9.421, total_time=0.113
+Trial 2:  prompt_tps=3657.556, generation_tps=109.242, peak_memory=9.421, total_time=0.112
+Trial 3:  prompt_tps=3637.233, generation_tps=109.410, peak_memory=9.421, total_time=0.113
+Averages: prompt_tps=3650.438, generation_tps=109.287, peak_memory=9.421
+--- pp512
+Running warmup..
+Timing with prompt_tokens=512, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=7583.762, generation_tps=93.923, peak_memory=9.727, total_time=1.435
+Trial 2:  prompt_tps=7073.464, generation_tps=93.955, peak_memory=9.727, total_time=1.439
+Trial 3:  prompt_tps=7013.226, generation_tps=93.686, peak_memory=9.728, total_time=1.444
+Averages: prompt_tps=7223.484, generation_tps=93.855, peak_memory=9.727
+--- pp1024
+Running warmup..
+Timing with prompt_tokens=1024, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=9060.153, generation_tps=106.224, peak_memory=9.884, total_time=0.193
+Trial 2:  prompt_tps=9056.447, generation_tps=106.338, peak_memory=9.884, total_time=0.193
+Trial 3:  prompt_tps=9004.035, generation_tps=105.293, peak_memory=9.885, total_time=0.194
+Averages: prompt_tps=9040.212, generation_tps=105.952, peak_memory=9.884
+--- pp2048
+Running warmup..
+Timing with prompt_tokens=2048, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=10141.555, generation_tps=105.522, peak_memory=9.998, total_time=0.282
+Trial 2:  prompt_tps=10161.851, generation_tps=105.365, peak_memory=9.999, total_time=0.282
+Trial 3:  prompt_tps=10127.494, generation_tps=105.308, peak_memory=9.999, total_time=0.283
+Averages: prompt_tps=10143.633, generation_tps=105.398, peak_memory=9.999
+--- pp4096
+Running warmup..
+Timing with prompt_tokens=4096, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=10217.359, generation_tps=104.248, peak_memory=10.102, total_time=0.482
+Trial 2:  prompt_tps=10240.502, generation_tps=104.351, peak_memory=10.103, total_time=0.481
+Trial 3:  prompt_tps=10217.066, generation_tps=104.658, peak_memory=10.103, total_time=0.482
+Averages: prompt_tps=10224.976, generation_tps=104.419, peak_memory=10.103
+exit 0 2026-10-31 00:12:26
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  4329387.
+Swapouts:                                   99113415.

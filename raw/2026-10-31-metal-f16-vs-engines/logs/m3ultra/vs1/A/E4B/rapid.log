@@ -1,0 +1,78 @@
+=== E4B rapid 2026-10-30 22:43:08
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1466781.
+Swapouts:                                   99113415.
+input ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+--- pp128
+[pp128] warm-up prompt_tokens 128 ttft 526.3 ms wall 0.593 s 243.2 tok/s
+[pp128] run prompt_tokens 128 ttft 129.0 ms wall 0.140 s 992.2 tok/s
+[pp128] run prompt_tokens 128 ttft 129.2 ms wall 0.140 s 990.5 tok/s
+[pp128] run prompt_tokens 128 ttft 128.4 ms wall 0.139 s 996.6 tok/s
+[tg8] warm-up completion_tokens 8 mean_itl 30.405 ms wall 0.329 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.435 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.410 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.413 ms wall 0.328 s 32.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | pp128 | 993.11 ± 3.15 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 32.87 ± 0.01 |
+--- pp512
+[pp512] warm-up prompt_tokens 512 ttft 334.0 ms wall 0.360 s 1532.8 tok/s
+[pp512] run prompt_tokens 512 ttft 251.8 ms wall 0.264 s 2033.3 tok/s
+[pp512] run prompt_tokens 512 ttft 251.5 ms wall 0.263 s 2035.8 tok/s
+[pp512] run prompt_tokens 512 ttft 251.8 ms wall 0.264 s 2033.3 tok/s
+[tg128] warm-up completion_tokens 128 mean_itl 30.544 ms wall 3.995 s 32.7 tok/s
+[tg128] run completion_tokens 128 mean_itl 30.531 ms wall 3.993 s 32.8 tok/s
+[tg128] run completion_tokens 128 mean_itl 30.540 ms wall 3.995 s 32.7 tok/s
+[tg128] run completion_tokens 128 mean_itl 30.524 ms wall 3.992 s 32.8 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | pp512 | 2034.13 ± 1.41 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | tg128 | 32.75 ± 0.01 |
+--- pp1024
+[pp1024] warm-up prompt_tokens 1024 ttft 419.1 ms wall 0.447 s 2443.6 tok/s
+[pp1024] run prompt_tokens 1024 ttft 411.1 ms wall 0.424 s 2490.6 tok/s
+[pp1024] run prompt_tokens 1024 ttft 410.3 ms wall 0.424 s 2496.0 tok/s
+[pp1024] run prompt_tokens 1024 ttft 411.6 ms wall 0.425 s 2488.0 tok/s
+[tg8] warm-up completion_tokens 8 mean_itl 30.445 ms wall 0.328 s 32.8 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.424 ms wall 0.329 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.412 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.422 ms wall 0.328 s 32.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | pp1024 | 2491.53 ± 4.11 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 32.87 ± 0.01 |
+--- pp2048
+[pp2048] warm-up prompt_tokens 2048 ttft 743.4 ms wall 0.774 s 2754.9 tok/s
+[pp2048] run prompt_tokens 2048 ttft 735.9 ms wall 0.752 s 2783.0 tok/s
+[pp2048] run prompt_tokens 2048 ttft 732.1 ms wall 0.748 s 2797.5 tok/s
+[pp2048] run prompt_tokens 2048 ttft 733.3 ms wall 0.750 s 2793.0 tok/s
+[tg8] warm-up completion_tokens 8 mean_itl 30.431 ms wall 0.329 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.417 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.418 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.410 ms wall 0.328 s 32.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | pp2048 | 2791.18 ± 7.44 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 32.88 ± 0.00 |
+--- pp4096
+[pp4096] warm-up prompt_tokens 4096 ttft 1483.3 ms wall 1.518 s 2761.5 tok/s
+[pp4096] run prompt_tokens 4096 ttft 1428.8 ms wall 1.450 s 2866.8 tok/s
+[pp4096] run prompt_tokens 4096 ttft 1429.3 ms wall 1.450 s 2865.7 tok/s
+[pp4096] run prompt_tokens 4096 ttft 1427.5 ms wall 1.448 s 2869.5 tok/s
+[tg8] warm-up completion_tokens 8 mean_itl 30.428 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.396 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.394 ms wall 0.328 s 32.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 30.424 ms wall 0.329 s 32.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | pp4096 | 2867.30 ± 1.94 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | rapid-mlx | tg8 | 32.89 ± 0.02 |
+exit 143 2026-10-30 22:43:52
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   543278.
+Swapouts:                                   99113415.

@@ -1,0 +1,12 @@
+/dev/disk3s5   926Gi   869Gi    31Gi    97%    3.8M  320M    1%   /System/Volumes/Data
+base-convert v0.4.2
+  input:   ~/models/qwen/Qwen3.5-2B
+  output:  ~/basert-tmp/Qwen3.5-2B-bf16.base
+  target:  Bf16
+  arch:    qwen3_5
+  config:  hidden=2048, layers=24, heads=8/2, ffn=6144, vocab=248320
+  mtp:     split mtp.fc.weight into fc_embed / fc_hidden (f16)
+  tied:    materializing lm_head.weight from model.language_model.embed_tokens.weight: --target Bf16; embed_tokens.weight keeps --target Bf16. Logits now project at the head's precision (--no-synth-tied-head keeps them at the embedding's).
+  mapped:  321 tensors kept, 297 mmproj, 16 speculator, 0 dropped
+  quantized 337 tensors
+  wrote 321 tensors (5320 MB)

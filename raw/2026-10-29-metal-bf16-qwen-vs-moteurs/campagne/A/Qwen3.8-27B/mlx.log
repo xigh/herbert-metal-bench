@@ -1,0 +1,39 @@
+=== Qwen3.8-27B mlx 2026-10-29 00:10:06
+Pages free:                                    94411.
+Swapouts:                                   98333948.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/__main__.py", line 6, in <module>
+    cli.main()
+    ~~~~~~~~^^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/cli.py", line 40, in main
+    submodule.main()
+    ~~~~~~~~~~~~~~^^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/benchmark.py", line 109, in main
+    model, tokenizer, config = load(
+                               ~~~~^
+        model_path,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        trust_remote_code=args.trust_remote_code,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/utils.py", line 652, in load
+    model, config = load_model(
+                    ~~~~~~~~~~^
+        model_path,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        trust_remote_code=trust_remote_code,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/utils.py", line 575, in load_model
+    mx.eval(model.parameters())
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [METAL] Command buffer execution failed: Caused GPU Timeout Error (00000002:kIOGPUCommandBufferCallbackErrorTimeout).
+exit 1 2026-10-29 00:10:21
+Pages free:                                   167645.
+Swapouts:                                   98333948.

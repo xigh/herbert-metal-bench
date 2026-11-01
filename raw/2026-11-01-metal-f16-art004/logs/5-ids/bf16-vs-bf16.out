@@ -1,0 +1,56 @@
+Qwen3.5-0.8B short: prompt = reference (17 ids) · 0/48 ids identical · first difference at 0
+    reference [31248, 11, 279, 1156, 369, 9859, 328, 78768]
+    metal     [77981, 77981, 77981, 77981, 77981, 77981, 77981, 77981]
+    reference top-5 at 0: 31248:20.75 90700:19 2381:16.38 1596:16.38 760:16 (margin 1.75)
+    metal top-5 at 0: 77981:13 163808:12.19 160400:11.88 160448:11.81 90202:11.62 (margin 0.8125)
+Qwen3.5-0.8B long: prompt = reference (146 ids) · 0/48 ids identical · first difference at 0
+    reference [90700, 8340, 25, 271, 16, 13, 220, 2972]
+    metal     [206671, 11, 220, 17, 11, 220, 17, 11]
+    reference top-5 at 0: 90700:21.88 1596:18.62 31248:18.12 8160:15.88 248069:15.62 (margin 3.25)
+    metal top-5 at 0: 206671:11.56 152168:11.25 40294:11.06 171298:10.69 1125:10.31 (margin 0.3125)
+Qwen3.5-2B short: prompt = reference (17 ids) · 9/48 ids identical · first difference at 9
+    reference [1649, 63210, 2308, 84, 907, 1, 864, 45351]
+    metal     [3847, 41962, 2308, 84, 907, 1, 864, 45351]
+    reference top-5 at 9: 1649:25.75 40883:16.88 893:16.62 24232:16 4606:15.25 (margin 8.875)
+    metal top-5 at 9: 3847:16.12 4606:16.12 63210:15.94 1649:14.56 893:14.25 (margin 0)
+Qwen3.5-2B long: prompt = reference (146 ids) · 0/48 ids identical · first difference at 0
+    reference [90700, 8340, 25, 271, 16, 13, 220, 2972]
+    metal     [4682, 67, 13, 198, 4682, 67, 13, 198]
+    reference top-5 at 0: 90700:25.38 1596:21.38 31248:21.25 8160:20.25 16:17.12 (margin 4)
+    metal top-5 at 0: 4682:9.875 5936:9.812 38770:8.875 48630:8.875 111520:8.688 (margin 0.0625)
+Qwen3.5-4B short: prompt = reference (17 ids) · 0/48 ids identical · first difference at 0
+    reference [31248, 11, 279, 1156, 369, 9859, 328, 78768]
+    metal     [760, 1156, 369, 9859, 328, 78768, 11, 1649]
+    reference top-5 at 0: 31248:22.5 90700:20.62 760:18 1596:14.94 8160:14.88 (margin 1.875)
+    metal top-5 at 0: 760:13.44 8160:11.88 42:11.56 1919:11.5 43:11.25 (margin 1.562)
+Qwen3.5-4B long: prompt = reference (146 ids) · 0/48 ids identical · first difference at 0
+    reference [90700, 8340, 25, 271, 16, 13, 220, 2972]
+    metal     [3720, 3720, 3720, 3720, 3720, 3720, 3720, 3720]
+    reference top-5 at 0: 90700:25 31248:17.12 8160:16.12 760:16 1596:15.81 (margin 7.875)
+    metal top-5 at 0: 3720:11.31 6853:9.812 17791:9.625 5229:9.188 7639:9.188 (margin 1.5)
+Qwen3.5-9B short: prompt = reference (17 ids) · 0/48 ids identical · first difference at 0
+    reference [31248, 11, 279, 1156, 369, 9859, 328, 78768]
+    metal     [98056, 12, 15, 12, 15, 12, 15, 12]
+    reference top-5 at 0: 31248:22.75 90700:20.88 760:19.12 8160:17.25 40:16.62 (margin 1.875)
+    metal top-5 at 0: 98056:11.56 100:9.75 4067:9.688 114:9.625 165338:9.5 (margin 1.812)
+Qwen3.5-9B long: prompt = reference (146 ids) · 0/48 ids identical · first difference at 0
+    reference [90700, 8340, 25, 271, 16, 13, 220, 2972]
+    metal     [1206, 279, 1156, 579, 1622, 11, 353, 1144]
+    reference top-5 at 0: 90700:28.25 8160:19.62 31248:18.88 1596:17.38 79420:16.75 (margin 8.625)
+    metal top-5 at 0: 1206:15.19 90700:14.19 79420:13.44 1091:13.25 96797:12.69 (margin 1)
+Qwen3.8-27B short: prompt = reference (17 ids) · 0/48 ids identical · first difference at 0
+    reference [760, 1156, 369, 40719, 728, 303, 8323, 321]
+    metal     [18699, 64, 11, 321, 279, 975, 799, 369]
+    reference top-5 at 0: 760:31.5 2229:18.62 90700:17.62 43:17.25 1596:16.5 (margin 12.88)
+    metal top-5 at 0: 18699:9.75 14616:9.562 50033:9.5 29190:9.25 218917:9.25 (margin 0.1875)
+Qwen3.8-27B long: prompt = reference (146 ids) · 0/48 ids identical · first difference at 0
+    reference [760, 1156, 16561, 728, 310, 59987, 264, 8323]
+    metal     [49172, 294, 13, 271, 22365, 314, 279, 2614]
+    reference top-5 at 0: 760:32 90700:18.38 1421:17.62 97237:16.25 8160:15.94 (margin 13.62)
+    metal top-5 at 0: 49172:9.562 64842:9.188 158792:9 93646:8.688 17692:8.625 (margin 0.375)
+Qwen3.6-35B-A3B short: prompt = reference (17 ids) · 0/48 ids identical · first difference at 0
+    reference [1596, 1144, 310, 5707, 310, 279, 1156, 579]
+    metal     [8160, 579, 264, 7047, 1817, 25, 271, 16]
+    reference top-5 at 0: 1596:24.62 8160:22.88 90700:20 31248:18.75 760:18.25 (margin 1.75)
+    metal top-5 at 0: 8160:21.12 90700:18.12 1596:16.75 77264:13.81 760:13.69 (margin 3)
+Qwen3.6-35B-A3B long: prompt = reference (146 ids) · 48/48 ids identical · identical

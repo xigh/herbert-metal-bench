@@ -1,0 +1,5 @@
+target/release/herbert-metal-chat ~/models/qwen/Qwen3.5-0.8B --no-system --max-tokens 49 --ask Bonjour, que fais-tu ? --tune
+
+--- stderr ---
+--tune needs a value
+usage: herbert-metal-chat MODEL_DIR [--q4] [--ctx N] [--max-tokens N] [--system TEXT | --no-system] [--ask TEXT|@FILE]... [--temperature T] [--no-think] [--rows N] [--prefill-block N] [--sliding-ring N] [--tune K=V,...] [--ignore-eos] [--fresh] [--dump-msl DIR]

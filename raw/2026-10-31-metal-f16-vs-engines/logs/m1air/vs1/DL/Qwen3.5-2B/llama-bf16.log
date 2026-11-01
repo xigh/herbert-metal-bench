@@ -1,0 +1,67 @@
+=== Qwen3.5-2B llama-bf16 2026-10-31 04:55:47
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   317219.
+Swapouts:                                     138568.
+input ~/s1-f16/gguf/Qwen3.5-2B-BF16.gguf
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_compile_all: compiled 'fa_aux' library in 0.038 sec
+ggml_metal_library_compile_all: compiled 'fa_f16' library in 0.036 sec
+ggml_metal_library_compile_all: compiled 'fa_f32' library in 0.015 sec
+ggml_metal_library_compile_all: compiled 'fa_q4_0' library in 0.055 sec
+ggml_metal_library_compile_all: compiled 'fa_q4_1' library in 0.028 sec
+ggml_metal_library_compile_all: compiled 'fa_q5_0' library in 0.039 sec
+ggml_metal_library_compile_all: compiled 'fa_q5_1' library in 0.014 sec
+ggml_metal_library_compile_all: compiled 'fa_q8_0' library in 0.038 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_f16' library in 0.033 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_f32' library in 0.033 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q4_0' library in 0.059 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q4_1' library in 0.023 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q5_0' library in 0.026 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q5_1' library in 0.054 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q8_0' library in 0.044 sec
+ggml_metal_library_compile_all: compiled 'mul_mv' library in 0.019 sec
+ggml_metal_library_compile_all: compiled 'mul_mm' library in 0.047 sec
+ggml_metal_library_compile_all: compiled 'quantize' library in 0.049 sec
+ggml_metal_library_compile_all: compiled 'softmax' library in 0.028 sec
+ggml_metal_library_compile_all: compiled 'norm' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'unary' library in 0.040 sec
+ggml_metal_library_compile_all: compiled 'binbcast' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'reduce' library in 0.013 sec
+ggml_metal_library_compile_all: compiled 'tri' library in 0.039 sec
+ggml_metal_library_compile_all: compiled 'ssm' library in 0.028 sec
+ggml_metal_library_compile_all: compiled 'wkv' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'gated_delta_net' library in 0.039 sec
+ggml_metal_library_compile_all: compiled 'solve_tri' library in 0.039 sec
+ggml_metal_library_compile_all: compiled 'rope' library in 0.049 sec
+ggml_metal_library_compile_all: compiled 'conv' library in 0.035 sec
+ggml_metal_library_compile_all: compiled 'upscale' library in 0.035 sec
+ggml_metal_library_compile_all: compiled 'argsort' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'pool' library in 0.039 sec
+ggml_metal_library_compile_all: compiled 'misc' library in 0.036 sec
+ggml_metal_library_compile_all: loaded 34 libraries from embedded data in 0.059 sec (max single = 0.059 sec)
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M1)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| qwen35 2B BF16                 |   3.51 GiB |     1.88 B | MTL,BLAS   |       4 |  tg128 @ d81920 |         11.88 ± 0.00 |
+
+build: fb4b273 (1)
+exit 0 2026-10-31 05:01:43
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   171143.
+Swapouts:                                     153344.

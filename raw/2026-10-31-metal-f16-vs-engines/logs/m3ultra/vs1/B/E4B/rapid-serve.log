@@ -1,0 +1,277 @@
+  Note: ~/models/gemma-4-E4B-it-qat-q4_0-unquantized is not in the Rapid-MLX catalog, so it has not been catalog-tested here.
+INFO:rapid_mlx.utils.mamba_cache:[MambaCache] Skipping _make_cache patch — mlx-lm ArraysCache has native batching support
+INFO:rapid_mlx.gdn_prefill:[gdn_prefill] blocked-seq GDN prefill kernel installed (prompt>=64 tokens, Dk=128)
+INFO:rapid_mlx.cli:Disk caches disabled by --disable-disk-caches: no prefix-cache snapshot, KV checkpoints or vision prefix-cache disk tier is written
+INFO:rapid_mlx.model_auto_config:Auto-detected model family 'gemma[-_]?4' → tool_call_parser=gemma4, reasoning_parser=gemma4, is_hybrid=False, supports_spec_decode=True
+INFO:rapid_mlx.cli:Auto-configured --tool-call-parser gemma4
+INFO:rapid_mlx.cli:Auto-configured --reasoning-parser gemma4
+INFO:rapid_mlx.server:Host-header allowlist enabled (allowed_hosts=['localhost', 'localhost', '[::1]', '*.localhost'])
+INFO:rapid_mlx.cli:Reasoning parser enabled: gemma4
+INFO:rapid_mlx.kv_cache_dtype:KV cache dtype: bf16 (model=~/models/gemma-4-E4B-it-qat-q4_0-unquantized) — bf16 selected (no QuantizedKVCache wrap)
+INFO:rapid_mlx.utils.generation_config:generation_config: loaded sampling defaults from ~/models/gemma-4-E4B-it-qat-q4_0-unquantized/generation_config.json: {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}
+INFO:rapid_mlx.server:Force text-only mode enabled via --no-mllm flag (MLLM auto-detection overridden, #393)
+INFO:rapid_mlx.server:Loading model with BatchedEngine: ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+INFO:rapid_mlx.server:Model loaded: ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+INFO:rapid_mlx.server:Native tool format enabled for parser: gemma4
+INFO:rapid_mlx.server:Default max tokens: 32768
+INFO:rapid_mlx.runtime.model_registry:Registered model '~/models/gemma-4-E4B-it-qat-q4_0-unquantized' (aliases=none, default=True)
+⚠ rapid-mlx 0.16.10 is behind latest 1.0.0 — run `rapid-mlx upgrade` to pick up new model aliases / flags.
+INFO:     Started server process [90338]
+INFO:     Waiting for application startup.
+INFO:rapid_mlx.server:GC control enabled: thresholds set to (100000, 50, 50)
+INFO:rapid_mlx.engine_core:MLX step thread initialized: stream=Stream(Device(gpu, 0), 2) (worker default = generation_stream)
+INFO:rapid_mlx.utils.tokenizer:Gemma 4 cross-layer shared KV uses the metadata-preserving text loader
+INFO:rapid_mlx.utils.generation_config:generation_config: loaded extra EOS token ids from ~/models/gemma-4-E4B-it-qat-q4_0-unquantized/generation_config.json: [1, 106, 50]
+INFO:rapid_mlx.utils.tokenizer:augment_eos: added [50] to TokenizerWrapper stop set for ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+INFO:rapid_mlx.models.gemma4_text:[gemma4] Loaded gemma4 text-only model via LLM path (42 layers)
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: evicted 15146.7 MB from UBC for ~/models/gemma-4-E4B-it-qat-q4_0-unquantized/model.safetensors
+INFO:rapid_mlx.runtime.ubc_evict:ubc_evict: pass complete total_mb=15146.7 elapsed_s=0.07
+INFO:rapid_mlx.engine.batched:Metal memory limits set (auto): allocation_limit=75.1GB (90% of 83.5GB, weights=0.0GB), cache_limit=18.8GB
+INFO:rapid_mlx.engine_core:Model profile: ~/models/gemma-4-E4B-it-qat-q4_0-unquantized → pure attention, throttle OFF, spec decode OK, tool=gemma4, reasoning=gemma4
+INFO:rapid_mlx.engine_core:Engine started
+INFO:rapid_mlx.engine.batched:BatchedEngine loaded: ~/models/gemma-4-E4B-it-qat-q4_0-unquantized (mllm=False)
+INFO:rapid_mlx.server:Warming up (compiling Metal shaders)...
+INFO:rapid_mlx.server:Warmup complete (0.9s)
+INFO:rapid_mlx.server:Tool-grammar warmup complete (LLTokenizer pre-built for parser 'gemma4')
+INFO:rapid_mlx.server:[lifespan] Prefix-cache auto-load skipped: disk caches disabled by --disable-disk-caches
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8765 (Press CTRL+C to quit)
+
+  🐆 Rapid-MLX
+  ─────────
+  Features: tools: gemma4, reasoning: gemma4, gc-control
+  Model: ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+Mode: Continuous batching (for multiple concurrent users)
+Stream interval: 1 tokens
+
+  Starting server on http://localhost:8765 (warming up — this can take a few seconds)
+
+  Ready: http://localhost:8765
+
+  OpenAI:    http://localhost:8765/v1
+  Anthropic: http://localhost:8765
+  Model:     ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+
+  Connect:
+    Coding agent  rapid-mlx launch <agent>
+    Python        rapid-mlx connect openai-python --base-url http://localhost:8765/v1
+INFO:     localhost:63147 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=693
+INFO:rapid_mlx.scheduler:[dense_sampler_fastpath] installed on BatchGenerator
+INFO:rapid_mlx.singleton_cache_fastpath:[singleton-fastpath] installed (B=1 keeps singleton KV caches)
+INFO:rapid_mlx.scheduler:[schedule] request=0e75aa5d-8ab uid=0 prompt_tokens=128 tokens_to_prefill=128 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.output_router:[OutputRouter] Gemma 4 format detected: channel=100/101, tool=48/49
+INFO:rapid_mlx.routes.completions:Completion: 128 prompt + 1 completion tokens in 0.43s (2.3 tok/s)
+INFO:     localhost:63148 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=685
+INFO:rapid_mlx.scheduler:[schedule] request=941bf557-bb0 uid=1 prompt_tokens=128 tokens_to_prefill=128 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 128 prompt + 1 completion tokens in 0.14s (7.2 tok/s)
+INFO:     localhost:63149 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=756
+INFO:rapid_mlx.scheduler:[schedule] request=420afc35-e1b uid=2 prompt_tokens=128 tokens_to_prefill=128 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 128 prompt + 1 completion tokens in 0.14s (7.1 tok/s)
+INFO:     localhost:63150 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=695
+INFO:rapid_mlx.scheduler:[schedule] request=87cc1b74-e5b uid=3 prompt_tokens=128 tokens_to_prefill=128 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 128 prompt + 1 completion tokens in 0.14s (7.2 tok/s)
+INFO:     localhost:63151 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=a33a0a66-e98 uid=4 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.4 tok/s)
+INFO:     localhost:63152 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=ebfc9b01-cf7 uid=5 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63153 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=7759dc85-882 uid=6 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63154 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=9b098817-6f8 uid=7 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63155 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2667
+INFO:rapid_mlx.scheduler:[schedule] request=08125965-872 uid=8 prompt_tokens=512 tokens_to_prefill=512 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 512 prompt + 1 completion tokens in 0.27s (3.8 tok/s)
+INFO:     localhost:63156 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2812
+INFO:rapid_mlx.scheduler:[schedule] request=cc042cb1-5b5 uid=9 prompt_tokens=512 tokens_to_prefill=512 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 512 prompt + 1 completion tokens in 0.26s (3.8 tok/s)
+INFO:     localhost:63157 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2919
+INFO:rapid_mlx.scheduler:[schedule] request=e8bf04b9-ffd uid=10 prompt_tokens=512 tokens_to_prefill=512 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 512 prompt + 1 completion tokens in 0.26s (3.8 tok/s)
+INFO:     localhost:63158 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=2709
+INFO:rapid_mlx.scheduler:[schedule] request=c77bdcfa-281 uid=11 prompt_tokens=512 tokens_to_prefill=512 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 512 prompt + 1 completion tokens in 0.26s (3.8 tok/s)
+INFO:     localhost:63159 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=f3ce2479-4c9 uid=12 prompt_tokens=46 tokens_to_prefill=46 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 128 completion tokens in 3.99s (32.1 tok/s)
+INFO:     localhost:63160 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=121378c3-6f6 uid=13 prompt_tokens=46 tokens_to_prefill=46 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.scheduler:[Metal memory] active=29.9GB peak=30.6GB cache=0.0GB step=256 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 128 completion tokens in 3.99s (32.1 tok/s)
+INFO:     localhost:63161 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=7c79687a-bd4 uid=14 prompt_tokens=46 tokens_to_prefill=46 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 128 completion tokens in 3.99s (32.1 tok/s)
+INFO:     localhost:63162 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=128 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=aa3a413b-7e2 uid=15 prompt_tokens=46 tokens_to_prefill=46 max_tokens=128 running=1 waiting=0
+INFO:rapid_mlx.scheduler:[Metal memory] active=29.9GB peak=30.6GB cache=0.0GB step=512 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 128 completion tokens in 3.99s (32.1 tok/s)
+INFO:     localhost:63163 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5517
+INFO:rapid_mlx.scheduler:[schedule] request=3f278e9f-a56 uid=16 prompt_tokens=1024 tokens_to_prefill=1024 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1024 prompt + 1 completion tokens in 0.43s (2.3 tok/s)
+INFO:     localhost:63164 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5701
+INFO:rapid_mlx.scheduler:[schedule] request=19a7f890-521 uid=17 prompt_tokens=1024 tokens_to_prefill=1024 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1024 prompt + 1 completion tokens in 0.42s (2.4 tok/s)
+INFO:     localhost:63165 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5674
+INFO:rapid_mlx.scheduler:[schedule] request=0e9d4a6e-7ff uid=18 prompt_tokens=1024 tokens_to_prefill=1024 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1024 prompt + 1 completion tokens in 0.42s (2.4 tok/s)
+INFO:     localhost:63166 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=5434
+INFO:rapid_mlx.scheduler:[schedule] request=9c487a71-cbe uid=19 prompt_tokens=1024 tokens_to_prefill=1024 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 1024 prompt + 1 completion tokens in 0.42s (2.4 tok/s)
+INFO:     localhost:63167 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=b543a469-7da uid=20 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.4 tok/s)
+INFO:     localhost:63168 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=3a33bb58-9e8 uid=21 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63169 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=03b9c2a6-1b0 uid=22 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63170 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=0cc80835-07a uid=23 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.6 tok/s)
+INFO:     localhost:63171 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=10944
+INFO:rapid_mlx.scheduler:[schedule] request=505df837-750 uid=24 prompt_tokens=2048 tokens_to_prefill=2048 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 2048 prompt + 1 completion tokens in 0.75s (1.3 tok/s)
+INFO:     localhost:63172 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=11364
+INFO:rapid_mlx.scheduler:[schedule] request=fa0e8958-6be uid=25 prompt_tokens=2048 tokens_to_prefill=2048 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 2048 prompt + 1 completion tokens in 0.75s (1.3 tok/s)
+INFO:     localhost:63173 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=11262
+INFO:rapid_mlx.scheduler:[schedule] request=b1046a95-3db uid=26 prompt_tokens=2048 tokens_to_prefill=2048 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 2048 prompt + 1 completion tokens in 0.75s (1.3 tok/s)
+INFO:     localhost:63174 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=10875
+INFO:rapid_mlx.scheduler:[schedule] request=ebee9d49-e94 uid=27 prompt_tokens=2048 tokens_to_prefill=2048 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 2048 prompt + 1 completion tokens in 0.75s (1.3 tok/s)
+INFO:     localhost:63175 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=546babf1-9c1 uid=28 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.4 tok/s)
+INFO:     localhost:63176 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=5b6adc06-382 uid=29 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.4 tok/s)
+INFO:     localhost:63177 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=6597445f-95f uid=30 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63178 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=94a8191b-282 uid=31 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.4 tok/s)
+INFO:     localhost:63179 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=22138
+INFO:rapid_mlx.scheduler:[schedule] request=7b0749d3-9e5 uid=32 prompt_tokens=4096 tokens_to_prefill=4096 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 4096 prompt + 1 completion tokens in 1.45s (0.7 tok/s)
+INFO:     localhost:63180 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=22357
+INFO:rapid_mlx.scheduler:[schedule] request=edaee855-55a uid=33 prompt_tokens=4096 tokens_to_prefill=4096 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 4096 prompt + 1 completion tokens in 1.44s (0.7 tok/s)
+INFO:     localhost:63181 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=22408
+INFO:rapid_mlx.scheduler:[schedule] request=f12c9b2b-0fc uid=34 prompt_tokens=4096 tokens_to_prefill=4096 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 4096 prompt + 1 completion tokens in 1.44s (0.7 tok/s)
+INFO:     localhost:63182 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=1 temp=0.0 n_prompts=1 prompt_chars=21958
+INFO:rapid_mlx.scheduler:[schedule] request=98d11e63-2f1 uid=35 prompt_tokens=4096 tokens_to_prefill=4096 max_tokens=1 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 4096 prompt + 1 completion tokens in 1.44s (0.7 tok/s)
+INFO:     localhost:63183 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=604165ef-e31 uid=36 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.4 tok/s)
+INFO:     localhost:63184 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=529df14a-c40 uid=37 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63185 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=edca8c83-aff uid=38 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:rapid_mlx.routes.completions:[REQUEST] POST /v1/completions stream=False model='~/models/gemma-4-E4B-it-qat-q4_0-unquantized' max_tokens=8 temp=0.0 n_prompts=1 prompt_chars=138
+INFO:rapid_mlx.scheduler:[schedule] request=3fefb2e2-dc1 uid=39 prompt_tokens=46 tokens_to_prefill=46 max_tokens=8 running=1 waiting=0
+INFO:rapid_mlx.routes.completions:Completion: 46 prompt + 8 completion tokens in 0.33s (24.5 tok/s)
+INFO:     localhost:63187 - "POST /v1/completions HTTP/1.1" 200 OK
+WARNING:rapid_mlx._signal_observability:rapid-mlx received signal SIGTERM; thread stacks follow (faulthandler)
+Thread 0x0000000176823000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000175817000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 355 in wait
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/queue.py", line 171 in get
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/telemetry/inference.py", line 44 in _worker_main
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000170ebb000 (most recent call first):
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016eea3000 (most recent call first):
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/update_refresh.py", line 64 in _run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Current thread 0x00000001ef485d80 (most recent call first):
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_signal_observability.py", line 694 in _on_signal
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/selectors.py", line 566 in select
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 1961 in _run_once
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 645 in run_forever
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 678 in run_until_complete
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118 in run
+  File "~/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 195 in run
+  File "$ENGINES_DIR/rapid-mlx/venv/lib/python3.12/site-packages/uvicorn/server.py", line 86 in run
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_uvicorn.py", line 258 in _run_server
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/_uvicorn.py", line 285 in run_uvicorn
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 749 in _run_uvicorn
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 8231 in serve_command
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 16029 in main
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 15346 in wrapped
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/cli.py", line 16183 in cli_entrypoint
+  File "$ENGINES_DIR/rapid-mlx/src/rapid_mlx/dependency_repair.py", line 250 in cli_entrypoint
+  File "$ENGINES_DIR/rapid-mlx/venv/bin/rapid-mlx", line 8 in <module>
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:rapid_mlx.server:[lifespan] Prefix-cache auto-save skipped: disk caches disabled by --disable-disk-caches
+INFO:rapid_mlx.engine_core:Engine stopped
+INFO:rapid_mlx.scheduler:Deep reset completed - all caches cleared
+INFO:rapid_mlx.engine.batched:BatchedEngine stopped
+INFO:rapid_mlx.server:Engine stopped
+INFO:     Application shutdown complete.
+INFO:     Finished server process [90338]

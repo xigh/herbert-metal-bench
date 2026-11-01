@@ -1,0 +1,11 @@
+=== Qwen3.5-4B basert 2026-10-29 00:29:17
+Pages free:                                  3433661.
+Swapouts:                                   98333948.
+BaseWeightStore: weights blob (10595549184 bytes) wrapped as 2 chunks (max_buffer_size=62620631040)
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| Qwen3.5-4B-bf16 | 24948 MiB | pp512:random | 1866.17 ± 0.60 |
+| Qwen3.5-4B-bf16 | 24948 MiB | tg128 | 77.30 ± 0.00 |
+exit 1 2026-10-29 00:29:52
+Pages free:                                  2801783.
+Swapouts:                                   98333948.

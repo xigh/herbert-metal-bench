@@ -1,0 +1,75 @@
+=== Qwen3.6-35B-A3B mlx 2026-10-31 01:37:41
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  5504114.
+Swapouts:                                   99113415.
+input $MODELS_DIR/Qwen3.6-35B-A3B
+--- pp128
+Running warmup..
+Timing with prompt_tokens=128, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=991.697, generation_tps=83.494, peak_memory=69.554, total_time=0.228
+Trial 2:  prompt_tps=994.330, generation_tps=83.460, peak_memory=69.555, total_time=0.227
+Trial 3:  prompt_tps=992.142, generation_tps=83.456, peak_memory=69.555, total_time=0.228
+Averages: prompt_tps=992.723, generation_tps=83.470, peak_memory=69.555
+--- pp512
+Running warmup..
+Timing with prompt_tokens=512, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=1888.479, generation_tps=73.299, peak_memory=69.996, total_time=2.020
+Trial 2:  prompt_tps=1887.129, generation_tps=73.244, peak_memory=69.996, total_time=2.022
+Trial 3:  prompt_tps=1889.994, generation_tps=73.306, peak_memory=69.997, total_time=2.020
+Averages: prompt_tps=1888.534, generation_tps=73.283, peak_memory=69.996
+--- pp1024
+Running warmup..
+Timing with prompt_tokens=1024, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=2315.943, generation_tps=82.267, peak_memory=70.461, total_time=0.542
+Trial 2:  prompt_tps=2314.745, generation_tps=82.172, peak_memory=70.461, total_time=0.543
+Trial 3:  prompt_tps=2308.184, generation_tps=83.373, peak_memory=70.462, total_time=0.542
+Averages: prompt_tps=2312.957, generation_tps=82.604, peak_memory=70.461
+--- pp2048
+Running warmup..
+Timing with prompt_tokens=2048, generation_tokens=8, batch_size=1.
+Trial 1:  prompt_tps=2602.282, generation_tps=81.456, peak_memory=71.121, total_time=0.888
+Trial 2:  prompt_tps=2605.425, generation_tps=81.280, peak_memory=71.121, total_time=0.887
+Trial 3:  prompt_tps=2605.371, generation_tps=80.866, peak_memory=71.122, total_time=0.888
+Averages: prompt_tps=2604.359, generation_tps=81.201, peak_memory=71.121
+--- pp4096
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/__main__.py", line 6, in <module>
+    cli.main()
+    ~~~~~~~~^^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/cli.py", line 40, in main
+    submodule.main()
+    ~~~~~~~~~~~~~~^^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/benchmark.py", line 109, in main
+    model, tokenizer, config = load(
+                               ~~~~^
+        model_path,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        trust_remote_code=args.trust_remote_code,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/utils.py", line 652, in load
+    model, config = load_model(
+                    ~~~~~~~~~~^
+        model_path,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        trust_remote_code=trust_remote_code,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "~/mlx-bench-venv/lib/python3.13/site-packages/mlx_lm/utils.py", line 575, in load_model
+    mx.eval(model.parameters())
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [METAL] Command buffer execution failed: Caused GPU Timeout Error (00000002:kIOGPUCommandBufferCallbackErrorTimeout).
+exit 1 2026-10-31 01:45:21
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2535528.
+Swapouts:                                   99113415.

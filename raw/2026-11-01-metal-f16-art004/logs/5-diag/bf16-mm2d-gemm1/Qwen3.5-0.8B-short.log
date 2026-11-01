@@ -1,0 +1,99 @@
+target/release/herbert-metal-chat ~/models/qwen/Qwen3.5-0.8B --no-system --max-tokens 49 --ask Bonjour, que fais-tu ? --tune sdpa.prefill=4,gemm.mma=1
+
+>>> Bonjour, que fais-tu ?
+Okay, the user is asking "Bonjour, que fais-tu ?" in French. Let me break this down.
+
+First, "Bonjour" is a greeting in French, which is a common way to say hello. The user is likely
+
+--- stderr ---
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] skipped: model.visual.* ×153, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_text — hidden 1024, 24 layers, 8 heads / 2 kv × 256, intermediate 3584, vocab 248320, rotary 64, linear k 16×128 v 16×128, tied head true
+[metal] weights 1.46 GiB, everything 1.78 GiB, capacity 4096, DeltaNet activations bf16
+[autotune] matvec 1024x8224 Bf16: r1 0.427 ms, r2 0.437 ms, r4 0.443 ms, r8 0.451 ms, r1k2 0.461 ms, r2k2 0.436 ms, r4k2 0.442 ms, r8k2 0.457 ms, r1k4 0.662 ms, r2k4 0.438 ms, r4k4 0.446 ms, r8k4 0.454 ms -> r1
+[autotune] matvec 2048x1024 Residual: r1 0.308 ms, r2 0.326 ms, r4 0.326 ms, r8 0.430 ms, r1k2 0.276 ms, r2k2 0.265 ms, r4k2 0.276 ms, r8k2 0.317 ms, r1k4 0.279 ms, r2k4 0.248 ms, r4k4 0.247 ms, r8k4 0.284 ms -> r4k4
+[autotune] matvec 1024x7168 Bf16: r1 0.681 ms, r2 0.645 ms, r4 0.656 ms, r8 0.658 ms, r1k2 0.740 ms, r2k2 0.653 ms, r4k2 0.638 ms, r8k2 0.659 ms, r1k4 0.952 ms, r2k4 0.716 ms, r4k4 0.658 ms, r8k4 0.674 ms -> r4k2
+[autotune] matvec 3584x1024 Residual: r1 0.489 ms, r2 0.475 ms, r4 0.514 ms, r8 0.697 ms, r1k2 0.449 ms, r2k2 0.430 ms, r4k2 0.463 ms, r8k2 0.512 ms, r1k4 0.408 ms, r2k4 0.398 ms, r4k4 0.409 ms, r8k4 0.425 ms -> r2k4
+[autotune] matvec 1024x5120 Bf16: r1 0.074 ms, r2 0.073 ms, r4 0.075 ms, r8 0.078 ms, r1k2 0.091 ms, r2k2 0.072 ms, r4k2 0.076 ms, r8k2 0.079 ms, r1k4 0.140 ms, r2k4 0.083 ms, r4k4 0.072 ms, r8k4 0.078 ms -> r4k4
+[autotune] matvec 1024x248320 Bf16: r1 0.638 ms, r2 0.646 ms, r4 0.650 ms, r8 0.657 ms, r1k2 0.680 ms, r2k2 0.639 ms, r4k2 0.642 ms, r8k2 0.642 ms, r1k4 1.049 ms, r2k4 0.665 ms, r4k4 0.638 ms, r8k4 0.643 ms -> r1
+[autotune] matvec 1024x8224 Bf16 p[640, 1280, 2560, 5120]: r1 0.703 ms, r2 0.674 ms, r4 0.644 ms, r8 0.635 ms, r1p640 0.769 ms, r2p640 0.672 ms, r4p640 0.663 ms, r1p1280 0.670 ms, r2p1280 0.662 ms, r4p1280 0.662 ms, r1p2560 0.597 ms, r2p2560 0.623 ms, r4p2560 0.678 ms, r1p5120 0.711 ms, r2p5120 0.588 ms, r4p5120 0.637 ms, r1k2 0.771 ms, r2k2 0.642 ms, r4k2 0.615 ms, r8k2 0.671 ms, r1k2p640 0.788 ms, r2k2p640 0.687 ms, r4k2p640 0.682 ms, r1k2p1280 0.718 ms, r2k2p1280 0.643 ms, r4k2p1280 0.609 ms, r1k2p2560 0.599 ms, r2k2p2560 0.678 ms, r4k2p2560 0.681 ms, r1k2p5120 0.804 ms, r2k2p5120 0.711 ms, r4k2p5120 0.684 ms, r1k4 1.210 ms, r2k4 0.771 ms, r4k4 0.640 ms, r8k4 0.714 ms, r1k4p640 0.765 ms, r2k4p640 0.865 ms, r4k4p640 0.724 ms, r1k4p1280 0.799 ms, r2k4p1280 0.676 ms, r4k4p1280 0.712 ms, r1k4p2560 0.819 ms, r2k4p2560 0.744 ms, r4k4p2560 0.703 ms, r1k4p5120 0.918 ms, r2k4p5120 0.682 ms, r4k4p5120 0.682 ms -> r2p5120
+[autotune] matvec 2048x1024 Residual p[640, 1280, 2560, 5120]: r1 0.200 ms, r2 0.203 ms, r4 0.217 ms, r8 0.318 ms, r1p640 0.206 ms, r2p640 0.208 ms, r4p640 0.225 ms, r1p1280 0.206 ms, r2p1280 0.207 ms, r4p1280 0.226 ms, r1p2560 0.205 ms, r2p2560 0.208 ms, r4p2560 0.226 ms, r1p5120 0.206 ms, r2p5120 0.208 ms, r4p5120 0.226 ms, r1k2 0.197 ms, r2k2 0.196 ms, r4k2 0.209 ms, r8k2 0.244 ms, r1k2p640 0.200 ms, r2k2p640 0.198 ms, r4k2p640 0.212 ms, r1k2p1280 0.200 ms, r2k2p1280 0.198 ms, r4k2p1280 0.212 ms, r1k2p2560 0.200 ms, r2k2p2560 0.198 ms, r4k2p2560 0.211 ms, r1k2p5120 0.200 ms, r2k2p5120 0.197 ms, r4k2p5120 0.211 ms, r1k4 0.208 ms, r2k4 0.190 ms, r4k4 0.201 ms, r8k4 0.220 ms, r1k4p640 0.198 ms, r2k4p640 0.191 ms, r4k4p640 0.203 ms, r1k4p1280 0.204 ms, r2k4p1280 0.191 ms, r4k4p1280 0.203 ms, r1k4p2560 0.204 ms, r2k4p2560 0.191 ms, r4k4p2560 0.203 ms, r1k4p5120 0.204 ms, r2k4p5120 0.191 ms, r4k4p5120 0.203 ms -> r2k4
+[autotune] matvec 1024x7168 Bf16 p[640, 1280, 2560, 5120]: r1 0.507 ms, r2 0.515 ms, r4 0.514 ms, r8 0.554 ms, r1p640 0.532 ms, r2p640 0.530 ms, r4p640 0.526 ms, r1p1280 0.534 ms, r2p1280 0.525 ms, r4p1280 0.526 ms, r1p2560 0.514 ms, r2p2560 0.524 ms, r4p2560 0.526 ms, r1p5120 0.512 ms, r2p5120 0.525 ms, r4p5120 0.530 ms, r1k2 0.659 ms, r2k2 0.663 ms, r4k2 0.636 ms, r8k2 0.692 ms, r1k2p640 0.762 ms, r2k2p640 0.683 ms, r4k2p640 0.675 ms, r1k2p1280 0.671 ms, r2k2p1280 0.670 ms, r4k2p1280 0.665 ms, r1k2p2560 0.673 ms, r2k2p2560 0.648 ms, r4k2p2560 0.655 ms, r1k2p5120 0.683 ms, r2k2p5120 0.657 ms, r4k2p5120 0.629 ms, r1k4 0.907 ms, r2k4 0.626 ms, r4k4 0.631 ms, r8k4 0.709 ms, r1k4p640 0.745 ms, r2k4p640 0.786 ms, r4k4p640 0.738 ms, r1k4p1280 0.678 ms, r2k4p1280 0.700 ms, r4k4p1280 0.661 ms, r1k4p2560 0.663 ms, r2k4p2560 0.718 ms, r4k4p2560 0.675 ms, r1k4p5120 0.764 ms, r2k4p5120 0.672 ms, r4k4p5120 0.640 ms -> r1
+[autotune] matvec 3584x1024 Residual p[640, 1280, 2560, 5120]: r1 0.311 ms, r2 0.318 ms, r4 0.337 ms, r8 0.512 ms, r1p640 0.318 ms, r2p640 0.325 ms, r4p640 0.346 ms, r1p1280 0.317 ms, r2p1280 0.326 ms, r4p1280 0.346 ms, r1p2560 0.317 ms, r2p2560 0.325 ms, r4p2560 0.346 ms, r1p5120 0.317 ms, r2p5120 0.326 ms, r4p5120 0.346 ms, r1k2 0.309 ms, r2k2 0.306 ms, r4k2 0.327 ms, r8k2 0.376 ms, r1k2p640 0.312 ms, r2k2p640 0.308 ms, r4k2p640 0.330 ms, r1k2p1280 0.311 ms, r2k2p1280 0.307 ms, r4k2p1280 0.330 ms, r1k2p2560 0.311 ms, r2k2p2560 0.307 ms, r4k2p2560 0.330 ms, r1k2p5120 0.311 ms, r2k2p5120 0.308 ms, r4k2p5120 0.330 ms, r1k4 0.302 ms, r2k4 0.305 ms, r4k4 0.311 ms, r8k4 0.341 ms, r1k4p640 0.315 ms, r2k4p640 0.307 ms, r4k4p640 0.313 ms, r1k4p1280 0.304 ms, r2k4p1280 0.307 ms, r4k4p1280 0.314 ms, r1k4p2560 0.304 ms, r2k4p2560 0.307 ms, r4k4p2560 0.314 ms, r1k4p5120 0.304 ms, r2k4p5120 0.308 ms, r4k4p5120 0.314 ms -> r1k4
+[autotune] matvec 1024x5120 Bf16 p[640, 1280, 2560, 5120]: r1 0.143 ms, r2 0.158 ms, r4 0.125 ms, r8 0.123 ms, r1p640 0.161 ms, r2p640 0.140 ms, r4p640 0.136 ms, r1p1280 0.156 ms, r2p1280 0.143 ms, r4p1280 0.125 ms, r1p2560 0.146 ms, r2p2560 0.145 ms, r4p2560 0.130 ms, r1p5120 0.143 ms, r2p5120 0.150 ms, r4p5120 0.145 ms, r1k2 0.165 ms, r2k2 0.134 ms, r4k2 0.125 ms, r8k2 0.145 ms, r1k2p640 0.173 ms, r2k2p640 0.145 ms, r4k2p640 0.146 ms, r1k2p1280 0.155 ms, r2k2p1280 0.149 ms, r4k2p1280 0.131 ms, r1k2p2560 0.164 ms, r2k2p2560 0.128 ms, r4k2p2560 0.137 ms, r1k2p5120 0.176 ms, r2k2p5120 0.148 ms, r4k2p5120 0.140 ms, r1k4 0.194 ms, r2k4 0.177 ms, r4k4 0.143 ms, r8k4 0.147 ms, r1k4p640 0.185 ms, r2k4p640 0.165 ms, r4k4p640 0.148 ms, r1k4p1280 0.162 ms, r2k4p1280 0.157 ms, r4k4p1280 0.140 ms, r1k4p2560 0.162 ms, r2k4p2560 0.126 ms, r4k4p2560 0.142 ms, r1k4p5120 0.235 ms, r2k4p5120 0.150 ms, r4k4p5120 0.128 ms -> r8
+[autotune] matvec 1024x248320 Bf16 p[640, 1280, 2560, 5120]: r1 0.637 ms, r2 0.645 ms, r4 0.649 ms, r8 0.655 ms, r1p640 0.662 ms, r2p640 0.666 ms, r4p640 0.672 ms, r1p1280 0.659 ms, r2p1280 0.659 ms, r4p1280 0.657 ms, r1p2560 0.661 ms, r2p2560 0.656 ms, r4p2560 0.656 ms, r1p5120 0.652 ms, r2p5120 0.651 ms, r4p5120 0.651 ms, r1k2 0.678 ms, r2k2 0.637 ms, r4k2 0.640 ms, r8k2 0.640 ms, r1k2p640 0.664 ms, r2k2p640 0.669 ms, r4k2p640 0.667 ms, r1k2p1280 0.674 ms, r2k2p1280 0.657 ms, r4k2p1280 0.656 ms, r1k2p2560 0.669 ms, r2k2p2560 0.656 ms, r4k2p2560 0.652 ms, r1k2p5120 0.657 ms, r2k2p5120 0.647 ms, r4k2p5120 0.648 ms, r1k4 1.050 ms, r2k4 0.666 ms, r4k4 0.639 ms, r8k4 0.641 ms, r1k4p640 0.675 ms, r2k4p640 0.665 ms, r4k4p640 0.696 ms, r1k4p1280 0.679 ms, r2k4p1280 0.705 ms, r4k4p1280 0.658 ms, r1k4p2560 0.690 ms, r2k4p2560 0.677 ms, r4k4p2560 0.654 ms, r1k4p5120 0.666 ms, r2k4p5120 0.657 ms, r4k4p5120 0.647 ms -> r1
+[autotune] decode step at position 4095, persist: none 2.859 ms, 640/1280/2560/5120 8.665 ms -> none
+[autotune] decode step at position 4095, rec: dn_recurrence 11.499 ms, rows c16s16 4.598 ms, rows c8s16 4.002 ms, rows c32s8 2.887 ms, rows c16s8 2.886 ms -> rows c16s8
+[autotune] decode step at position 4095, sdpa: 0 14.041 ms, 8 4.803 ms, 16 3.031 ms, 32 3.222 ms, 64 3.351 ms -> 16
+[autotune] matvec 2048x1024 Residual convshift: r1 0.211 ms, r2 0.207 ms, r4 0.227 ms, r8 0.254 ms, r1k2 0.199 ms, r2k2 0.199 ms, r4k2 0.210 ms, r8k2 0.245 ms, r1k4 0.216 ms, r2k4 0.192 ms, r4k4 0.201 ms, r8k4 0.222 ms -> r2k4
+[autotune] decode step at position 4095, fdn: apart 3.265 ms, dn_step 4.047 ms, dn_step+gnorm 2.807 ms -> dn_step+gnorm
+[autotune] decode step at position 4095, frope: 0 2.800 ms, 1 3.123 ms -> 0
+[autotune] matvec 1024x8224 Bf16 norm: r1 0.472 ms, r2 0.462 ms, r4 0.471 ms, r8 0.487 ms, r1k2 0.481 ms, r2k2 0.458 ms, r4k2 0.466 ms, r8k2 0.482 ms, r1k4 0.715 ms, r2k4 0.464 ms, r4k4 0.463 ms, r8k4 0.475 ms -> r2k2
+[autotune] matvec 1024x7168 Bf16 norm: r1 0.550 ms, r2 0.554 ms, r4 0.562 ms, r8 0.600 ms, r1k2 0.571 ms, r2k2 0.550 ms, r4k2 0.556 ms, r8k2 0.566 ms, r1k4 0.843 ms, r2k4 0.551 ms, r4k4 0.557 ms, r8k4 0.567 ms -> r1
+[autotune] matvec 1024x5120 Bf16 norm: r1 0.080 ms, r2 0.082 ms, r4 0.083 ms, r8 0.086 ms, r1k2 0.100 ms, r2k2 0.078 ms, r4k2 0.082 ms, r8k2 0.086 ms, r1k4 0.154 ms, r2k4 0.093 ms, r4k4 0.080 ms, r8k4 0.084 ms -> r2k2
+[autotune] decode step at position 4095, fnorm: 0 3.690 ms, 1 2.714 ms -> 1
+[autotune] matvec 3584x1024 Residual swiglu: r1 0.328 ms, r2 0.324 ms, r4 0.346 ms, r8 0.515 ms, r1k2 0.317 ms, r2k2 0.307 ms, r4k2 0.328 ms, r8k2 0.379 ms, r1k4 0.332 ms, r2k4 0.308 ms, r4k4 0.313 ms, r8k4 0.343 ms -> r2k2
+[autotune] decode step at position 4095, swiglu: 0 2.715 ms, 1 2.679 ms -> 1
+[autotune] decode step at position 4095, prep: 0 2.678 ms, 1 3.244 ms -> 0
+[autotune] decode step at position 4095, pfk: 0 3.491 ms, 1024 3.514 ms, 4096 3.406 ms -> 4096
+[autotune] decode step at position 4095, pfdn: 0 3.544 ms, 512 3.380 ms, 1024 3.555 ms, 2048 3.347 ms, 3072 3.567 ms, 4096 3.321 ms -> 4096
+[autotune] decode step at position 4095, conc: serial 3.467 ms, concurrent 2.764 ms, concurrent pf2048 4.319 ms -> concurrent
+[metal] 406 kernels compiled in 0.07 s, GEMMs and blocks timed in 12.25 s, 137 dispatches per token, blocks of 4096 rows; prefill.block=4096 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.pair=0 rec.stage=0 conv.cols=32 sdpa.prefill=4 sdpa.bq=16 sdpa.bk=16 sdpa.mq=0 sdpa.mk=32 sdpa.qreg=0 sdpa.kt=0 sdpa.msg=8 sdpa.auto=0 auto.heat=0 gemm.simt=1 gemm.auto=0 gemm.mma=1 gemm.tn=64 gemm.mform=0 gemm.half=1 gemm.mfirst=1 moe.grouped=1 moe.tile=16 q4.fuse=0 mv.auto=1 mv.masks=0 mv.split=1 mv.splitauto=1 mv.persist=0 mv.persists=[] dec.sdpa=16 mv.cold=1 dec.swiglu=1 dec.prep=0 dec.conc=1 dec.pf=0 dec.pfk=4096 dec.auto=1 dec.gnorm=0 dec.pfdn=4096 dec.fnorm=1 dec.fswi=0 pf.fswi=2 dec.fdn=2 dec.frope=0 dec.rec=1 dec.cols=16 dec.slices=8 dn.sscale=0 dn.oscale=0 dn.tscale=0
+[engine] loaded in 7.9 s
+[tokens] im_start 248045 im_end 248046 endoftext 248044 think Some(248068)/Some(248069) tool_call Some(248058)/Some(248059) · vocab 248070
+[ask 1]
+[prompt] 248045 846 198 78768 11 1649 63210 2308 84 907 248046 198 248045 74455 198 248068 198
+[top 0] 31248:20.75 90700:19 1596:16.375 2381:16.375 760:15.9375
+[top 1] 11:25.75 748:12.5625 279:12.0625 66459:11.3125 471:10.8125
+[top 2] 279:22.375 1042:19.75 748:18.25 353:15.125 1156:13.875
+[top 3] 1156:23.5 3296:16.625 3134:15.5 3889:14.3125 2570:14.1875
+[top 4] 369:20.125 4439:19.375 42315:18.625 1066:17.875 3727:16.875
+[top 5] 9859:21.125 40719:18.625 303:16.375 5315:15.75 5732:15.3125
+[top 6] 328:18.5 11:18 303:18 728:17.625 1204:16.125
+[top 7] 78768:25.5 9419:20.875 24955:19.75 45039:19.75 2114:18.125
+[top 8] 11:23.375 1:14.875 13:13.6875 1116:13.4375 1649:13.25
+[top 9] 1649:24.75 893:19 71331:16.5 9139:16.125 2715:15.9375
+[top 10] 63210:23.25 19092:16.25 180106:15.875 18872:15.5625 236317:14.25
+[top 11] 2308:30.625 54087:20 4534:19.875 2759:17.625 9009:17.625
+[top 12] 84:29.375 72:24.125 17076:18.875 43867:18.75 1896:18.625
+[top 13] 907:22.375 7285:20.375 224994:17.125 40907:17 1:16.375
+[top 14] 1:23.625 3158:21.875 487:18.25 1149:15.3125 62804:15
+[top 15] 303:22.25 864:21.375 318:17.625 321:17 1317:16.375
+[top 16] 8323:22.625 264:14.9375 6163:14.875 279:14.25 46862:13.9375
+[top 17] 13:24 11:22 321:17.875 364:17.75 864:16.875
+[top 18] 6558:20.75 353:19.875 2302:19.75 5339:18.375 1061:18.125
+[top 19] 728:26.25 579:23.75 1118:16.25 1070:14.5 2573:13.75
+[top 20] 1387:20.875 14260:20.625 1683:20.25 22903:20.125 1716:19.875
+[top 21] 411:26.75 1441:25.375 424:24.625 421:24.375 1070:20.875
+[top 22] 1441:26 13:20 11316:19.875 3296:17.75 1083:16.75
+[top 23] 13:24.75 364:19.5 1118:18.25 303:17.875 77980:17.625
+[top 24] 271:20.25 328:20.125 2302:19.75 5339:19.75 561:18.375
+[top 25] 5170:24.375 1:21.125 6651:19.75 9419:18.875 760:18.125
+[top 26] 11:24.125 11316:16.5 1637:15.1875 1500:15.125 3299:14.75
+[top 27] 328:20.125 353:19.125 781:18.375 279:18.25 424:16
+[top 28] 78768:27.625 45039:20.875 9419:20.625 5782:19.5 178499:19.375
+[top 29] 1:22.625 11:18.375 1288:16 487:14.0625 8687:13.4375
+[top 30] 369:22.75 3254:20.5 45351:18.875 303:16.75 864:16
+[top 31] 264:20.375 328:17.375 449:17.375 8323:17.125 279:16.5
+[top 32] 40719:19 11321:17.25 4047:17 5129:16.75 46193:16.25
+[top 33] 303:21.75 11:19.125 13:19 7063:17.5 421:16.125
+[top 34] 8323:22.375 6163:16 279:14.0625 2107:13.8125 9338:13.75
+[top 35] 11:21.75 13:20.5 7063:18.375 321:18.125 364:18.125
+[top 36] 864:20.625 7063:20.375 748:19.875 13185:18.375 4283:18.25
+[top 37] 369:19.875 3254:19.5 45351:19.5 353:18 781:17.75
+[top 38] 264:17.625 4047:16.875 4252:16.75 16138:16.375 279:16.25
+[top 39] 4047:17.25 5129:15.875 11321:15.875 46193:15.6875 15440:15.4375
+[top 40] 1560:16.375 40719:15.625 4134:15.1875 1965:14.6875 321:14.625
+[top 41] 310:22.375 314:16.375 364:16.25 1208:16 23066:15.125
+[top 42] 1910:20.875 1151:20 2534:20 39440:19.125 18553:18.125
+[top 43] 23066:21.875 328:20.625 21251:19.625 15131:16.625 1603:16
+[top 44] 13:22.875 303:21.125 310:19.75 11:18.875 466:18.125
+[top 45] 561:20.25 328:19.75 1987:19.75 4844:19.75 2302:18.625
+[top 46] 1156:20.625 3296:18.875 2645:18.75 16629:18.25 328:17.5
+[top 47] 369:21.75 2493:20.875 4507:19.625 6587:19.25 23535:18.25
+[top 48] 4222:18.375 4507:18.25 9859:17.875 40719:17 303:16.75
+[ids] 31248 11 279 1156 369 9859 328 78768 11 1649 63210 2308 84 907 1 303 8323 13 6558 728 1387 411 1441 13 271 5170 11 328 78768 1 369 264 40719 303 8323 11 864 369 264 4047 1560 310 1910 23066 13 561 1156 369
+[decoded] "Okay, the user is asking \"Bonjour, que fais-tu ?\" in French. Let me break this down.\n\nFirst, \"Bonjour\" is a greeting in French, which is a common way to say hello. The user is"
+[turn 1] 17 prompt tokens in 0.022 s (780.7 tok/s) · 48 generated in 0.17 s (290.63 tok/s) · position 65 · GPU 2.64 ms per step
+[timing 1] wall 0.19 s (asleep 0.00 s) · 0 steps, per step ms: prep 0.00 encode 0.00 wait 0.00 (GPU 0.00, commit→GPU start 0.00, driver queue 0.00, GPU end→host 0.00); worst step so far 0.0 ms (GPU 0.0)
+[proc 1] faults major 0 minor 97, context switches voluntary 0 involuntary 198, CPU user 0.03 s system 0.01 s, max RSS 1.64 GiB, thermal nominal, low power false

@@ -1,0 +1,59 @@
+=== E4B h-bf16 2026-10-31 00:32:17
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2245500.
+Swapouts:                                   99113415.
+input ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] gemma4_text — hidden 2560, 42 layers (18 sharing K/V), 8 heads / 2 kv × 256 (global 2 kv × 512), intermediate 10240, per-layer input 256, window 512, vocab 262144
+[metal] weights 8.65 GiB, everything 8.88 GiB, capacity 4096, prefill block 16
+[metal] 51 kernels compiled in 0.02 s
+[engine] loaded in 1.2 s
+[pp128] warm-up 1.284 s, 99.7 tok/s, gpu 1.206 s, 106.1 tok/s, argmax 237218
+[pp128] run 1.215 s, 105.3 tok/s, gpu 1.205 s, 106.2 tok/s, argmax 237218
+[pp128] run 1.215 s, 105.4 tok/s, gpu 1.204 s, 106.3 tok/s, argmax 237218
+[pp128] run 1.215 s, 105.4 tok/s, gpu 1.204 s, 106.3 tok/s, argmax 237218
+[pp512] warm-up 4.871 s, 105.1 tok/s, gpu 4.827 s, 106.1 tok/s, argmax 107
+[pp512] run 4.881 s, 104.9 tok/s, gpu 4.838 s, 105.8 tok/s, argmax 107
+[pp512] run 4.872 s, 105.1 tok/s, gpu 4.830 s, 106.0 tok/s, argmax 107
+[pp512] run 4.869 s, 105.2 tok/s, gpu 4.826 s, 106.1 tok/s, argmax 107
+[pp1024] warm-up 9.759 s, 104.9 tok/s, gpu 9.672 s, 105.9 tok/s, argmax 238185
+[pp1024] run 9.741 s, 105.1 tok/s, gpu 9.656 s, 106.0 tok/s, argmax 238185
+[pp1024] run 9.734 s, 105.2 tok/s, gpu 9.649 s, 106.1 tok/s, argmax 238185
+[pp1024] run 9.726 s, 105.3 tok/s, gpu 9.641 s, 106.2 tok/s, argmax 238185
+[pp2048] warm-up 19.525 s, 104.9 tok/s, gpu 19.354 s, 105.8 tok/s, argmax 237462
+[pp2048] run 19.538 s, 104.8 tok/s, gpu 19.367 s, 105.7 tok/s, argmax 237462
+[pp2048] run 19.532 s, 104.9 tok/s, gpu 19.360 s, 105.8 tok/s, argmax 237462
+[pp2048] run 19.522 s, 104.9 tok/s, gpu 19.349 s, 105.8 tok/s, argmax 237462
+[pp4096] warm-up 39.367 s, 104.0 tok/s, gpu 39.011 s, 105.0 tok/s, argmax 236761
+[pp4096] run 39.376 s, 104.0 tok/s, gpu 39.021 s, 105.0 tok/s, argmax 236761
+[pp4096] run 39.363 s, 104.1 tok/s, gpu 39.008 s, 105.0 tok/s, argmax 236761
+[pp4096] run 39.369 s, 104.0 tok/s, gpu 39.012 s, 105.0 tok/s, argmax 236761
+[tg128] warm-up 128 tokens 2.177 s, 58.8 tok/s, gpu 2.101 s, 60.9 tok/s
+[tg128] run 128 tokens 2.176 s, 58.8 tok/s, gpu 2.100 s, 61.0 tok/s
+[tg128] run 128 tokens 2.176 s, 58.8 tok/s, gpu 2.100 s, 60.9 tok/s
+[tg128] run 128 tokens 2.176 s, 58.8 tok/s, gpu 2.099 s, 61.0 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp128 | 105.36 ± 0.02 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp512 | 105.05 ± 0.13 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1024 | 105.20 ± 0.08 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp2048 | 104.86 ± 0.04 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp4096 | 104.04 ± 0.02 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 | 58.82 ± 0.01 |
+
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp128 | 106.28 ± 0.04 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp512 | 105.97 ± 0.14 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1024 | 106.13 ± 0.08 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp2048 | 105.79 ± 0.05 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp4096 | 104.99 ± 0.02 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 | 60.96 ± 0.02 |
+exit 0 2026-10-31 00:37:26
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2255877.
+Swapouts:                                   99113415.

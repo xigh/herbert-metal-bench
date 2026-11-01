@@ -1,0 +1,23 @@
+=== Qwen3.5-2B mlx 2026-10-31 23:53:35
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+com.apple.system.thermalpressurelevel 0
+ 55.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+ 41.9 /System/Library/PrivateFrameworks/UVFSXPCService.framework/Versions/A/XPCServices/UVFSService.xpc/Contents/MacOS/UVFSService
+Pages free:                                  1313184.
+Swapouts:                                  100282979.
+input ~/models/qwen/Qwen3.5-2B
+--- pp24576
+Running warmup..
+Timing with prompt_tokens=24576, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=4829.040, generation_tps=130.226, peak_memory=5.922, total_time=6.076
+Trial 2:  prompt_tps=4829.476, generation_tps=130.171, peak_memory=5.923, total_time=6.076
+Averages: prompt_tps=4829.258, generation_tps=130.199, peak_memory=5.923
+exit 0 2026-10-31 23:53:54
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+com.apple.system.thermalpressurelevel 0
+Pages free:                                  1218541.
+Swapouts:                                  100282979.

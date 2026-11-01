@@ -1,0 +1,647 @@
+[gpu] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+check	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	worst relative error of 8 outputs 3.76e-4
+check	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	worst relative error of 8 outputs 2.48e-3
+check	h2mv	0.8B down K=3584 N=1024	f32 fma	worst relative error of 8 outputs 3.73e-4
+check	h2mv	0.8B down K=3584 N=1024	half2 fma	worst relative error of 8 outputs 1.94e-3
+check	h2mv	0.8B dn in K=1024 N=8224	f32 fma	worst relative error of 8 outputs 3.63e-4
+check	h2mv	0.8B dn in K=1024 N=8224	half2 fma	worst relative error of 8 outputs 1.22e-3
+check	h2mv	0.8B dn out K=2048 N=1024	f32 fma	worst relative error of 8 outputs 3.91e-4
+check	h2mv	0.8B dn out K=2048 N=1024	half2 fma	worst relative error of 8 outputs 4.30e-3
+check	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	worst relative error of 8 outputs 2.72e-4
+check	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	worst relative error of 8 outputs 7.80e-2
+check	h2mv	0.8B attn o K=2048 N=1024	f32 fma	worst relative error of 8 outputs 3.91e-4
+check	h2mv	0.8B attn o K=2048 N=1024	half2 fma	worst relative error of 8 outputs 4.30e-3
+check	h2mv	0.8B head K=1024 N=248320	f32 fma	worst relative error of 8 outputs 3.46e-4
+check	h2mv	0.8B head K=1024 N=248320	half2 fma	worst relative error of 8 outputs 3.53e-3
+check	h2mv	4B gate|up K=2560 N=18432	f32 fma	worst relative error of 8 outputs 3.09e-4
+check	h2mv	4B gate|up K=2560 N=18432	half2 fma	worst relative error of 8 outputs 4.52e-3
+check	h2mv	4B down K=9216 N=2560	f32 fma	worst relative error of 8 outputs 4.39e-4
+check	h2mv	4B down K=9216 N=2560	half2 fma	worst relative error of 8 outputs 9.79e-2
+check	h2mv	4B dn in K=2560 N=12352	f32 fma	worst relative error of 8 outputs 3.05e-4
+check	h2mv	4B dn in K=2560 N=12352	half2 fma	worst relative error of 8 outputs 1.18e-2
+check	h2mv	4B dn out K=4096 N=2560	f32 fma	worst relative error of 8 outputs 4.01e-4
+check	h2mv	4B dn out K=4096 N=2560	half2 fma	worst relative error of 8 outputs 1.59e-3
+check	h2mv	4B attn qkv K=2560 N=10240	f32 fma	worst relative error of 8 outputs 2.68e-4
+check	h2mv	4B attn qkv K=2560 N=10240	half2 fma	worst relative error of 8 outputs 1.89e-3
+check	h2mv	4B attn o K=4096 N=2560	f32 fma	worst relative error of 8 outputs 4.01e-4
+check	h2mv	4B attn o K=4096 N=2560	half2 fma	worst relative error of 8 outputs 1.59e-3
+check	h2mv	4B head K=2560 N=248320	f32 fma	worst relative error of 8 outputs 2.76e-4
+check	h2mv	4B head K=2560 N=248320	half2 fma	worst relative error of 8 outputs 3.25e-3
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	0	0.000024333	603.963	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	0	0.000013625	1078.656	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	0	0.000015250	481.920	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	0	0.000011625	632.193	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	0	0.000026875	627.391	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	0	0.000015708	1073.392	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	0	0.000011042	380.415	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	0	0.000008167	514.334	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	0	0.000018750	559.893	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	0	0.000011125	943.635	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	0	0.000012000	350.035	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	0	0.000008750	480.051	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	0	0.000648000	785.583	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	0	0.000745750	682.612	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	0	0.000127875	738.329	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	0	0.000119458	790.349	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	0	0.000068042	693.831	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	0	0.000038250	1234.238	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	0	0.000091625	690.555	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	0	0.000065042	972.792	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	0	0.000032917	637.514	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	0	0.000017750	1182.239	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	0	0.000074750	701.731	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	0	0.000051375	1021.010	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	0	0.000032542	644.858	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	0	0.000018167	1155.132	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	0	0.001630417	780.107	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	0	0.001724375	737.601	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	1	0.001718375	740.176	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	1	0.001632542	779.092	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	1	0.000032458	646.518	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	1	0.000017750	1182.254	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	1	0.000074000	708.845	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	1	0.000048875	1073.233	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	1	0.000032083	654.072	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	1	0.000018708	1121.679	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	1	0.000087959	719.340	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	1	0.000066125	956.858	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	1	0.000067042	704.180	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	1	0.000037958	1243.717	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	1	0.000129000	731.890	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	1	0.000117333	804.663	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	1	0.000747000	681.470	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	1	0.000647000	786.798	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	1	0.000011417	367.924	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	1	0.000008667	484.655	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	1	0.000019583	536.069	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	1	0.000010917	961.648	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	1	0.000011208	374.757	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	1	0.000007875	533.388	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	1	0.000027917	603.986	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	1	0.000014125	1193.725	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	1	0.000015958	460.524	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	1	0.000012125	606.117	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	1	0.000024959	588.835	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	1	0.000013000	1130.508	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	2	0.000012792	1148.904	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	2	0.000013042	1126.895	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	2	0.000011875	618.881	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	2	0.000011167	658.134	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	2	0.000015542	1084.905	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	2	0.000014708	1146.370	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	2	0.000008875	473.288	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	2	0.000008125	516.972	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	2	0.000013500	777.634	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	2	0.000011125	943.635	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	2	0.000009750	430.814	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	2	0.000008458	496.608	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	2	0.000646500	787.406	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	2	0.000744875	683.414	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	2	0.000129000	731.890	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	2	0.000116875	807.819	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	2	0.000068125	692.982	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	2	0.000038625	1222.253	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	2	0.000090958	695.616	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	2	0.000065542	965.373	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	2	0.000032167	652.377	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	2	0.000018000	1165.815	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	2	0.000074583	703.299	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	2	0.000050500	1038.700	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	2	0.000032750	640.754	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	2	0.000017750	1182.239	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	2	0.001630708	779.968	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	2	0.001723958	737.779	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	3	0.001720875	739.101	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	3	0.001632125	779.291	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	3	0.000032792	639.945	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	3	0.000018083	1160.456	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	3	0.000075458	695.144	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	3	0.000048375	1084.329	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	3	0.000031834	659.205	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	3	0.000018583	1129.240	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	3	0.000088875	711.921	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	3	0.000063625	994.454	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	3	0.000066917	705.496	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	3	0.000038292	1232.895	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	3	0.000130250	724.866	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	3	0.000116250	812.162	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	3	0.000743750	684.448	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	3	0.000648125	785.432	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	3	0.000011583	362.629	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	3	0.000008708	482.348	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	3	0.000018750	559.893	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	3	0.000010750	976.560	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	3	0.000011292	371.990	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	3	0.000008333	504.059	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	3	0.000027500	613.139	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	3	0.000014375	1172.959	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	3	0.000016125	455.770	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	3	0.000011500	639.067	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	3	0.000024333	603.963	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	3	0.000012917	1137.783	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	4	0.000012833	1145.173	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	4	0.000013083	1123.285	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	4	0.000011708	627.693	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	4	0.000011000	668.123	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	4	0.000015708	1073.407	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	4	0.000015000	1124.075	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	4	0.000009500	442.154	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	4	0.000008875	473.288	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	4	0.000013583	772.862	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	4	0.000011000	954.381	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	4	0.000009583	438.309	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	4	0.000008625	487.010	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	4	0.000646625	787.254	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	4	0.000743375	684.793	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	4	0.000128208	736.409	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	4	0.000118542	796.460	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	4	0.000067875	695.535	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	4	0.000038459	1227.543	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	4	0.000093375	677.612	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	4	0.000064375	982.869	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	4	0.000032125	653.228	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	4	0.000017750	1182.239	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	4	0.000074083	708.045	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	4	0.000050375	1041.278	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	4	0.000032042	654.923	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	4	0.000018125	1157.788	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	4	0.001635667	777.604	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	4	0.001725625	737.066	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	5	0.001721542	738.815	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	5	0.001636125	777.386	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	5	0.000033250	631.121	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	5	0.000018333	1144.628	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	5	0.000074375	705.270	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	5	0.000048500	1081.534	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	5	0.000031625	663.554	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	5	0.000017750	1182.239	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	5	0.000089292	708.599	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	5	0.000063875	990.561	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	5	0.000066833	706.376	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	5	0.000039459	1196.433	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	5	0.000128750	733.311	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	5	0.000118333	797.863	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	5	0.000755375	673.914	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	5	0.000659292	772.129	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	5	0.000011250	373.376	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	5	0.000008625	487.010	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	5	0.000019042	551.322	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	5	0.000010750	976.582	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	5	0.000011500	365.257	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	5	0.000008042	522.331	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	5	0.000027750	607.609	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	5	0.000014250	1183.232	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	5	0.000016250	452.263	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	5	0.000011417	643.733	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	5	0.000024500	599.853	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	5	0.000012875	1141.466	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	6	0.000013208	1112.652	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	6	0.000013667	1075.348	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	6	0.000012000	612.445	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	6	0.000011208	655.701	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	6	0.000015583	1082.004	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	6	0.000015750	1070.567	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	6	0.000009375	448.051	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	6	0.000008083	519.638	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	6	0.000013292	789.812	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	6	0.000010958	957.990	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	6	0.000009875	425.360	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	6	0.000008292	506.593	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	6	0.000648167	785.381	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	6	0.000747833	680.710	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	6	0.000129250	730.475	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	6	0.000117375	804.379	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	6	0.000068375	690.448	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	6	0.000039875	1183.935	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	6	0.000093083	679.735	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	6	0.000064583	979.698	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	6	0.000032333	649.014	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	6	0.000017750	1182.254	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	6	0.000073750	711.246	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	6	0.000050000	1049.090	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	6	0.000032625	643.215	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	6	0.000018375	1142.032	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	6	0.001633042	778.854	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	6	0.001723750	737.868	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	7	0.001725375	737.173	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	7	0.001632042	779.331	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	7	0.000032958	636.708	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	7	0.000018750	1119.186	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	7	0.000074875	700.559	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	7	0.000048333	1085.264	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	7	0.000032042	654.923	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	7	0.000018333	1144.628	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	7	0.000089083	710.257	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	7	0.000063625	994.454	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	7	0.000067042	704.180	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	7	0.000038792	1217.000	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	7	0.000129500	729.065	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	7	0.000116958	807.244	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	7	0.000746583	681.850	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	7	0.000646542	787.355	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	7	0.000011625	361.329	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	7	0.000008750	480.051	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	7	0.000018667	562.393	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	7	0.000011000	954.381	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	7	0.000011375	369.272	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	7	0.000008125	516.972	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	7	0.000028375	594.228	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	7	0.000014208	1186.722	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	7	0.000016667	440.954	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	7	0.000011708	627.693	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	7	0.000024625	596.808	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	7	0.000012833	1145.193	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	8	0.000012875	1141.466	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	8	0.000013833	1062.389	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	8	0.000011458	641.391	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	8	0.000011250	653.272	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	8	0.000016083	1048.374	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	8	0.000015125	1114.800	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	8	0.000009083	462.442	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	8	0.000008125	516.987	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	8	0.000013334	787.343	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	8	0.000011750	893.449	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	8	0.000009875	425.360	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	8	0.000009167	458.237	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	8	0.000646625	787.254	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	8	0.000746250	682.155	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	8	0.000129667	728.127	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	8	0.000119625	789.247	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	8	0.000067750	696.819	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	8	0.000038958	1211.792	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	8	0.000090458	699.460	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	8	0.000065000	973.416	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	8	0.000032167	652.377	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	8	0.000017625	1190.626	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	8	0.000073625	712.454	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	8	0.000049042	1069.585	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	8	0.000032583	644.033	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	8	0.000018375	1142.032	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	8	0.001633583	778.595	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	8	0.001728250	735.947	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	9	0.001723625	737.922	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	9	0.001636000	777.445	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	9	0.000032417	647.345	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	9	0.000018000	1165.830	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	9	0.000074000	708.842	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	9	0.000047583	1102.368	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	9	0.000031583	664.429	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	9	0.000018208	1152.488	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	9	0.000089000	710.922	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	9	0.000061250	1033.012	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	9	0.000066750	707.258	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	9	0.000036917	1278.811	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	9	0.000128708	733.549	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	9	0.000118125	799.270	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	9	0.000748292	680.293	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	9	0.000648583	784.877	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	9	0.000011667	360.038	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	9	0.000008500	494.160	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	9	0.000018625	563.652	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	9	0.000010625	988.052	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	9	0.000011542	363.938	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	9	0.000009042	464.562	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	9	0.000027875	604.889	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	9	0.000014375	1172.959	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	9	0.000016333	449.955	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	9	0.000011542	636.759	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	9	0.000024375	602.930	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	9	0.000013167	1116.194	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	10	0.000013250	1109.153	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	10	0.000013250	1109.172	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	10	0.000012500	587.941	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	10	0.000011292	650.860	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	10	0.000015792	1067.742	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	10	0.000015208	1108.690	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	10	0.000009125	460.330	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	10	0.000008500	494.160	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	10	0.000013667	768.148	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	10	0.000010875	965.333	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	10	0.000009875	425.360	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	10	0.000008750	480.064	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	10	0.000647750	785.887	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	10	0.000745083	683.223	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	10	0.000129000	731.891	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	10	0.000116625	809.551	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	10	0.000068250	691.713	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	10	0.000038500	1226.222	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	10	0.000092500	684.023	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	10	0.000063667	993.803	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	10	0.000033792	621.007	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	10	0.000017750	1182.239	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	10	0.000074417	704.875	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	10	0.000050083	1047.344	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	10	0.000032750	640.759	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	10	0.000018125	1157.788	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	10	0.001631083	779.789	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	10	0.001720417	739.298	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	11	0.001722708	738.314	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	11	0.001635750	777.564	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	11	0.000033417	627.977	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	11	0.000018417	1139.448	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	11	0.000074875	700.561	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	11	0.000047625	1101.404	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	11	0.000033000	635.904	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	11	0.000018167	1155.117	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	11	0.000088291	716.627	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	11	0.000062500	1012.355	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	11	0.000067875	695.535	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	11	0.000038167	1236.934	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	11	0.000129125	731.181	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	11	0.000116333	811.580	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	11	0.000745417	682.917	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	11	0.000648750	784.675	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	11	0.000011250	373.368	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	11	0.000008750	480.051	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	11	0.000018667	562.393	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	11	0.000010708	980.361	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	11	0.000011375	369.265	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	11	0.000008208	511.737	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	11	0.000028042	601.293	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	11	0.000014542	1159.512	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	11	0.000017167	428.113	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	11	0.000011958	614.567	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	11	0.000024458	600.875	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	11	0.000013500	1088.627	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	12	0.000012875	1141.486	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	12	0.000013125	1119.738	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	12	0.000012000	612.433	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	12	0.000011250	653.272	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	12	0.000016292	1034.964	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	12	0.000015125	1114.783	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	12	0.000009667	434.529	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	12	0.000009125	460.330	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	12	0.000013667	768.148	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	12	0.000011000	954.361	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	12	0.000009458	444.103	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	12	0.000008250	509.152	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	12	0.000647500	786.190	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	12	0.000745292	683.032	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	12	0.000128750	733.311	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	12	0.000117833	801.248	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	12	0.000068125	692.985	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	12	0.000039250	1202.785	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	12	0.000091875	688.676	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	12	0.000064875	975.292	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	12	0.000032875	638.322	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	12	0.000018375	1142.032	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	12	0.000074625	702.906	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	12	0.000049000	1070.500	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	12	0.000032167	652.377	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	12	0.000018375	1142.032	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	12	0.001631250	779.709	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	12	0.001720250	739.369	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	13	0.001726792	736.568	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	13	0.001635250	777.802	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	13	0.000032500	645.689	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	13	0.000018875	1111.786	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	13	0.000073875	710.042	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	13	0.000047875	1095.651	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	13	0.000032166	652.382	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	13	0.000018333	1144.628	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	13	0.000088792	712.591	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	13	0.000064125	986.698	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	13	0.000066583	709.029	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	13	0.000038375	1230.217	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	13	0.000129750	727.660	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	13	0.000116250	812.162	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	13	0.000746667	681.774	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	13	0.000648125	785.432	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	13	0.000011042	380.423	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	13	0.000009000	466.725	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	13	0.000018625	563.652	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	13	0.000011250	933.167	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	13	0.000011417	367.924	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	13	0.000007792	539.094	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	13	0.000027833	605.795	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	13	0.000014125	1193.725	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	13	0.000015917	461.730	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	13	0.000012042	610.325	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	13	0.000024250	606.039	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	13	0.000013208	1112.652	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	14	0.000012833	1145.193	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	14	0.000013208	1112.652	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	14	0.000011791	623.268	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	14	0.000011125	660.600	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	14	0.000015625	1079.118	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	14	0.000016125	1045.649	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	14	0.000009333	450.052	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	14	0.000008083	519.653	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	14	0.000013000	807.536	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	14	0.000011083	947.203	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	14	0.000009500	442.154	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	14	0.000008625	487.010	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	14	0.000647000	786.798	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	14	0.000745042	683.261	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	14	0.000129500	729.065	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	14	0.000117542	803.236	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	14	0.000068292	691.293	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	14	0.000038125	1238.286	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	14	0.000090792	696.893	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	14	0.000064500	980.964	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	14	0.000032250	650.691	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	14	0.000017875	1173.985	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	14	0.000075042	699.005	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	14	0.000048666	1077.834	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	14	0.000032292	649.856	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	14	0.000017792	1179.485	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	14	0.001642833	774.211	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	14	0.001720042	739.459	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	15	0.001726875	736.533	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	15	0.001631125	779.769	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	15	0.000032250	650.691	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	15	0.000018375	1142.032	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	15	0.000074667	702.514	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	15	0.000047500	1104.303	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	15	0.000032500	645.689	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	15	0.000018458	1136.875	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	15	0.000088542	714.601	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	15	0.000061792	1023.959	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	15	0.000067542	698.966	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	15	0.000037625	1254.738	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	15	0.000128125	736.888	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	15	0.000118375	797.582	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	15	0.000745708	682.650	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	15	0.000648208	785.331	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	15	0.000011375	369.272	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	15	0.000008208	511.737	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	15	0.000018542	566.186	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	15	0.000010833	969.047	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	15	0.000011375	369.272	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	15	0.000007958	527.802	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	15	0.000027500	613.134	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	15	0.000014375	1172.959	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	15	0.000016375	448.810	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	15	0.000011625	632.193	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	15	0.000024125	609.180	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	15	0.000013250	1109.172	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	16	0.000012750	1152.659	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	16	0.000013583	1081.947	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	16	0.000011875	618.881	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	16	0.000011708	627.693	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	16	0.000015708	1073.407	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	16	0.000015083	1117.880	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	16	0.000009417	446.057	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	16	0.000008125	516.987	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	16	0.000012917	812.747	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	16	0.000010750	976.560	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	16	0.000009292	452.059	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	16	0.000009083	462.430	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	16	0.000646875	786.950	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	16	0.000745750	682.612	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	16	0.000129375	729.768	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	16	0.000116125	813.036	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	16	0.000070083	673.618	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	16	0.000038458	1227.551	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	16	0.000091500	691.497	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	16	0.000062750	1008.320	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	16	0.000032125	653.224	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	16	0.000017875	1173.985	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	16	0.000074375	705.270	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	16	0.000048750	1075.991	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	16	0.000033250	631.121	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	16	0.000018333	1144.628	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	16	0.001637125	776.911	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	16	0.001719042	739.889	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	17	0.001723333	738.046	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	17	0.001631833	779.430	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	17	0.000032542	644.862	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	17	0.000017917	1171.254	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	17	0.000074750	701.731	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	17	0.000047708	1099.479	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	17	0.000031875	658.348	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	17	0.000019208	1092.488	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	17	0.000088000	719.001	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	17	0.000062250	1016.418	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	17	0.000066750	707.258	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	17	0.000038625	1222.253	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	17	0.000129375	729.768	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	17	0.000115625	816.553	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	17	0.000748958	679.688	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	17	0.000648250	785.281	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	17	0.000011250	373.376	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	17	0.000008792	477.775	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	17	0.000018750	559.893	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	17	0.000010875	965.333	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	17	0.000011875	353.720	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	17	0.000008375	501.537	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	17	0.000028500	591.625	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	17	0.000014125	1193.725	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	17	0.000015667	469.100	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	17	0.000011708	627.693	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	17	0.000024167	608.129	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	17	0.000012875	1141.466	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	18	0.000013000	1130.508	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	18	0.000013500	1088.627	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	18	0.000011750	625.466	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	18	0.000011250	653.272	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	18	0.000015625	1079.118	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	18	0.000014500	1162.845	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	18	0.000009042	464.562	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	18	0.000008167	514.349	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	18	0.000013000	807.536	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	18	0.000010958	958.011	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	18	0.000009625	436.411	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	18	0.000008625	487.010	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	18	0.000646542	787.355	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	18	0.000747375	681.128	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	18	0.000129125	731.181	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	18	0.000117375	804.379	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	18	0.000068208	692.138	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	18	0.000039875	1183.935	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	18	0.000093542	676.406	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	18	0.000063750	992.500	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	18	0.000032458	646.518	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	18	0.000017625	1190.626	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	18	0.000073334	715.286	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	18	0.000048917	1072.324	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	18	0.000033000	635.908	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	18	0.000019000	1104.456	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	18	0.001633375	778.694	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	18	0.001719750	739.584	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	19	0.001726500	736.693	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	19	0.001634750	778.040	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	19	0.000032500	645.689	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	19	0.000019000	1104.456	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	19	0.000074708	702.122	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	19	0.000047458	1105.273	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	19	0.000032042	654.923	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	19	0.000019250	1090.123	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	19	0.000088250	716.964	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	19	0.000063500	996.408	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	19	0.000068125	692.982	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	19	0.000037250	1267.373	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	19	0.000128375	735.454	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	19	0.000116625	809.551	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	19	0.000745958	682.421	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	19	0.000646708	787.152	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	19	0.000011792	356.220	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	19	0.000008458	496.608	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	19	0.000018500	567.461	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	19	0.000010875	965.333	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	19	0.000011625	361.329	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	19	0.000008125	516.972	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	19	0.000027875	604.889	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	19	0.000014125	1193.725	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	19	0.000016625	442.059	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	19	0.000011875	618.881	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	19	0.000024167	608.129	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	19	0.000012833	1145.193	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	f32 fma	20	0.000013125	1119.738	GB/s
+run	h2mv	0.8B gate|up K=1024 N=7168	half2 fma	20	0.000013208	1112.672	GB/s
+run	h2mv	0.8B down K=3584 N=1024	f32 fma	20	0.000011875	618.881	GB/s
+run	h2mv	0.8B down K=3584 N=1024	half2 fma	20	0.000011167	658.134	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	f32 fma	20	0.000015333	1099.649	GB/s
+run	h2mv	0.8B dn in K=1024 N=8224	half2 fma	20	0.000015833	1064.931	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	f32 fma	20	0.000009875	425.360	GB/s
+run	h2mv	0.8B dn out K=2048 N=1024	half2 fma	20	0.000008125	516.972	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	f32 fma	20	0.000013083	802.406	GB/s
+run	h2mv	0.8B attn qkv K=1024 N=5120	half2 fma	20	0.000010875	965.333	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	f32 fma	20	0.000009417	446.068	GB/s
+run	h2mv	0.8B attn o K=2048 N=1024	half2 fma	20	0.000008375	501.551	GB/s
+run	h2mv	0.8B head K=1024 N=248320	f32 fma	20	0.000648792	784.625	GB/s
+run	h2mv	0.8B head K=1024 N=248320	half2 fma	20	0.000745458	682.879	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	f32 fma	20	0.000129792	727.426	GB/s
+run	h2mv	4B gate|up K=2560 N=18432	half2 fma	20	0.000117958	800.400	GB/s
+run	h2mv	4B down K=9216 N=2560	f32 fma	20	0.000067750	696.819	GB/s
+run	h2mv	4B down K=9216 N=2560	half2 fma	20	0.000039125	1206.629	GB/s
+run	h2mv	4B dn in K=2560 N=12352	f32 fma	20	0.000091542	691.184	GB/s
+run	h2mv	4B dn in K=2560 N=12352	half2 fma	20	0.000063125	1002.333	GB/s
+run	h2mv	4B dn out K=4096 N=2560	f32 fma	20	0.000032500	645.685	GB/s
+run	h2mv	4B dn out K=4096 N=2560	half2 fma	20	0.000018000	1165.815	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	f32 fma	20	0.000074750	701.733	GB/s
+run	h2mv	4B attn qkv K=2560 N=10240	half2 fma	20	0.000049458	1060.577	GB/s
+run	h2mv	4B attn o K=4096 N=2560	f32 fma	20	0.000032000	655.776	GB/s
+run	h2mv	4B attn o K=4096 N=2560	half2 fma	20	0.000018042	1163.137	GB/s
+run	h2mv	4B head K=2560 N=248320	f32 fma	20	0.001630667	779.988	GB/s
+run	h2mv	4B head K=2560 N=248320	half2 fma	20	0.001721500	738.833	GB/s
+| probe | shape | variant | median | min | max | unit | / first of the shape |
+| --- | --- | --- | ---: | ---: | ---: | --- | ---: |
+| h2mv | 0.8B gate|up K=1024 N=7168 | f32 fma | 1137.783 | 603.963 | 1152.659 | GB/s | 1.0000 |
+| h2mv | 0.8B gate|up K=1024 N=7168 | half2 fma | 1062.389 | 588.835 | 1126.895 | GB/s | 0.9337 |
+| h2mv | 0.8B down K=3584 N=1024 | f32 fma | 618.881 | 481.920 | 643.733 | GB/s | 1.0000 |
+| h2mv | 0.8B down K=3584 N=1024 | half2 fma | 627.693 | 428.113 | 668.123 | GB/s | 1.0142 |
+| h2mv | 0.8B dn in K=1024 N=8224 | f32 fma | 1099.649 | 627.391 | 1193.725 | GB/s | 1.0000 |
+| h2mv | 0.8B dn in K=1024 N=8224 | half2 fma | 1045.649 | 591.625 | 1162.845 | GB/s | 0.9509 |
+| h2mv | 0.8B dn out K=2048 N=1024 | f32 fma | 464.562 | 380.415 | 539.094 | GB/s | 1.0000 |
+| h2mv | 0.8B dn out K=2048 N=1024 | half2 fma | 460.330 | 353.720 | 519.653 | GB/s | 0.9909 |
+| h2mv | 0.8B attn qkv K=1024 N=5120 | f32 fma | 812.747 | 559.893 | 988.052 | GB/s | 1.0000 |
+| h2mv | 0.8B attn qkv K=1024 N=5120 | half2 fma | 893.449 | 536.069 | 976.560 | GB/s | 1.0993 |
+| h2mv | 0.8B attn o K=2048 N=1024 | f32 fma | 452.059 | 350.035 | 511.737 | GB/s | 1.0000 |
+| h2mv | 0.8B attn o K=2048 N=1024 | half2 fma | 458.237 | 356.220 | 509.152 | GB/s | 1.0137 |
+| h2mv | 0.8B head K=1024 N=248320 | f32 fma | 785.887 | 772.129 | 787.406 | GB/s | 1.0000 |
+| h2mv | 0.8B head K=1024 N=248320 | half2 fma | 682.612 | 673.914 | 684.793 | GB/s | 0.8686 |
+| h2mv | 4B gate|up K=2560 N=18432 | f32 fma | 738.329 | 727.426 | 816.553 | GB/s | 1.0000 |
+| h2mv | 4B gate|up K=2560 N=18432 | half2 fma | 789.247 | 724.866 | 813.036 | GB/s | 1.0690 |
+| h2mv | 4B down K=9216 N=2560 | f32 fma | 696.819 | 673.618 | 1278.811 | GB/s | 1.0000 |
+| h2mv | 4B down K=9216 N=2560 | half2 fma | 1183.935 | 692.982 | 1238.286 | GB/s | 1.6991 |
+| h2mv | 4B dn in K=2560 N=12352 | f32 fma | 699.460 | 676.406 | 1033.012 | GB/s | 1.0000 |
+| h2mv | 4B dn in K=2560 N=12352 | half2 fma | 965.373 | 708.599 | 1008.320 | GB/s | 1.3802 |
+| h2mv | 4B dn out K=4096 N=2560 | f32 fma | 653.228 | 621.007 | 1182.239 | GB/s | 1.0000 |
+| h2mv | 4B dn out K=4096 N=2560 | half2 fma | 1142.032 | 635.904 | 1190.626 | GB/s | 1.7483 |
+| h2mv | 4B attn qkv K=2560 N=10240 | f32 fma | 715.286 | 699.005 | 1105.273 | GB/s | 1.0000 |
+| h2mv | 4B attn qkv K=2560 N=10240 | half2 fma | 1021.010 | 695.144 | 1077.834 | GB/s | 1.4274 |
+| h2mv | 4B attn o K=4096 N=2560 | f32 fma | 655.776 | 631.121 | 1182.254 | GB/s | 1.0000 |
+| h2mv | 4B attn o K=4096 N=2560 | half2 fma | 1104.456 | 627.977 | 1182.239 | GB/s | 1.6842 |
+| h2mv | 4B head K=2560 N=248320 | f32 fma | 778.854 | 774.211 | 780.107 | GB/s | 1.0000 |
+| h2mv | 4B head K=2560 N=248320 | half2 fma | 738.046 | 735.947 | 740.176 | GB/s | 0.9476 |

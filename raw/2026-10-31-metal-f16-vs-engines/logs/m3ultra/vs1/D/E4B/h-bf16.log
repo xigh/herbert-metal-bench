@@ -1,0 +1,35 @@
+=== E4B h-bf16 2026-10-31 01:58:56
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  3132921.
+Swapouts:                                   99397947.
+input ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] gemma4_text — hidden 2560, 42 layers (18 sharing K/V), 8 heads / 2 kv × 256 (global 2 kv × 512), intermediate 10240, per-layer input 256, window 512, vocab 262144
+[metal] weights 8.65 GiB, everything 8.90 GiB, capacity 4352, prefill block 16
+[metal] 51 kernels compiled in 0.12 s
+[engine] loaded in 12.7 s
+[pp1] warm-up 0.087 s, 11.4 tok/s, gpu 0.017 s, 57.9 tok/s, argmax 151237
+[pp1] run 0.017 s, 59.0 tok/s, gpu 0.016 s, 61.5 tok/s, argmax 151237
+[pp1] run 0.017 s, 59.2 tok/s, gpu 0.016 s, 61.5 tok/s, argmax 151237
+[pp1] run 0.017 s, 59.0 tok/s, gpu 0.016 s, 61.3 tok/s, argmax 151237
+[tg128] warm-up 128 tokens 2.529 s, 50.6 tok/s, gpu 2.453 s, 52.2 tok/s
+[tg128] run 128 tokens 2.520 s, 50.8 tok/s, gpu 2.444 s, 52.4 tok/s
+[tg128] run 128 tokens 2.519 s, 50.8 tok/s, gpu 2.443 s, 52.4 tok/s
+[tg128] run 128 tokens 2.516 s, 50.9 tok/s, gpu 2.441 s, 52.4 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1 | 59.08 ± 0.10 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 @ d4096 | 50.83 ± 0.04 |
+
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1 | 61.44 ± 0.08 |
+| gemma-4-E4B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 @ d4096 | 52.40 ± 0.04 |
+exit 0 2026-10-31 02:01:58
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  2558145.
+Swapouts:                                   99397947.

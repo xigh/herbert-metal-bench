@@ -1,0 +1,8 @@
+=== E4B llama-f16 2026-10-31 02:03:29
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1631477.
+Swapouts:                                   99397947.
+input $GGUF_DIR/gemma-4-E4B-f16.gguf
+missing input $GGUF_DIR/gemma-4-E4B-f16.gguf: not run

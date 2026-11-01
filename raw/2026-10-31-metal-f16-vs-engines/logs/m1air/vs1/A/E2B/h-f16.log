@@ -1,0 +1,112 @@
+=== E2B h-f16 2026-10-30 14:59:25
+busy 14:59:25, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 14:59:55, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:00:25, waiting 30 s:
+ 99.8 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:00:55, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:01:25, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:01:55, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:02:25, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:02:55, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:03:25, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:03:56, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:04:26, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:04:56, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:05:26, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:05:56, waiting 30 s:
+ 99.8 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:06:26, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:06:56, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:07:26, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:07:56, waiting 30 s:
+ 99.6 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:08:26, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+busy 15:08:56, waiting 30 s:
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+100.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged
+Pages free:                                   226555.
+Swapouts:                                      55524.
+input ~/models/gemma-4-E2B-it-qat-q4_0-unquantized
+[metal] Apple M1 · working set 5.3 GiB · max buffer 4.0 GiB · threadgroup memory 32 KiB
+[loader] gemma4_text — hidden 1536, 35 layers (20 sharing K/V), 8 heads / 1 kv × 256 (global 1 kv × 512), intermediate 6144, per-layer input 256, window 512, vocab 262144
+[metal] weights 4.25 GiB, everything 4.33 GiB, capacity 4096, prefill block 16
+[metal] 55 kernels compiled in 0.03 s
+[engine] loaded in 8.8 s
+[pp128] warm-up 8.108 s, 15.8 tok/s, gpu 7.619 s, 16.8 tok/s, argmax 208180
+[pp128] run 7.699 s, 16.6 tok/s, gpu 7.627 s, 16.8 tok/s, argmax 208180
+[pp128] run 7.696 s, 16.6 tok/s, gpu 7.624 s, 16.8 tok/s, argmax 208180
+[pp128] run 7.749 s, 16.5 tok/s, gpu 7.677 s, 16.7 tok/s, argmax 208180
+[pp128] run 7.781 s, 16.4 tok/s, gpu 7.711 s, 16.6 tok/s, argmax 208180
+[pp128] run 7.694 s, 16.6 tok/s, gpu 7.622 s, 16.8 tok/s, argmax 208180
+[pp512] warm-up 31.007 s, 16.5 tok/s, gpu 30.582 s, 16.7 tok/s, argmax 105
+[pp512] run 30.943 s, 16.5 tok/s, gpu 30.658 s, 16.7 tok/s, argmax 105
+[pp512] run 30.922 s, 16.6 tok/s, gpu 30.634 s, 16.7 tok/s, argmax 105
+[pp512] run 30.988 s, 16.5 tok/s, gpu 30.700 s, 16.7 tok/s, argmax 105
+[pp512] run 30.902 s, 16.6 tok/s, gpu 30.615 s, 16.7 tok/s, argmax 105
+[pp512] run 31.057 s, 16.5 tok/s, gpu 30.772 s, 16.6 tok/s, argmax 105
+[pp1024] warm-up 62.268 s, 16.4 tok/s, gpu 61.493 s, 16.7 tok/s, argmax 227430
+[pp1024] run 62.097 s, 16.5 tok/s, gpu 61.525 s, 16.6 tok/s, argmax 227430
+[pp1024] run 62.128 s, 16.5 tok/s, gpu 61.559 s, 16.6 tok/s, argmax 227430
+[pp1024] run 62.124 s, 16.5 tok/s, gpu 61.553 s, 16.6 tok/s, argmax 227430
+[pp1024] run 62.083 s, 16.5 tok/s, gpu 61.507 s, 16.6 tok/s, argmax 227430
+[pp1024] run 62.099 s, 16.5 tok/s, gpu 61.523 s, 16.6 tok/s, argmax 227430
+[pp2048] warm-up 125.094 s, 16.4 tok/s, gpu 123.540 s, 16.6 tok/s, argmax 1109
+[pp2048] run 124.825 s, 16.4 tok/s, gpu 123.683 s, 16.6 tok/s, argmax 1109
+[pp2048] run 124.707 s, 16.4 tok/s, gpu 123.557 s, 16.6 tok/s, argmax 1109
+[pp2048] run 124.758 s, 16.4 tok/s, gpu 123.632 s, 16.6 tok/s, argmax 1109
+[pp2048] run 124.817 s, 16.4 tok/s, gpu 123.679 s, 16.6 tok/s, argmax 1109
+[pp2048] run 124.814 s, 16.4 tok/s, gpu 123.678 s, 16.6 tok/s, argmax 1109
+[pp4096] warm-up 252.390 s, 16.2 tok/s, gpu 249.335 s, 16.4 tok/s, argmax 21527
+[pp4096] run 251.834 s, 16.3 tok/s, gpu 249.549 s, 16.4 tok/s, argmax 21527
+[pp4096] run 253.138 s, 16.2 tok/s, gpu 250.696 s, 16.3 tok/s, argmax 21527
+[pp4096] run 253.546 s, 16.2 tok/s, gpu 251.039 s, 16.3 tok/s, argmax 21527
+[pp4096] run 253.721 s, 16.1 tok/s, gpu 251.232 s, 16.3 tok/s, argmax 21527
+[pp4096] run 252.049 s, 16.3 tok/s, gpu 249.511 s, 16.4 tok/s, argmax 21527
+[tg128] warm-up 128 tokens 10.292 s, 12.4 tok/s, gpu 9.987 s, 12.8 tok/s
+[tg128] run 128 tokens 10.294 s, 12.4 tok/s, gpu 9.988 s, 12.8 tok/s
+[tg128] run 128 tokens 10.293 s, 12.4 tok/s, gpu 9.988 s, 12.8 tok/s
+[tg128] run 128 tokens 10.297 s, 12.4 tok/s, gpu 9.985 s, 12.8 tok/s
+[tg128] run 128 tokens 10.294 s, 12.4 tok/s, gpu 9.988 s, 12.8 tok/s
+[tg128] run 128 tokens 10.293 s, 12.4 tok/s, gpu 9.989 s, 12.8 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp128 | 16.57 ± 0.08 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp512 | 16.54 ± 0.03 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp1024 | 16.49 ± 0.01 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp2048 | 16.41 ± 0.01 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp4096 | 16.20 ± 0.06 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | tg128 | 12.43 ± 0.00 |
+
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp128 | 16.73 ± 0.09 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp512 | 16.69 ± 0.03 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp1024 | 16.64 ± 0.01 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp2048 | 16.56 ± 0.01 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | pp4096 | 16.36 ± 0.05 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-f16 | tg128 | 12.82 ± 0.00 |
+exit 0 2026-10-30 15:58:28
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   291184.
+Swapouts:                                      55524.

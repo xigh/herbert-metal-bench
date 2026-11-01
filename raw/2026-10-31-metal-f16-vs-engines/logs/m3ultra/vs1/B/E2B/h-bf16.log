@@ -1,0 +1,60 @@
+=== E2B h-bf16 2026-10-31 00:14:22
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+ 21.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdsync
+Pages free:                                  4134212.
+Swapouts:                                   99113415.
+input ~/models/gemma-4-E2B-it-qat-q4_0-unquantized
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] gemma4_text — hidden 1536, 35 layers (20 sharing K/V), 8 heads / 1 kv × 256 (global 1 kv × 512), intermediate 6144, per-layer input 256, window 512, vocab 262144
+[metal] weights 4.25 GiB, everything 4.33 GiB, capacity 4096, prefill block 16
+[metal] 55 kernels compiled in 0.02 s
+[engine] loaded in 0.6 s
+[pp128] warm-up 0.567 s, 225.9 tok/s, gpu 0.522 s, 245.3 tok/s, argmax 208180
+[pp128] run 0.523 s, 244.8 tok/s, gpu 0.513 s, 249.3 tok/s, argmax 208180
+[pp128] run 0.526 s, 243.5 tok/s, gpu 0.516 s, 247.9 tok/s, argmax 208180
+[pp128] run 0.522 s, 245.2 tok/s, gpu 0.513 s, 249.7 tok/s, argmax 208180
+[pp512] warm-up 2.106 s, 243.1 tok/s, gpu 2.068 s, 247.6 tok/s, argmax 105
+[pp512] run 2.109 s, 242.7 tok/s, gpu 2.072 s, 247.1 tok/s, argmax 105
+[pp512] run 2.122 s, 241.2 tok/s, gpu 2.085 s, 245.6 tok/s, argmax 105
+[pp512] run 2.112 s, 242.5 tok/s, gpu 2.074 s, 246.9 tok/s, argmax 105
+[pp1024] warm-up 4.243 s, 241.3 tok/s, gpu 4.166 s, 245.8 tok/s, argmax 227430
+[pp1024] run 4.252 s, 240.8 tok/s, gpu 4.177 s, 245.2 tok/s, argmax 227430
+[pp1024] run 4.250 s, 241.0 tok/s, gpu 4.175 s, 245.3 tok/s, argmax 227430
+[pp1024] run 4.253 s, 240.8 tok/s, gpu 4.178 s, 245.1 tok/s, argmax 227430
+[pp2048] warm-up 8.586 s, 238.5 tok/s, gpu 8.433 s, 242.8 tok/s, argmax 1109
+[pp2048] run 8.578 s, 238.8 tok/s, gpu 8.428 s, 243.0 tok/s, argmax 1109
+[pp2048] run 8.596 s, 238.2 tok/s, gpu 8.446 s, 242.5 tok/s, argmax 1109
+[pp2048] run 8.572 s, 238.9 tok/s, gpu 8.422 s, 243.2 tok/s, argmax 1109
+[pp4096] warm-up 17.438 s, 234.9 tok/s, gpu 17.134 s, 239.1 tok/s, argmax 21527
+[pp4096] run 17.434 s, 234.9 tok/s, gpu 17.137 s, 239.0 tok/s, argmax 21527
+[pp4096] run 17.426 s, 235.1 tok/s, gpu 17.128 s, 239.1 tok/s, argmax 21527
+[pp4096] run 17.403 s, 235.4 tok/s, gpu 17.105 s, 239.5 tok/s, argmax 21527
+[tg128] warm-up 128 tokens 1.211 s, 105.7 tok/s, gpu 1.145 s, 111.8 tok/s
+[tg128] run 128 tokens 1.209 s, 105.9 tok/s, gpu 1.144 s, 111.9 tok/s
+[tg128] run 128 tokens 1.211 s, 105.7 tok/s, gpu 1.146 s, 111.7 tok/s
+[tg128] run 128 tokens 1.211 s, 105.7 tok/s, gpu 1.146 s, 111.7 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp128 | 244.49 ± 0.88 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp512 | 242.15 ± 0.80 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1024 | 240.86 ± 0.09 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp2048 | 238.64 ± 0.36 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp4096 | 235.12 ± 0.22 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 | 105.77 ± 0.08 |
+
+| model | engine | test | gpu t/s |
+| --- | --- | ---: | ---: |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp128 | 248.97 ± 0.95 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp512 | 246.53 ± 0.81 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp1024 | 245.18 ± 0.11 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp2048 | 242.89 ± 0.36 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | pp4096 | 239.21 ± 0.23 |
+| gemma-4-E2B-it-qat-q4_0-unquantized | herbert-metal-bf16 | tg128 | 111.80 ± 0.10 |
+exit 0 2026-10-31 00:16:40
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  4121026.
+Swapouts:                                   99113415.

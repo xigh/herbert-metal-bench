@@ -1,0 +1,58 @@
+=== Qwen3.5-4B rapid 2026-10-31 06:06:35
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1341923.
+Swapouts:                                  100282979.
+input ~/models/qwen/Qwen3.5-4B
+--- pp8192
+[pp8192] run prompt_tokens 8571 ttft 4189.4 ms wall 4.243 s 2045.9 tok/s
+[pp8192] run prompt_tokens 8547 ttft 4181.7 ms wall 4.216 s 2043.9 tok/s
+[tg128] run completion_tokens 128 mean_itl 14.129 ms wall 1.878 s 70.8 tok/s
+[tg128] run completion_tokens 128 mean_itl 14.136 ms wall 1.878 s 70.7 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp8192 | 2044.88 ± 1.39 |
+| Qwen3.5-4B | rapid-mlx | tg128 | 70.76 ± 0.03 |
+--- pp16384
+[pp16384] run prompt_tokens 17104 ttft 8896.4 ms wall 8.971 s 1922.6 tok/s
+[pp16384] run prompt_tokens 17116 ttft 8891.8 ms wall 8.942 s 1924.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.095 ms wall 0.181 s 70.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.122 ms wall 0.181 s 70.8 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp16384 | 1923.75 ± 1.66 |
+| Qwen3.5-4B | rapid-mlx | tg8 | 70.88 ± 0.10 |
+--- pp32768
+[pp32768] run prompt_tokens 34168 ttft 19963.8 ms wall 20.140 s 1711.5 tok/s
+[pp32768] run prompt_tokens 34261 ttft 20045.4 ms wall 20.148 s 1709.2 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.062 ms wall 0.186 s 71.1 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.077 ms wall 0.181 s 71.0 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp32768 | 1710.33 ± 1.65 |
+| Qwen3.5-4B | rapid-mlx | tg8 | 71.07 ± 0.05 |
+--- pp65536
+[pp65536] run prompt_tokens 68307 ttft 50253.3 ms wall 50.481 s 1359.3 tok/s
+[pp65536] run prompt_tokens 68395 ttft 50362.4 ms wall 50.573 s 1358.1 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.087 ms wall 0.184 s 71.0 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.123 ms wall 0.181 s 70.8 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp65536 | 1358.66 ± 0.85 |
+| Qwen3.5-4B | rapid-mlx | tg8 | 70.90 ± 0.13 |
+--- pp81920
+[pp81920] run prompt_tokens 85365 ttft 70112.4 ms wall 70.380 s 1217.5 tok/s
+[pp81920] run prompt_tokens 85474 ttft 70299.8 ms wall 70.601 s 1215.9 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.064 ms wall 0.187 s 71.1 tok/s
+[tg8] run completion_tokens 8 mean_itl 14.313 ms wall 0.182 s 69.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-4B | rapid-mlx | pp81920 | 1216.70 ± 1.20 |
+| Qwen3.5-4B | rapid-mlx | tg8 | 70.48 ± 0.87 |
+exit 143 2026-10-31 06:12:00
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1859314.
+Swapouts:                                  100282979.

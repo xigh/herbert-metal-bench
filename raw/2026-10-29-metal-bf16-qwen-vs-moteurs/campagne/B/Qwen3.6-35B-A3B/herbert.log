@@ -1,0 +1,145 @@
+=== Qwen3.6-35B-A3B herbert 2026-10-29 00:46:32
+Pages free:                                  3393201.
+Swapouts:                                   98333948.
+[metal] Apple M3 Ultra · working set 77.8 GiB · max buffer 58.3 GiB · threadgroup memory 32 KiB
+[loader] skipped: model.visual.* ×333, mtp.fc.* ×1, mtp.layers.* ×15, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] qwen3_5_moe_text — hidden 2048, 40 layers, 16 heads / 2 kv × 256, intermediate 512, vocab 248320, rotary 64, linear k 16×128 v 32×128, tied head false
+[metal] weights 64.63 GiB, everything 65.03 GiB, capacity 2048, DeltaNet activations bf16
+[autotune] gemm 2048x1024 Bf16, 2048 rows: mma 0.725 ms, mm2d64x64 0.542 ms, mm2d64x32 0.494 ms, mm2d64x16 0.489 ms, mm2d32x64 0.489 ms, mm2d32x32 0.487 ms, mm2d32x16 0.496 ms -> mm2d32x32
+[autotune] gemm 512x2048 Residual, 2048 rows: mma 0.354 ms, mm2d64x64 0.257 ms, mm2d64x32 0.250 ms, mm2d64x16 0.247 ms, mm2d32x64 0.253 ms, mm2d32x32 0.247 ms, mm2d32x16 0.254 ms -> mm2d32x32
+[autotune] gemm 2048x9216 Bf16, 2048 rows: mma 5.165 ms, mm2d64x64 3.953 ms, mm2d64x32 3.936 ms, mm2d64x16 4.007 ms, mm2d32x64 3.976 ms, mm2d32x32 4.008 ms, mm2d32x16 4.175 ms -> mm2d64x32
+[autotune] gemm 4096x2048 Residual, 2048 rows: mma 2.511 ms, mm2d64x64 1.885 ms, mm2d64x32 1.866 ms, mm2d64x16 1.851 ms, mm2d32x64 1.885 ms, mm2d32x32 1.850 ms, mm2d32x16 2.169 ms -> mm2d32x32
+[autotune] gemm 2048x12352 Bf16, 2048 rows: mma 6.877 ms, mm2d64x64 5.256 ms, mm2d64x32 5.247 ms, mm2d64x16 5.359 ms, mm2d32x64 5.300 ms, mm2d32x32 5.357 ms, mm2d32x16 5.586 ms -> mm2d64x32
+[autotune] gemm 512x2048 Bf16, 2048 rows: mma 0.320 ms, mm2d64x64 0.249 ms, mm2d64x32 0.245 ms, mm2d64x16 0.244 ms, mm2d32x64 0.249 ms, mm2d32x32 0.244 ms, mm2d32x16 0.252 ms -> mm2d64x16
+[autotune] gemm 2048x256 Bf16, 2048 rows: mma 0.216 ms, mm2d64x64 0.185 ms, mm2d64x32 0.148 ms, mm2d64x16 0.146 ms, mm2d32x64 0.150 ms, mm2d32x32 0.144 ms, mm2d32x16 0.142 ms -> mm2d32x16
+[autotune] experts sort by 16 rows, 64 rows: scan 0.084 ms, atomic 0.023 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 16 rows, 64 rows: mma 0.721 ms, gather+mm2d64 0.787 ms, gather+mm2d32 0.756 ms, gather+mm2d16 0.870 ms -> mma
+[autotune] experts down 512x2048 by 16 rows, 64 rows: mma 0.341 ms, mm2d64 0.350 ms, mm2d32 0.342 ms, mm2d16 0.372 ms -> mma
+[autotune] experts by 16 rows, 64 rows: sort 0.023 ms, total 1.085 ms
+[autotune] experts sort by 32 rows, 64 rows: scan 0.083 ms, atomic 0.022 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 32 rows, 64 rows: mma 1.072 ms, gather+mm2d64 0.997 ms, gather+mm2d32 1.051 ms, gather+mm2d16 1.283 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 32 rows, 64 rows: mma 0.520 ms, mm2d64 0.465 ms, mm2d32 0.481 ms, mm2d16 0.578 ms -> mm2d64
+[autotune] experts by 32 rows, 64 rows: sort 0.022 ms, total 1.485 ms
+[autotune] experts sort by 64 rows, 64 rows: scan 0.082 ms, atomic 0.022 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 64 rows, 64 rows: mma 2.257 ms, gather+mm2d64 1.737 ms, gather+mm2d32 1.781 ms, gather+mm2d16 1.914 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 64 rows, 64 rows: mma 1.095 ms, mm2d64 0.843 ms, mm2d32 0.853 ms, mm2d16 0.889 ms -> mm2d64
+[autotune] experts by 64 rows, 64 rows: sort 0.022 ms, total 2.602 ms
+[autotune] experts, 64 rows -> tiles of 16 rows
+[autotune] gemm 2048x1024 Bf16, 64 rows: mma 0.181 ms, mm2d64x64 0.087 ms, mm2d64x32 0.065 ms, mm2d64x16 0.044 ms, mm2d32x64 0.066 ms, mm2d32x32 0.042 ms, mm2d32x16 0.036 ms -> mm2d32x16
+[autotune] gemm 512x2048 Residual, 64 rows: mma 0.058 ms, mm2d64x64 0.046 ms, mm2d64x32 0.026 ms, mm2d64x16 0.018 ms, mm2d32x64 0.026 ms, mm2d32x32 0.019 ms, mm2d32x16 0.017 ms -> mm2d32x16
+[autotune] gemm 2048x9216 Bf16, 64 rows: mma 0.227 ms, mm2d64x64 0.183 ms, mm2d64x32 0.174 ms, mm2d64x16 0.163 ms, mm2d32x64 0.174 ms, mm2d32x32 0.162 ms, mm2d32x16 0.169 ms -> mm2d32x32
+[autotune] gemm 4096x2048 Residual, 64 rows: mma 0.376 ms, mm2d64x64 0.264 ms, mm2d64x32 0.140 ms, mm2d64x16 0.105 ms, mm2d32x64 0.137 ms, mm2d32x32 0.106 ms, mm2d32x16 0.103 ms -> mm2d32x16
+[autotune] gemm 2048x12352 Bf16, 64 rows: mma 0.357 ms, mm2d64x64 0.233 ms, mm2d64x32 0.200 ms, mm2d64x16 0.202 ms, mm2d32x64 0.200 ms, mm2d32x32 0.200 ms, mm2d32x16 0.223 ms -> mm2d32x64
+[autotune] gemm 512x2048 Bf16, 64 rows: mma 0.051 ms, mm2d64x64 0.037 ms, mm2d64x32 0.021 ms, mm2d64x16 0.017 ms, mm2d32x64 0.021 ms, mm2d32x32 0.016 ms, mm2d32x16 0.016 ms -> mm2d32x32
+[autotune] gemm 2048x256 Bf16, 64 rows: mma 0.178 ms, mm2d64x64 0.086 ms, mm2d64x32 0.057 ms, mm2d64x16 0.043 ms, mm2d32x64 0.064 ms, mm2d32x32 0.042 ms, mm2d32x16 0.034 ms -> mm2d32x16
+[autotune] experts sort by 16 rows, 128 rows: scan 0.146 ms, atomic 0.026 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 16 rows, 128 rows: mma 0.978 ms, gather+mm2d64 1.044 ms, gather+mm2d32 1.022 ms, gather+mm2d16 1.221 ms -> mma
+[autotune] experts down 512x2048 by 16 rows, 128 rows: mma 0.472 ms, mm2d64 0.466 ms, mm2d32 0.467 ms, mm2d16 0.524 ms -> mm2d64
+[autotune] experts by 16 rows, 128 rows: sort 0.026 ms, total 1.470 ms
+[autotune] experts sort by 32 rows, 128 rows: scan 0.146 ms, atomic 0.025 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 32 rows, 128 rows: mma 1.457 ms, gather+mm2d64 1.325 ms, gather+mm2d32 1.390 ms, gather+mm2d16 1.738 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 32 rows, 128 rows: mma 0.718 ms, mm2d64 0.635 ms, mm2d32 0.652 ms, mm2d16 0.806 ms -> mm2d64
+[autotune] experts by 32 rows, 128 rows: sort 0.025 ms, total 1.984 ms
+[autotune] experts sort by 64 rows, 128 rows: scan 0.146 ms, atomic 0.025 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 64 rows, 128 rows: mma 3.019 ms, gather+mm2d64 2.308 ms, gather+mm2d32 2.369 ms, gather+mm2d16 2.537 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 64 rows, 128 rows: mma 1.489 ms, mm2d64 1.139 ms, mm2d32 1.150 ms, mm2d16 1.201 ms -> mm2d64
+[autotune] experts by 64 rows, 128 rows: sort 0.025 ms, total 3.472 ms
+[autotune] experts, 128 rows -> tiles of 16 rows
+[autotune] gemm 2048x1024 Bf16, 128 rows: mma 0.179 ms, mm2d64x64 0.126 ms, mm2d64x32 0.063 ms, mm2d64x16 0.049 ms, mm2d32x64 0.067 ms, mm2d32x32 0.050 ms, mm2d32x16 0.045 ms -> mm2d32x16
+[autotune] gemm 512x2048 Residual, 128 rows: mma 0.056 ms, mm2d64x64 0.044 ms, mm2d64x32 0.032 ms, mm2d64x16 0.025 ms, mm2d32x64 0.031 ms, mm2d32x32 0.025 ms, mm2d32x16 0.024 ms -> mm2d32x16
+[autotune] gemm 2048x9216 Bf16, 128 rows: mma 0.429 ms, mm2d64x64 0.335 ms, mm2d64x32 0.299 ms, mm2d64x16 0.293 ms, mm2d32x64 0.303 ms, mm2d32x32 0.291 ms, mm2d32x16 0.297 ms -> mm2d32x32
+[autotune] gemm 4096x2048 Residual, 128 rows: mma 0.359 ms, mm2d64x64 0.264 ms, mm2d64x32 0.190 ms, mm2d64x16 0.161 ms, mm2d32x64 0.190 ms, mm2d32x32 0.159 ms, mm2d32x16 0.170 ms -> mm2d32x32
+[autotune] gemm 2048x12352 Bf16, 128 rows: mma 0.525 ms, mm2d64x64 0.389 ms, mm2d64x32 0.378 ms, mm2d64x16 0.384 ms, mm2d32x64 0.382 ms, mm2d32x32 0.382 ms, mm2d32x16 0.393 ms -> mm2d64x32
+[autotune] gemm 512x2048 Bf16, 128 rows: mma 0.049 ms, mm2d64x64 0.037 ms, mm2d64x32 0.028 ms, mm2d64x16 0.023 ms, mm2d32x64 0.027 ms, mm2d32x32 0.023 ms, mm2d32x16 0.024 ms -> mm2d32x32
+[autotune] gemm 2048x256 Bf16, 128 rows: mma 0.176 ms, mm2d64x64 0.087 ms, mm2d64x32 0.057 ms, mm2d64x16 0.044 ms, mm2d32x64 0.057 ms, mm2d32x32 0.043 ms, mm2d32x16 0.035 ms -> mm2d32x16
+[autotune] experts sort by 16 rows, 256 rows: scan 0.272 ms, atomic 0.030 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 16 rows, 256 rows: mma 1.329 ms, gather+mm2d64 1.332 ms, gather+mm2d32 1.355 ms, gather+mm2d16 1.683 ms -> mma
+[autotune] experts down 512x2048 by 16 rows, 256 rows: mma 0.652 ms, mm2d64 0.605 ms, mm2d32 0.643 ms, mm2d16 0.732 ms -> mm2d64
+[autotune] experts by 16 rows, 256 rows: sort 0.030 ms, total 1.964 ms
+[autotune] experts sort by 32 rows, 256 rows: scan 0.271 ms, atomic 0.028 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 32 rows, 256 rows: mma 1.947 ms, gather+mm2d64 1.749 ms, gather+mm2d32 1.844 ms, gather+mm2d16 2.314 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 32 rows, 256 rows: mma 0.972 ms, mm2d64 0.850 ms, mm2d32 0.877 ms, mm2d16 1.098 ms -> mm2d64
+[autotune] experts by 32 rows, 256 rows: sort 0.028 ms, total 2.628 ms
+[autotune] experts sort by 64 rows, 256 rows: scan 0.270 ms, atomic 0.029 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 64 rows, 256 rows: mma 3.924 ms, gather+mm2d64 2.991 ms, gather+mm2d32 3.092 ms, gather+mm2d16 3.318 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 64 rows, 256 rows: mma 1.963 ms, mm2d64 1.490 ms, mm2d32 1.505 ms, mm2d16 1.584 ms -> mm2d64
+[autotune] experts by 64 rows, 256 rows: sort 0.029 ms, total 4.509 ms
+[autotune] experts, 256 rows -> tiles of 16 rows
+[autotune] gemm 2048x1024 Bf16, 256 rows: mma 0.175 ms, mm2d64x64 0.131 ms, mm2d64x32 0.095 ms, mm2d64x16 0.079 ms, mm2d32x64 0.095 ms, mm2d32x32 0.078 ms, mm2d32x16 0.078 ms -> mm2d32x16
+[autotune] gemm 512x2048 Residual, 256 rows: mma 0.068 ms, mm2d64x64 0.059 ms, mm2d64x32 0.046 ms, mm2d64x16 0.042 ms, mm2d32x64 0.046 ms, mm2d32x32 0.042 ms, mm2d32x16 0.040 ms -> mm2d32x16
+[autotune] gemm 2048x9216 Bf16, 256 rows: mma 0.744 ms, mm2d64x64 0.590 ms, mm2d64x32 0.555 ms, mm2d64x16 0.547 ms, mm2d32x64 0.546 ms, mm2d32x32 0.539 ms, mm2d32x16 0.556 ms -> mm2d32x32
+[autotune] gemm 4096x2048 Residual, 256 rows: mma 0.442 ms, mm2d64x64 0.368 ms, mm2d64x32 0.290 ms, mm2d64x16 0.286 ms, mm2d32x64 0.299 ms, mm2d32x32 0.287 ms, mm2d32x16 0.311 ms -> mm2d64x16
+[autotune] gemm 2048x12352 Bf16, 256 rows: mma 0.942 ms, mm2d64x64 0.744 ms, mm2d64x32 0.708 ms, mm2d64x16 0.719 ms, mm2d32x64 0.716 ms, mm2d32x32 0.711 ms, mm2d32x16 0.735 ms -> mm2d64x32
+[autotune] gemm 512x2048 Bf16, 256 rows: mma 0.060 ms, mm2d64x64 0.051 ms, mm2d64x32 0.041 ms, mm2d64x16 0.041 ms, mm2d32x64 0.042 ms, mm2d32x32 0.040 ms, mm2d32x16 0.040 ms -> mm2d32x16
+[autotune] gemm 2048x256 Bf16, 256 rows: mma 0.172 ms, mm2d64x64 0.087 ms, mm2d64x32 0.060 ms, mm2d64x16 0.044 ms, mm2d32x64 0.068 ms, mm2d32x32 0.042 ms, mm2d32x16 0.035 ms -> mm2d32x16
+[autotune] experts sort by 16 rows, 512 rows: scan 0.521 ms, atomic 0.038 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 16 rows, 512 rows: mma 1.839 ms, gather+mm2d64 1.740 ms, gather+mm2d32 1.829 ms, gather+mm2d16 2.299 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 16 rows, 512 rows: mma 0.928 ms, mm2d64 0.837 ms, mm2d32 0.945 ms, mm2d16 1.012 ms -> mm2d64
+[autotune] experts by 16 rows, 512 rows: sort 0.038 ms, total 2.616 ms
+[autotune] experts sort by 32 rows, 512 rows: scan 0.524 ms, atomic 0.035 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 32 rows, 512 rows: mma 2.603 ms, gather+mm2d64 2.322 ms, gather+mm2d32 2.457 ms, gather+mm2d16 3.029 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 32 rows, 512 rows: mma 1.315 ms, mm2d64 1.133 ms, mm2d32 1.178 ms, mm2d16 1.476 ms -> mm2d64
+[autotune] experts by 32 rows, 512 rows: sort 0.035 ms, total 3.491 ms
+[autotune] experts sort by 64 rows, 512 rows: scan 0.518 ms, atomic 0.035 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 64 rows, 512 rows: mma 4.881 ms, gather+mm2d64 3.723 ms, gather+mm2d32 3.792 ms, gather+mm2d16 4.067 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 64 rows, 512 rows: mma 2.449 ms, mm2d64 1.829 ms, mm2d32 1.852 ms, mm2d16 1.955 ms -> mm2d64
+[autotune] experts by 64 rows, 512 rows: sort 0.035 ms, total 5.586 ms
+[autotune] experts, 512 rows -> tiles of 16 rows
+[autotune] gemm 2048x1024 Bf16, 512 rows: mma 0.215 ms, mm2d64x64 0.185 ms, mm2d64x32 0.148 ms, mm2d64x16 0.145 ms, mm2d32x64 0.150 ms, mm2d32x32 0.144 ms, mm2d32x16 0.139 ms -> mm2d32x16
+[autotune] gemm 512x2048 Residual, 512 rows: mma 0.113 ms, mm2d64x64 0.086 ms, mm2d64x32 0.078 ms, mm2d64x16 0.073 ms, mm2d32x64 0.079 ms, mm2d32x32 0.073 ms, mm2d32x16 0.072 ms -> mm2d32x16
+[autotune] gemm 2048x9216 Bf16, 512 rows: mma 1.315 ms, mm2d64x64 1.046 ms, mm2d64x32 1.039 ms, mm2d64x16 1.042 ms, mm2d32x64 1.050 ms, mm2d32x32 1.042 ms, mm2d32x16 1.071 ms -> mm2d64x32
+[autotune] gemm 4096x2048 Residual, 512 rows: mma 0.721 ms, mm2d64x64 0.572 ms, mm2d64x32 0.548 ms, mm2d64x16 0.521 ms, mm2d32x64 0.555 ms, mm2d32x32 0.521 ms, mm2d32x16 0.580 ms -> mm2d64x16
+[autotune] gemm 2048x12352 Bf16, 512 rows: mma 1.763 ms, mm2d64x64 1.396 ms, mm2d64x32 1.366 ms, mm2d64x16 1.378 ms, mm2d32x64 1.381 ms, mm2d32x32 1.380 ms, mm2d32x16 1.428 ms -> mm2d64x32
+[autotune] gemm 512x2048 Bf16, 512 rows: mma 0.099 ms, mm2d64x64 0.079 ms, mm2d64x32 0.074 ms, mm2d64x16 0.072 ms, mm2d32x64 0.075 ms, mm2d32x32 0.071 ms, mm2d32x16 0.071 ms -> mm2d32x32
+[autotune] gemm 2048x256 Bf16, 512 rows: mma 0.172 ms, mm2d64x64 0.129 ms, mm2d64x32 0.065 ms, mm2d64x16 0.051 ms, mm2d32x64 0.068 ms, mm2d32x32 0.050 ms, mm2d32x16 0.044 ms -> mm2d32x16
+[autotune] experts sort by 16 rows, 1024 rows: scan 1.012 ms, atomic 0.052 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 16 rows, 1024 rows: mma 2.758 ms, gather+mm2d64 2.532 ms, gather+mm2d32 2.755 ms, gather+mm2d16 3.556 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 16 rows, 1024 rows: mma 1.403 ms, mm2d64 1.251 ms, mm2d32 1.487 ms, mm2d16 1.599 ms -> mm2d64
+[autotune] experts by 16 rows, 1024 rows: sort 0.052 ms, total 3.835 ms
+[autotune] experts sort by 32 rows, 1024 rows: scan 1.007 ms, atomic 0.046 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 32 rows, 1024 rows: mma 3.503 ms, gather+mm2d64 3.147 ms, gather+mm2d32 3.284 ms, gather+mm2d16 3.970 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 32 rows, 1024 rows: mma 1.785 ms, mm2d64 1.528 ms, mm2d32 1.589 ms, mm2d16 1.970 ms -> mm2d64
+[autotune] experts by 32 rows, 1024 rows: sort 0.046 ms, total 4.722 ms
+[autotune] experts sort by 64 rows, 1024 rows: scan 1.003 ms, atomic 0.045 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 64 rows, 1024 rows: mma 6.058 ms, gather+mm2d64 4.615 ms, gather+mm2d32 4.679 ms, gather+mm2d16 5.017 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 64 rows, 1024 rows: mma 3.067 ms, mm2d64 2.262 ms, mm2d32 2.283 ms, mm2d16 2.422 ms -> mm2d64
+[autotune] experts by 64 rows, 1024 rows: sort 0.045 ms, total 6.922 ms
+[autotune] experts, 1024 rows -> tiles of 16 rows
+[autotune] gemm 2048x1024 Bf16, 1024 rows: mma 0.363 ms, mm2d64x64 0.289 ms, mm2d64x32 0.275 ms, mm2d64x16 0.263 ms, mm2d32x64 0.278 ms, mm2d32x32 0.262 ms, mm2d32x16 0.257 ms -> mm2d32x16
+[autotune] gemm 512x2048 Residual, 1024 rows: mma 0.206 ms, mm2d64x64 0.153 ms, mm2d64x32 0.134 ms, mm2d64x16 0.132 ms, mm2d32x64 0.137 ms, mm2d32x32 0.131 ms, mm2d32x16 0.134 ms -> mm2d32x32
+[autotune] gemm 2048x9216 Bf16, 1024 rows: mma 2.533 ms, mm2d64x64 2.044 ms, mm2d64x32 1.998 ms, mm2d64x16 2.036 ms, mm2d32x64 2.021 ms, mm2d32x32 2.036 ms, mm2d32x16 2.102 ms -> mm2d64x32
+[autotune] gemm 4096x2048 Residual, 1024 rows: mma 1.416 ms, mm2d64x64 1.077 ms, mm2d64x32 0.961 ms, mm2d64x16 0.967 ms, mm2d32x64 0.998 ms, mm2d32x32 0.972 ms, mm2d32x16 1.110 ms -> mm2d64x32
+[autotune] gemm 2048x12352 Bf16, 1024 rows: mma 3.425 ms, mm2d64x64 2.700 ms, mm2d64x32 2.654 ms, mm2d64x16 2.708 ms, mm2d32x64 2.684 ms, mm2d32x32 2.709 ms, mm2d32x16 2.816 ms -> mm2d64x32
+[autotune] gemm 512x2048 Bf16, 1024 rows: mma 0.183 ms, mm2d64x64 0.143 ms, mm2d64x32 0.128 ms, mm2d64x16 0.129 ms, mm2d32x64 0.131 ms, mm2d32x32 0.128 ms, mm2d32x16 0.132 ms -> mm2d64x32
+[autotune] gemm 2048x256 Bf16, 1024 rows: mma 0.174 ms, mm2d64x64 0.131 ms, mm2d64x32 0.097 ms, mm2d64x16 0.079 ms, mm2d32x64 0.096 ms, mm2d32x32 0.078 ms, mm2d32x16 0.078 ms -> mm2d32x16
+[autotune] experts sort by 16 rows, 2048 rows: scan 1.998 ms, atomic 0.081 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 16 rows, 2048 rows: mma 4.758 ms, gather+mm2d64 4.313 ms, gather+mm2d32 4.824 ms, gather+mm2d16 6.042 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 16 rows, 2048 rows: mma 2.436 ms, mm2d64 2.146 ms, mm2d32 2.622 ms, mm2d16 2.828 ms -> mm2d64
+[autotune] experts by 16 rows, 2048 rows: sort 0.081 ms, total 6.540 ms
+[autotune] experts sort by 32 rows, 2048 rows: scan 1.987 ms, atomic 0.069 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 32 rows, 2048 rows: mma 5.373 ms, gather+mm2d64 4.823 ms, gather+mm2d32 4.986 ms, gather+mm2d16 5.886 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 32 rows, 2048 rows: mma 2.754 ms, mm2d64 2.341 ms, mm2d32 2.436 ms, mm2d16 2.974 ms -> mm2d64
+[autotune] experts by 32 rows, 2048 rows: sort 0.069 ms, total 7.232 ms
+[autotune] experts sort by 64 rows, 2048 rows: scan 1.982 ms, atomic 0.064 ms -> atomic
+[autotune] experts gate_up 2048x1024 by 64 rows, 2048 rows: mma 8.202 ms, gather+mm2d64 6.165 ms, gather+mm2d32 6.274 ms, gather+mm2d16 6.686 ms -> gather+mm2d64
+[autotune] experts down 512x2048 by 64 rows, 2048 rows: mma 4.192 ms, mm2d64 3.023 ms, mm2d32 3.046 ms, mm2d16 3.228 ms -> mm2d64
+[autotune] experts by 64 rows, 2048 rows: sort 0.064 ms, total 9.252 ms
+[autotune] experts, 2048 rows -> tiles of 16 rows
+[autotune] blocks over 2048 rows, 4 layers: 512 102.653 ms, 1024 85.966 ms, 2048 79.075 ms -> 2048
+[metal] 265 kernels compiled in 0.06 s, GEMMs and blocks timed in 7.64 s, 705 dispatches per token, blocks of 2048 rows; prefill.block=2048 rec.chunk=4 rec.pcols=16 rec.pslices=16 rec.vec=0 rec.pair=0 rec.stage=0 conv.cols=32 sdpa.prefill=1 sdpa.bq=16 sdpa.bk=16 gemm.simt=1 gemm.auto=1 gemm.mma=1 gemm.tn=64 gemm.mfirst=1 moe.grouped=1 moe.tile=16
+[engine] loaded in 89.4 s
+[pp512] warm-up 0.614 s, 834.1 tok/s, argmax 89
+[pp512] run 0.218 s, 2352.4 tok/s, argmax 89
+[pp512] run 0.218 s, 2352.9 tok/s, argmax 89
+[pp512] run 0.217 s, 2354.7 tok/s, argmax 89
+[tg128] warm-up 128 tokens 1.830 s, 70.0 tok/s
+[tg128] run 128 tokens 1.829 s, 70.0 tok/s
+[tg128] run 128 tokens 1.829 s, 70.0 tok/s
+[tg128] run 128 tokens 1.829 s, 70.0 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | pp512 | 2353.35 ± 1.22 |
+| Qwen3.6-35B-A3B | herbert-metal-bf16 | tg128 | 69.97 ± 0.01 |
+exit 0 2026-10-29 00:48:10
+Pages free:                                  4315924.
+Swapouts:                                   98333948.

@@ -1,0 +1,13 @@
+/dev/disk3s5   926Gi   869Gi    31Gi    97%    3.8M  320M    1%   /System/Volumes/Data
+base-convert v0.4.2
+  input:   ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+  output:  ~/basert-tmp/E4B-bf16.base
+  target:  Bf16
+  arch:    gemma4
+  config:  hidden=2560, layers=42, heads=8/2, ffn=10240, vocab=262144
+  sampling: model defaults temp=Some(1.0) top_p=Some(0.95) top_k=Some(64) min_p=None (repetition_penalty=None recorded, not applied)
+  eos:     stop ids [1, 106, 50] (merged generation_config.json)
+  tied:    no lm_head.weight synthesized — the gemma4 runtime projects logits through embed_tokens.weight and never reads output.weight.
+  mapped:  665 tensors kept, 1411 mmproj, 0 speculator, 0 dropped
+  quantized 665 tensors
+  wrote 665 tensors (15181 MB)

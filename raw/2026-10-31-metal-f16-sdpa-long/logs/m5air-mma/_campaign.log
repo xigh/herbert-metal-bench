@@ -1,0 +1,87 @@
+start 2026-10-31 08:33:24
+456c66b0aab72d04c30ccac39395e7135bf7e01533eb8f7dbeeb9724ae338988  target/f16/release/herbert-metal-bench
+model ~/models/qwen/Qwen3.5-0.8B
+PPS=2048,8192,24576,61440 VARIANTS=base mma mmast mmaqr mmaqr8k PROFILE=0 ROWS_MAX=8192 R=2 W=1 R_LONG=1 W_LONG=0 PAUSE=60
+Apple M5
+26.5.1
+=== base pp2048 2026-10-31 08:33:24 
+[pp2048] run 0.443 s, 4628.1 tok/s, gpu 0.442 s, 4634.9 tok/s, argmax 9873
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 4651.84 ± 33.53 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 4658.48 ± 33.30 |
+=== mma pp2048 2026-10-31 08:34:46 
+[pp2048] run 0.339 s, 6044.4 tok/s, gpu 0.338 s, 6056.6 tok/s, argmax 9873
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6047.98 ± 5.05 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6059.91 ± 4.73 |
+=== mmast pp2048 2026-10-31 08:36:07 
+[pp2048] run 0.302 s, 6788.5 tok/s, gpu 0.301 s, 6802.6 tok/s, argmax 9873
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6805.33 ± 23.75 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6819.41 ± 23.72 |
+=== mmaqr pp2048 2026-10-31 08:37:28 
+[pp2048] run 0.300 s, 6823.0 tok/s, gpu 0.299 s, 6840.1 tok/s, argmax 9873
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6827.19 ± 5.89 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6842.86 ± 3.96 |
+=== mmaqr8k pp2048 2026-10-31 08:38:48 
+[pp2048] run 0.337 s, 6071.7 tok/s, gpu 0.337 s, 6077.8 tok/s, argmax 9873
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6070.05 ± 2.37 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp2048 | 6076.23 ± 2.25 |
+=== base pp8192 2026-10-31 08:40:22 
+[pp8192] run 3.739 s, 2190.8 tok/s, gpu 3.736 s, 2192.6 tok/s, argmax 1658
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 2198.71 ± 11.16 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 2200.42 ± 11.10 |
+=== mma pp8192 2026-10-31 08:41:54 
+[pp8192] run 2.349 s, 3487.1 tok/s, gpu 2.347 s, 3491.1 tok/s, argmax 1658
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 3504.68 ± 24.92 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 3508.79 ± 24.95 |
+=== mmast pp8192 2026-10-31 08:43:21 
+[pp8192] run 1.749 s, 4684.1 tok/s, gpu 1.746 s, 4691.1 tok/s, argmax 1658
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 4705.03 ± 29.54 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 4712.05 ± 29.64 |
+=== mmaqr pp8192 2026-10-31 08:44:43 
+[pp8192] run 1.649 s, 4966.5 tok/s, gpu 1.647 s, 4974.0 tok/s, argmax 1658
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 4970.23 ± 5.34 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 4978.19 ± 5.89 |
+=== mmaqr8k pp8192 2026-10-31 08:46:06 
+[pp8192] run 2.244 s, 3650.6 tok/s, gpu 2.243 s, 3652.0 tok/s, argmax 1658
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 3690.72 ± 56.77 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp8192 | 3691.96 ± 56.54 |
+=== base pp24576 2026-10-31 08:47:44 
+[pp24576] run 28.771 s, 854.2 tok/s, gpu 28.748 s, 854.9 tok/s, argmax 8
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 854.21 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 854.88 ± 0.00 |
+=== mma pp24576 2026-10-31 08:49:33 
+[pp24576] run 14.801 s, 1660.4 tok/s, gpu 14.787 s, 1662.0 tok/s, argmax 8
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 1660.44 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 1662.03 ± 0.00 |
+=== mmast pp24576 2026-10-31 08:51:05 
+[pp24576] run 9.734 s, 2524.8 tok/s, gpu 9.720 s, 2528.5 tok/s, argmax 8
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 2524.84 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 2528.51 ± 0.00 |
+=== mmaqr pp24576 2026-10-31 08:52:35 
+[pp24576] run 8.710 s, 2821.6 tok/s, gpu 8.696 s, 2826.1 tok/s, argmax 8
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 2821.58 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 2826.12 ± 0.00 |
+=== mmaqr8k pp24576 2026-10-31 08:54:03 
+[pp24576] run 10.205 s, 2408.2 tok/s, gpu 10.186 s, 2412.7 tok/s, argmax 8
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 2408.17 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp24576 | 2412.68 ± 0.00 |
+=== base pp61440 2026-10-31 08:55:46 
+[pp61440] run 200.639 s, 306.2 tok/s, gpu 200.561 s, 306.3 tok/s, argmax 82
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 306.22 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 306.34 ± 0.00 |
+=== mma pp61440 2026-10-31 09:00:26 
+[pp61440] run 89.675 s, 685.1 tok/s, gpu 89.632 s, 685.5 tok/s, argmax 82
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 685.14 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 685.47 ± 0.00 |
+=== mmast pp61440 2026-10-31 09:03:16 
+[pp61440] run 53.719 s, 1143.7 tok/s, gpu 53.686 s, 1144.4 tok/s, argmax 82
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 1143.73 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 1144.43 ± 0.00 |
+=== mmaqr pp61440 2026-10-31 09:05:27 
+[pp61440] run 47.086 s, 1304.8 tok/s, gpu 47.056 s, 1305.7 tok/s, argmax 82
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 1304.84 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 1305.69 ± 0.00 |
+=== mmaqr8k pp61440 2026-10-31 09:07:32 
+[pp61440] run 49.842 s, 1232.7 tok/s, gpu 49.815 s, 1233.4 tok/s, argmax 82
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 1232.69 ± 0.00 |
+| Qwen3.5-0.8B | herbert-metal-f16 | pp61440 | 1233.37 ± 0.00 |
+end 2026-10-31 09:08:55

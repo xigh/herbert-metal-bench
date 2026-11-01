@@ -1,0 +1,35 @@
+=== E2B basert 2026-10-30 22:32:47
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  3774511.
+Swapouts:                                   99113415.
+input ~/models/gemma-4-E2B-it-qat-q4_0-unquantized
+--- pp128
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| E2B-bf16 | 21614 MiB | pp128:random | 4282.25 ± 3.41 |
+--- pp512
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| E2B-bf16 | 21614 MiB | pp512:random | 7691.58 ± 3.29 |
+| E2B-bf16 | 21614 MiB | tg128 | 96.86 ± 0.07 |
+--- pp1024
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| E2B-bf16 | 21614 MiB | pp1024:random | 9597.52 ± 9.81 |
+--- pp2048
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| E2B-bf16 | 21614 MiB | pp2048:random | 10373.59 ± 7.94 |
+--- pp4096
+| model | size | test | t/s |
+| --- | ---: | ---: | ---: |
+| E2B-bf16 | 21614 MiB | pp4096:random | 10457.69 ± 2.50 |
+removed ~/basert-tmp/E2B-bf16.base
+exit 0 2026-10-30 22:33:57
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  3131074.
+Swapouts:                                   99113415.

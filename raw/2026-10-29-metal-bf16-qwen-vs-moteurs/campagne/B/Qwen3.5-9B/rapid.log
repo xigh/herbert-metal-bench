@@ -1,0 +1,18 @@
+=== Qwen3.5-9B rapid 2026-10-29 00:36:03
+Pages free:                                  1938022.
+Swapouts:                                   98333948.
+[pp512] warm-up prompt_tokens 533 ttft 570.3 ms wall 0.605 s 934.7 tok/s
+[pp512] run prompt_tokens 547 ttft 562.6 ms wall 0.574 s 972.3 tok/s
+[pp512] run prompt_tokens 530 ttft 561.2 ms wall 0.572 s 944.4 tok/s
+[pp512] run prompt_tokens 528 ttft 559.9 ms wall 0.571 s 943.0 tok/s
+[tg128] warm-up completion_tokens 128 mean_itl 24.409 ms wall 3.224 s 41.0 tok/s
+[tg128] run completion_tokens 128 mean_itl 24.411 ms wall 3.225 s 41.0 tok/s
+[tg128] run completion_tokens 128 mean_itl 24.438 ms wall 3.228 s 40.9 tok/s
+[tg128] run completion_tokens 128 mean_itl 24.442 ms wall 3.228 s 40.9 tok/s
+| model | engine | test | t/s |
+| --- | --- | ---: | ---: |
+| Qwen3.5-9B | rapid-mlx | pp512 | 953.22 ± 16.52 |
+| Qwen3.5-9B | rapid-mlx | tg128 | 40.93 ± 0.03 |
+exit 143 2026-10-29 00:36:28
+Pages free:                                  3018952.
+Swapouts:                                   98333948.

@@ -1,0 +1,8 @@
+=== Qwen3.6-35B-A3B llama-f16 2026-10-30 23:55:47
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   125420.
+Swapouts:                                   99113415.
+input $GGUF_DIR/Qwen3.6-35B-A3B-F16.gguf
+missing input $GGUF_DIR/Qwen3.6-35B-A3B-F16.gguf: not run

@@ -1,0 +1,2 @@
+unknown argument --tune sdpa.prefill=3,sdpa.qreg=1
+usage: herbert-metal-bench MODEL_DIR [-p N[,N…]] [-n N] [-d N] [-r R] [-w W] [--ctx N] [--rows N] [--q4] [--tune K=V,...] [--dump-msl DIR]

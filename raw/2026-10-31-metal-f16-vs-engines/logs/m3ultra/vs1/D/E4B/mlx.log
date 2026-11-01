@@ -1,0 +1,19 @@
+=== E4B mlx 2026-10-31 02:03:59
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                  1621603.
+Swapouts:                                   99397947.
+input ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+Running warmup..
+Timing with prompt_tokens=4096, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=3166.926, generation_tps=53.504, peak_memory=15.825, total_time=3.690
+Trial 2:  prompt_tps=3165.261, generation_tps=53.571, peak_memory=15.826, total_time=3.688
+Trial 3:  prompt_tps=3170.383, generation_tps=53.611, peak_memory=15.827, total_time=3.684
+Averages: prompt_tps=3167.523, generation_tps=53.562, peak_memory=15.826
+exit 0 2026-10-31 02:04:17
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+Pages free:                                   703745.
+Swapouts:                                   99397947.
