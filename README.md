@@ -30,7 +30,7 @@ On the M3 Ultra only, the engine's defaults (`gemm.auto`, `sdpa.auto`, `dec.auto
 
 llama.cpp's and mlx-lm's measures are those of the first pass of the same night (their engines did not change); herbert's are those at `f07e234`. The measures at `9e80538` (folders `1-bf16-long`, `3-d32768`, `4-big`, `5-ids`) and at `2b86c37` (`*-2b86c37`) are kept, marked as such.
 
-The engines: herbert-metal-bf16 at `f07e234` (bf16, and f16 with `--features f16`), mlx-lm 0.32.3 (bf16 checkpoint), llama.cpp `fb4b2737` (Metal, GGUF BF16 and F16). mlx-lm's and llama.cpp's rates are their own benchmarks' (wall-clock). herbert's decode rates are wall-clock too (the first table of `herbert-metal-bench`); its GPU rate (the `gpu t/s` table, the GPU time of the command buffers, the one `art004/_art004_tables.py` reads) is 1 to 12 % higher there (Qwen3.5-0.8B tg128: 382 against 336) and is not used. herbert's prefill rates are its GPU rate, within 0.5 % of its wall-clock one (0.8B pp2048: 12 775 against 12 738).
+The engines: herbert-metal-bf16 at `f07e234` (bf16, and f16 with `--features f16`), mlx-lm 0.32.0 on mlx 0.32.3 (bf16 checkpoint; the folder READMEs of the night say « mlx-lm 0.32.3 », the version of mlx), llama.cpp `fb4b2737` (Metal, GGUF BF16 and F16). mlx-lm's and llama.cpp's rates are their own benchmarks' (wall-clock). herbert's decode rates are wall-clock too (the first table of `herbert-metal-bench`); its GPU rate (the `gpu t/s` table, the GPU time of the command buffers, the one `art004/_art004_tables.py` reads) is 1 to 12 % higher there (Qwen3.5-0.8B tg128: 382 against 336) and is not used. herbert's prefill rates are its GPU rate, within 0.5 % of its wall-clock one (0.8B pp2048: 12 775 against 12 738).
 
 ### The same tokens (point 5, `logs/5r-ids`)
 
@@ -62,12 +62,23 @@ The ratio is herbert over mlx-lm. Qwen3.5-0.8B at 81 920 tokens: 4 827 / 4 784 /
 
 | model | herbert f16 | herbert bf16 | llama.cpp bf16 | mlx-lm |
 |---|---|---|---|---|
-| Qwen3.8-27B | 374 / 365 / 14.8 | 374 / 365 / 14.7 | 320 / 307 / 13.5 | does not load (GPU Timeout, twice) |
-| Qwen3.6-35B-A3B | 2 430 / 3 267 / 87.1 | 2 415 / 3 248 / 87.0 | 2 004 / 1 804 / 71.7 | 1 893 / 2 487 / 73.3 to 78.4 |
+| Qwen3.8-27B | 374 / 365 / 14.8 | 374 / 365 / 14.7 | 320 / 307 / 13.5 | does not load (GPU Timeout, twice); loaded the next morning, tg128 13.4 from an empty context |
+| Qwen3.6-35B-A3B | 2 430 / 3 267 / 87.1 | 2 415 / 3 248 / 87.0 | 2 004 / 1 804 / 71.7 | 1 893 / 2 487 / 73.3 to 78.4 (73.3 after pp512, 78.4 after pp8192; 74.0 from an empty context) |
 
 ### Decode, tokens/s
 
-tg128 from an empty context (bf16, in the runs of point 1 at pp8192): herbert 336 / 170 / 82 / 46 (0.8B, 2B, 4B, 9B), mlx-lm 250 / 144 / 71 / 41, llama.cpp 210 / 135 / 69 / 41.
+tg128, bf16, in the runs of point 1: herbert 336 / 170 / 82 / 46 (0.8B, 2B, 4B, 9B) and llama.cpp 210 / 135 / 69 / 41 from an empty context; mlx-lm 250 / 144 / 71 / 41 is `mlx_lm benchmark -p 2048 -g 128`, so its 128 tokens follow a 2 048-token prompt. mlx-lm measured again from an (almost) empty context the next morning, `-p 1` and `-p 16`, framed by herbert and llama.cpp in the same session, the order reversed from one model to the next (`raw/2026-11-01-metal-art004-mlx-tg-vide`):
+
+| model | herbert bf16 | mlx-lm `-p 1` | mlx-lm `-p 16` | llama.cpp bf16 `-p 0` | herbert / mlx-lm |
+|---|---:|---:|---:|---:|---:|
+| Qwen3.5-0.8B | 336.3 | 255.6 | 255.1 | 207.3 | ×1.32 |
+| Qwen3.5-2B | 170.4 | 144.2 | 144.2 | 133.3 | ×1.18 |
+| Qwen3.5-4B | 82.5 | 71.2 | 71.4 | 68.1 | ×1.16 |
+| Qwen3.5-9B | 46.3 | 40.9 | 40.9 | 40.8 | ×1.13 |
+| Qwen3.8-27B | 14.7 | 13.4 | 13.4 | 13.4 | ×1.10 |
+| Qwen3.6-35B-A3B | 86.6 | 74.0 (reloaded once after a GPU Timeout) | 73.7 | 71.9 | ×1.17 |
+
+The empty context does not change mlx-lm's decode: its values after 2 048 tokens hold within 2 %.
 
 tg128 after 32 768 tokens (point 3, `logs/3r-d32768`) and after 81 920 tokens (point 3 bis, `logs/3-d81920`):
 
@@ -98,6 +109,7 @@ tg128 after 32 768 tokens (point 3, `logs/3r-d32768`) and after 81 920 tokens (p
 | `2026-10-31-metal-f16-vs-engines` | the f16 engine and its bf16 build against the same selection on the M3 Ultra and the M1 Air, pp128 to pp4096, tg128 after 4 096 tokens, then the long pass up to 81 920 tokens, where the prefill fell behind |
 | `2026-10-31-metal-f16-sdpa-long` | why the prefill fell behind past ~2 000 tokens (the scalar attention's share, the prefill's methods forced one by one), then the attention on the matrix units (`sdpa_mma`, `sdpa_mm2d`, `sdpa.auto`), on the three machines; the probes `hacc` and `h2mv` |
 | `2026-11-01-metal-f16-art004` | the article's campaign, above |
+| `2026-11-01-metal-art004-mlx-tg-vide` | the next morning: mlx-lm's tg128 from an (almost) empty context on the six Qwen bf16, framed by herbert and llama.cpp in the same session |
 
 The replacement is mechanical and the same everywhere (the scripts are in the development tooling, not here): the home directories become `~`, the external disks' model, GGUF and engine directories `$MODELS_DIR`, `$GGUF_DIR`, `$ENGINES_DIR` (with a default in the `.sh` copies, so that they still run), the machines `m3ultra`, `m1air` and `m5air` (in file names too), the user applications seen by the process listings `(user application)`, the local servers' address `localhost`, the development tree's directory `herbert-metal-bf16`, the llama.cpp build directory the commit it was built from (`llama.cpp-fb4b2737`); references to private working notes are removed or replaced by the folder that holds the measure, requests quoted in the headers are removed, and « jeton » reads « token » in the French prose. Rapid-MLX's start-up banner names a coding-agent integration; that name reads `<agent>`. No number is touched. The emitted kernels (`.metal`) only get the path rules.
 

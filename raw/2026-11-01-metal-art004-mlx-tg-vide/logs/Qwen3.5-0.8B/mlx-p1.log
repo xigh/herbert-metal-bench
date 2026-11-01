@@ -1,0 +1,20 @@
+=== Qwen3.5-0.8B mlx-p1 2026-11-01 09:03:52
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+com.apple.system.thermalpressurelevel 0
+Pages free:                                  1399712.
+Swapouts:                                  101275115.
+input ~/models/qwen/Qwen3.5-0.8B
+Running warmup..
+Timing with prompt_tokens=1, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=171.146, generation_tps=255.446, peak_memory=1.548, total_time=0.511
+Trial 2:  prompt_tps=163.584, generation_tps=255.744, peak_memory=1.548, total_time=0.510
+Averages: prompt_tps=167.365, generation_tps=255.595, peak_memory=1.548
+exit 0 2026-11-01 09:03:55
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+com.apple.system.thermalpressurelevel 0
+Pages free:                                  1380501.
+Swapouts:                                  101275115.
